@@ -42,5 +42,5 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `"foto_pos": "50% 72%"` num slide ajusta o enquadramento da foto (horizontal vertical).
 
 ## Notas
-- O logótipo (`assets/logo-994.png`, 172×242 px) tem texto escuro, por isso vai sobre um disco claro (`"fundo_claro"` em `serie.json`).
+- O logótipo (`assets/logo-994.png`, 172×242 px) vai sem fundo; `"altura"` e `"fundo_claro"` (disco claro opcional) em `serie.json`.
   Um PNG maior ou SVG melhora a nitidez.

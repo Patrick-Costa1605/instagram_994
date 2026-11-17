@@ -13,6 +13,6 @@
     "vermelho": "#EE4B3A",
     "creme": "#F8F3E8"
   },
-  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 130, "fundo_claro": true },
+  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 165, "fundo_claro": false },
   "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta"
 }
