@@ -1,7 +1,17 @@
 {
   "titulo": "Caminheiros",
-  "modelo": "modelos/caminheiros.html.j2",
-  "estilo": "modelos/caminheiros.css",
+  "modelo": "modelos/unificado.html.j2",
+  "estilo": "modelos/unificado.css",
+  "numero": 4,
+  "unidade_nome": "Clã",
+  "unidade_patrono": "São Francisco de Assis",
+  "simbolo_secao": "logo_IV_Seccao_transparente.png",
+  "pasta_fotos": "caminheiros",
+  "cores": {
+    "banda": "#9B3C3C",
+    "creme": "#F1DADA",
+    "texto_escuro": "#2C1616"
+  },
   "legenda": "Caminheiros: dos 18 aos 22 anos, o caminho faz-se a servir. 🥾\n«Os Caminheiros formam uma fraternidade do Ar Livre para Servir», escreveu Baden-Powell. No Clã, cada Tribo escolhe o seu patrono e parte em Caminhada: no 994, as Tribos Aristides de Sousa Mendes e Irena Sendler. Servir!\n\nTens entre 18 e 22 anos? Vem conhecer o nosso Clã.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne #caminheiros",
   "slides": [
     {
@@ -12,25 +22,25 @@
       "dir": "O Clã",
       "lema": "Servir.",
       "sub": "A última etapa do caminho escutista.",
-      "foto": "caminheiros/capa.jpg",
+      "foto": "capa_iv.png",
       "foto_pos": "50% 40%"
     },
     {
       "tipo": "fazem",
-      "citacao": "Os Caminheiros formam uma fraternidade do Ar Livre para Servir.»",
+      "citacao": "Os Caminheiros formam uma fraternidade do Ar Livre para Servir.",
       "autor": "Baden-Powell",
       "itens": [
         [
           "A Caminhada",
-          "A grande atividade do Clã, preparada como um projeto."
+          "Um caminho escolhido e preparado por todos."
         ],
         [
           "O Serviço",
-          "Construir pontes de solidariedade, amizade e serviço."
+          "Estar onde é preciso. Fazer a diferença com as próprias mãos."
         ],
         [
           "Decidir juntos",
-          "No Conselho de Clã, os jovens tomam as decisões mais importantes."
+          "No Conselho de Clã, cada voz conta."
         ]
       ]
     },
@@ -59,7 +69,7 @@
       "tipo": "fim",
       "lema": "Servir.",
       "significado": "A divisa dos caminheiros, rumo ao ideal do Homem Novo.",
-      "foto": "caminheiros/final.jpg",
+      "foto": "final.jpg",
       "foto_pos": "50% 50%",
       "convite": "Tens 18 a 22 anos? Vem conhecer o Clã.",
       "contactos": [

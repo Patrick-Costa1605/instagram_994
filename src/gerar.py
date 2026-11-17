@@ -50,6 +50,17 @@ def _contraste(a, b):
     return (la + 0.05) / (lb + 0.05)
 
 
+def fotos_dir(serie_dir: Path, parte: dict) -> Path:
+    """Devolve a pasta de fotos específica da secção, se configurada."""
+    return serie_dir / "fotos" / parte.get("pasta_fotos", "")
+
+
+def foto_path(serie_dir: Path, parte: dict, nome):
+    if not nome:
+        return None
+    return fotos_dir(serie_dir, parte) / Path(nome).name
+
+
 def cores_da_parte(serie: dict, parte: dict):
     """Devolve (cores, pontos, veu) para esta parte.
 
@@ -117,12 +128,12 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
     def foto_fn(nome):
         if not nome:
             return ""
-        fp = serie_dir / "fotos" / nome
+        fp = foto_path(serie_dir, parte, nome)
         if fp.exists():
             return fp.as_uri()
         if nome not in avisadas:
             avisadas.add(nome)
-            print(f"  ! foto «{nome}» não existe em {serie_dir / 'fotos'}", file=sys.stderr)
+            print(f"  ! foto «{nome}» não existe em {fotos_dir(serie_dir, parte)}", file=sys.stderr)
         return ""
     env.globals.update(ag=ag, ft=foto_fn)
     css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
@@ -164,17 +175,18 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
         """URI da foto (pasta fotos/ da série) ou '' se não existir (o modelo mostra um espaço reservado)."""
         if not nome:
             return ""
-        fp = serie_dir / "fotos" / nome
+        fp = foto_path(serie_dir, parte, nome)
         if fp.exists():
             return fp.as_uri()
         if nome not in avisadas:
             avisadas.add(nome)
-            print(f"  ! slide {idx + 1}: foto «{nome}» não existe em {serie_dir / 'fotos'}", file=sys.stderr)
+            print(f"  ! slide {idx + 1}: foto «{nome}» não existe em {fotos_dir(serie_dir, parte)}", file=sys.stderr)
         return ""
 
     env.filters["mk"] = lambda t: markup(t)
     env.globals["ft"] = foto_fn
     env.globals["ag"] = lambda nome: (ROOT / "assets" / "agrupamento" / f"{nome}.png").as_uri()  # emblemas do agrupamento
+    env.globals["secao"] = lambda nome: (ROOT / "assets" / "agrupamento" / nome).as_uri()
     pers = {f.stem: f.read_text(encoding="utf-8") for f in sorted((serie_dir / "personagens").glob("*.svg"))} \
         if (serie_dir / "personagens").is_dir() else {}
     motivo = ""
@@ -182,17 +194,20 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
         mp = serie_dir / "motivos" / f"{parte['motivo']}.svg"
         motivo = mp.read_text(encoding="utf-8") if mp.exists() else ""
     foto = None
+    foto_fundo = ""
+    if s.get("foto_fundo"):
+        foto_fundo = foto_fn(s["foto_fundo"])
     if s.get("foto") and "fotos" not in s and serie.get("modelo_usa_foto_fundo", True):
-        fp = serie_dir / "fotos" / s["foto"]
+        fp = foto_path(serie_dir, parte, s["foto"])
         if fp.exists():
             foto = fp.as_uri()
         else:
-            print(f"  ! slide {idx + 1}: foto «{s['foto']}» não existe em {serie_dir / 'fotos'} — a usar fundo padrão",
+            print(f"  ! slide {idx + 1}: foto «{s['foto']}» não existe em {fotos_dir(serie_dir, parte)} — a usar fundo padrão",
                   file=sys.stderr)
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / parte.get("modelo", serie["modelo"])).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
+        css=css, s=s, foto=foto, foto_fundo=foto_fundo, foto_fundo_pos=s.get("foto_fundo_pos", "50% 50%"), foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
         sec_num=next((i + 1 for i, p in enumerate(pontos) if p["ativo"]), None), sec_total=len(pontos), cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))

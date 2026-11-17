@@ -1,0 +1,4 @@
+python src/gerar.py series/nossas_seccoes/partes/1_lobitos.json
+#python src/gerar.py series/nossas_seccoes/partes/2_exploradores.json
+#python src/gerar.py series/nossas_seccoes/partes/3_pioneiros.json
+#python src/gerar.py series/nossas_seccoes/partes/4_caminheiros.json

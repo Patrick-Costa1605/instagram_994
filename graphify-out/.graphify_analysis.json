@@ -1,0 +1,154 @@
+{
+  "communities": {
+    "0": [
+      "path",
+      "src_gerar_folha",
+      "src_gerar_launch",
+      "src_gerar_main",
+      "src_gerar_rationale_99",
+      "src_gerar_render_html",
+      "src_gerar_render_html_foto_fn",
+      "src_gerar_render_panorama",
+      "src_gerar_render_panorama_ag",
+      "src_gerar_render_panorama_foto_fn"
+    ],
+    "1": [
+      "argparse",
+      "html",
+      "jinja2",
+      "json",
+      "pathlib",
+      "re",
+      "src_gerar",
+      "src_gerar_rationale_2",
+      "sys"
+    ],
+    "2": [
+      "src_gerar_contraste",
+      "src_gerar_cores_da_parte",
+      "src_gerar_cores_da_parte_mixhex",
+      "src_gerar_lum",
+      "src_gerar_lum_f",
+      "src_gerar_rationale_54",
+      "src_gerar_rgb"
+    ],
+    "3": [
+      "math",
+      "random",
+      "src_corda",
+      "src_corda_pts",
+      "src_corda_rationale_1"
+    ],
+    "4": [
+      "src_corda_no",
+      "src_corda_rationale_32",
+      "src_corda_rationale_40",
+      "src_corda_rope"
+    ],
+    "5": [
+      "src_corda_corda_svg",
+      "src_corda_path",
+      "src_corda_rationale_56"
+    ],
+    "6": [
+      "src_gerar_markup",
+      "src_gerar_rationale_27"
+    ]
+  },
+  "cohesion": {
+    "0": 0.26666666666666666,
+    "1": 0.2222222222222222,
+    "2": 0.2857142857142857,
+    "3": 0.6,
+    "4": 0.5,
+    "5": 0.6666666666666666,
+    "6": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_corda_corda_svg",
+      "label": "corda_svg()",
+      "degree": 8
+    },
+    {
+      "id": "src_gerar_render_html",
+      "label": "render_html()",
+      "degree": 7
+    },
+    {
+      "id": "src_gerar_render_panorama",
+      "label": "render_panorama()",
+      "degree": 7
+    },
+    {
+      "id": "src_gerar_cores_da_parte",
+      "label": "cores_da_parte()",
+      "degree": 6
+    },
+    {
+      "id": "src_gerar_main",
+      "label": "main()",
+      "degree": 5
+    },
+    {
+      "id": "src_corda_pts",
+      "label": "_pts()",
+      "degree": 4
+    },
+    {
+      "id": "src_corda_no",
+      "label": "_no()",
+      "degree": 4
+    },
+    {
+      "id": "src_corda_rope",
+      "label": "_rope()",
+      "degree": 4
+    },
+    {
+      "id": "src_gerar_folha",
+      "label": "folha()",
+      "degree": 3
+    },
+    {
+      "id": "src_gerar_contraste",
+      "label": "_contraste()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "render_panorama()",
+      "target": "corda_svg()",
+      "source_files": [
+        "src/gerar.py",
+        "src/corda.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `corda_svg()` connect `Rope SVG Output` to `Panorama Slide Rendering`, `Post Generator CLI`, `Rope Geometry Math`, `Rope Drawing and Knots`?",
+      "why": "High betweenness centrality (0.336) - this node is a cross-community bridge."
+    },
+    {
+      "type": "verify_inferred",
+      "question": "Are the 2 inferred relationships involving `render_panorama()` (e.g. with `ag()` and `foto_fn()`) actually correct?",
+      "why": "`render_panorama()` has 2 INFERRED edges - model-reasoned connections that need verification."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `render_panorama()` connect `Panorama Slide Rendering` to `Post Generator CLI`, `Rope SVG Output`?",
+      "why": "High betweenness centrality (0.156) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `cores_da_parte()` connect `Color Contrast Utilities` to `Panorama Slide Rendering`, `Post Generator CLI`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    }
+  ]
+}

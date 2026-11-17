@@ -1,15 +1,26 @@
 {
   "titulo": "Pioneiros",
-  "modelo": "modelos/pioneiros.html.j2",
-  "estilo": "modelos/pioneiros.css",
+  "modelo": "modelos/unificado.html.j2",
+  "estilo": "modelos/unificado.css",
+  "numero": 3,
+  "unidade_nome": "Comunidade",
+  "unidade_patrono": "São João Batista",
+  "simbolo_secao": "logo_III_Seccao_transparente.png",
+  "pasta_fotos": "pioneiros",
+  "cores": {
+    "banda": "#3D41B9",
+    "creme": "#DEE1F7",
+    "texto_escuro": "#1B2032"
+  },
   "legenda": "Pioneiros: dos 14 aos 18 anos, as ideias passam do papel à obra. 🛠️\nNa Comunidade, cada Equipa trabalha em conjunto para construir algo maior: o Empreendimento, um projeto escolhido por todos e feito com a comunidade. No 994, as Equipas chamam-se Cristóvão Colombo, Vasco da Gama e Nuno Álvares Pereira. Sempre Alerta!\n\nTens entre 14 e 18 anos? Vem conhecer a nossa Comunidade.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne #pioneiros",
   "slides": [
     {
       "tipo": "capa",
       "titulo": "Pioneiros",
       "idade": "14 – 18 ANOS",
+      "chamada": "As ideias passam do papel à obra.",
       "legenda": "Fig. 01 — Empreendimento em curso",
-      "foto": "pioneiros/capa.jpg",
+      "foto": "capa_iii.png",
       "foto_pos": "50% 55%",
       "ficha": [
         [
@@ -33,19 +44,19 @@
         "O Empreen-",
         "dimento"
       ],
-      "sub": "A grande atividade dos pioneiros: um projeto pensado e feito por eles.",
+      "sub": "Uma ideia escolhida por todos, levada do papel para a vida.",
       "passos": [
         [
           "Escolher",
-          "Em Conselho de Comunidade, decidem o projeto."
+          "No Conselho de Comunidade, escolhem o que querem fazer."
         ],
         [
           "Construir",
-          "Cada Equipa com a sua parte. Juntos, algo maior."
+          "Cada Equipa pega numa parte. Juntos, fazem algo maior."
         ],
         [
           "Servir",
-          "Projetos feitos com e para a comunidade."
+          "O que fazem ganha sentido quando chega à comunidade."
         ]
       ]
     },
@@ -80,7 +91,7 @@
       ],
       "significado": "O lema dos pioneiros. O ideal da secção vai mais longe: «Sempre Mais Longe».",
       "legenda": "Fig. 02",
-      "foto": "pioneiros/final.jpg",
+      "foto": "final.jpg",
       "foto_pos": "50% 50%",
       "convite": "Tens 14 a 18 anos? Vem conhecer-nos.",
       "contactos": [

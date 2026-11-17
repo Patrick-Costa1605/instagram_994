@@ -34,22 +34,20 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), 4 publicações com design próprio
-Cada secção tem um design diferente, com fontes e linguagem visual próprias. Em comum (a âncora do 994): a etiqueta
-«As Nossas Secções · I/II/III/IV» em cima à esquerda e o logótipo em baixo à direita.
-
-| Parte | Conceito | Fontes |
-|---|---|---|
-| `1_lobitos.json` | Livro de histórias em papel recortado (folhas da Selva, sol com a idade, autocolantes) | Baloo 2 + Nunito |
-| `2_exploradores.json` | Mapa de expedição (curvas de nível, coordenadas, trilho, carimbo, etiquetadora) | Saira Stencil One + Special Elite |
-| `3_pioneiros.json` | Planta técnica de um Empreendimento (blueprint, cotas, legenda técnica, organigrama) | Space Grotesk + Space Mono |
-| `4_caminheiros.json` | Revista editorial (capa com duotone vermelho, citação, serifa) | Fraunces + Inter |
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), 4 publicações
+As quatro publicações usam o mesmo sistema visual «Caderneta de campo 994»: papel creme,
+verde estrutural, tipografia condensada, fotografia tratada de forma consistente e uma cor
+de acento. A identidade de cada secção vem do conteúdo, dos grupos e da cor de destaque,
+não de um modelo gráfico isolado.
 
 - 4 slides por publicação: capa (nome, idade, lema) · o que fazem · como se organizam · lema e contactos.
-- Cada parte indica o seu `"modelo"` e `"estilo"` (em `modelos/`), por isso os designs são independentes.
-- Fontes dos factos: 994caxinas.com (bandos, patrulhas, equipas, tribos, lemas) e escutismo.pt (organização e atividades de cada secção).
-- **Fotos:** `series/nossas_seccoes/fotos/<secção>/capa.jpg`, `atividade.jpg`, `final.jpg`. As atuais são provisórias;
-  basta substituí-las com o mesmo nome (o enquadramento ajusta-se com `"foto_pos"` no JSON). Fora do git (há crianças).
+- As partes usam `modelos/unificado.html.j2` e `modelos/unificado.css`.
+- As unidades e patronos seguem a página oficial do agrupamento em `994caxinas.com/agrupamento`.
+- **Fotos:** cada parte declara a sua pasta em `"pasta_fotos"`:
+  `series/nossas_seccoes/fotos/lobitos/`, `exploradores/`, `pioneiros/` ou `caminheiros/`.
+  A capa e o slide final usam `"foto"`; `"foto_fundo"` é opcional nos slides 2 e 3 e recebe
+  automaticamente um véu da cor da secção, com baixa nitidez. `"foto_pos"` e `"foto_fundo_pos"`
+  ajustam o enquadramento. Fora do git (há crianças).
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

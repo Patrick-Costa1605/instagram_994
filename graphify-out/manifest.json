@@ -1,0 +1,91 @@
+{
+  "series/dicionario_escutista/partes/parte_01.json": {
+    "mtime": 1794949850.3578415,
+    "seen": 1794950530.575264,
+    "ast_hash": "bfc8b0f4d54529bd511e05be5d184fd3",
+    "semantic_hash": "bfc8b0f4d54529bd511e05be5d184fd3",
+    "ast_empty": true
+  },
+  "series/dicionario_escutista/partes/parte_02.json": {
+    "mtime": 1794949850.3578415,
+    "seen": 1794950530.575277,
+    "ast_hash": "e9546f7cecf5933b15fc11e01abd3807",
+    "semantic_hash": "e9546f7cecf5933b15fc11e01abd3807",
+    "ast_empty": true
+  },
+  "series/dicionario_escutista/partes/parte_03.json": {
+    "mtime": 1794949850.3578415,
+    "seen": 1794950530.5752833,
+    "ast_hash": "cf7e28ec892e71f25b3f8eaddf27680b",
+    "semantic_hash": "cf7e28ec892e71f25b3f8eaddf27680b",
+    "ast_empty": true
+  },
+  "series/dicionario_escutista/serie.json": {
+    "mtime": 1794949850.3612823,
+    "seen": 1794950530.5752869,
+    "ast_hash": "1930dd031c196434ab4bca26bb37927e",
+    "semantic_hash": "1930dd031c196434ab4bca26bb37927e",
+    "ast_empty": true
+  },
+  "series/nossas_seccoes/partes/1_lobitos.json": {
+    "mtime": 1794949850.3790476,
+    "seen": 1794950530.5752895,
+    "ast_hash": "7cbdaecd573cf1e7e8828de9333810b2",
+    "semantic_hash": "7cbdaecd573cf1e7e8828de9333810b2",
+    "ast_empty": true
+  },
+  "series/nossas_seccoes/partes/2_exploradores.json": {
+    "mtime": 1794949850.381103,
+    "seen": 1794950530.5752926,
+    "ast_hash": "f145dbcc7f068aaf400df1e712f10a41",
+    "semantic_hash": "f145dbcc7f068aaf400df1e712f10a41",
+    "ast_empty": true
+  },
+  "series/nossas_seccoes/partes/3_pioneiros.json": {
+    "mtime": 1794949850.3829944,
+    "seen": 1794950530.5752954,
+    "ast_hash": "e70174143f1629830c6270fc114d84b6",
+    "semantic_hash": "e70174143f1629830c6270fc114d84b6",
+    "ast_empty": true
+  },
+  "series/nossas_seccoes/partes/4_caminheiros.json": {
+    "mtime": 1794949850.3848584,
+    "seen": 1794950530.5752985,
+    "ast_hash": "4aa3e5d3a68fd7f27cce10343a632767",
+    "semantic_hash": "4aa3e5d3a68fd7f27cce10343a632767",
+    "ast_empty": true
+  },
+  "series/nossas_seccoes/serie.json": {
+    "mtime": 1794949850.3848584,
+    "seen": 1794950530.5753014,
+    "ast_hash": "e2e7aed3cc35efc5735985bc3cf7424b",
+    "semantic_hash": "e2e7aed3cc35efc5735985bc3cf7424b",
+    "ast_empty": true
+  },
+  "series/rotulo_994/partes/parte_01.json": {
+    "mtime": 1794949850.3903775,
+    "seen": 1794950530.5753043,
+    "ast_hash": "891bbef8b6bcdfac93c747aace2d6082",
+    "semantic_hash": "891bbef8b6bcdfac93c747aace2d6082",
+    "ast_empty": true
+  },
+  "series/rotulo_994/serie.json": {
+    "mtime": 1794949850.3903775,
+    "seen": 1794950530.5753064,
+    "ast_hash": "5efad1c5fdb71a6f0da1d862a3f6d0f7",
+    "semantic_hash": "5efad1c5fdb71a6f0da1d862a3f6d0f7",
+    "ast_empty": true
+  },
+  "src/corda.py": {
+    "mtime": 1794949850.3903775,
+    "seen": 1794950530.5753098,
+    "ast_hash": "a92f44626f9fe3b3c6dd746daf1f4e1a",
+    "semantic_hash": "a92f44626f9fe3b3c6dd746daf1f4e1a"
+  },
+  "src/gerar.py": {
+    "mtime": 1794949850.3903775,
+    "seen": 1794950530.5757608,
+    "ast_hash": "6cc973500b55d972d85ca9f8d7ed5290",
+    "semantic_hash": "6cc973500b55d972d85ca9f8d7ed5290"
+  }
+}
