@@ -34,16 +34,15 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), «Os Cromos»
-Design suave e com pouco texto: a mesma criança a crescer ao longo das 4 secções (lobito, explorador, pioneiro, caminheiro),
-com fundo creme, manchas pastel e a cor de cada secção. Não usa fotografias.
-- **4 slides por parte:** `capa`, `cromo` (estatísticas de brincadeira), `sabado` (3 palavras) e `cta` (convite).
-- **Parte 0** (`parte_00_visao_geral.json`): as 4 personagens em fila (`linha`) + convite com todas (`cta` com `"todos": true`).
-- Cor da parte no JSON: `"cor_seccao": "amarelo"` (amarelo | verde | azul | vermelho) ou `"cor_banda": "#RRGGBB"`;
-  o pastel, o tom escuro e a cor do texto sobre fundos coloridos calculam-se sozinhos.
-- `"personagem": "lobitos"` escolhe o desenho. As personagens são geradas por `python src/personagens.py`
-  (cores do lenço, pele, chapéus… no topo desse ficheiro).
-- Para mudar o texto, edita os JSON em `series/nossas_seccoes/partes/` (títulos, `stats`, `linhas`, `balao`, `quando`/`onde`).
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), «O Trilho»
+Um carrossel **panorâmico**: o fundo e o caminho são contínuos e atravessam todos os slides, por isso ao deslizar é como andar
+por um trilho. As pegadas começam pequeninas e vão crescendo com as idades (do n.º 32 ao 44). O fundo passa suavemente de
+amarelo (Lobitos) a verde, azul e vermelho (Caminheiros). Sem bonecos, com fotografias em arco.
+- Uma só parte (`partes/parte_01_trilho.json`) gera os 6 slides: capa, 4 secções e convite final.
+- No `serie.json`, `"panorama": true` faz o gerador desenhar uma página larga e cortá-la em slides de 1080×1350.
+- Por slide de secção: `id` (amarelo | verde | azul | vermelho), `numeral`, `idade`, `nome`, `linha` (uma frase), `lema`, `foto`, `calcado`.
+- Fotos em `series/nossas_seccoes/fotos/<secção>/capa.jpg` (e `lobitos/ficha.jpg` para o slide final). Fora do git (há crianças).
+- O código do trilho (estrada e pegadas) está em `src/panorama.py`.
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

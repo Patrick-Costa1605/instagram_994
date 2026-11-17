@@ -1,0 +1,18 @@
+{
+  "titulo": "As Nossas Secções — O Trilho",
+  "legenda": "Qual é a tua secção? 🥾\nDos 6 aos 22 anos, o caminho faz-se a andar. E as pegadas só crescem.\n\nLobitos, Exploradores, Pioneiros e Caminheiros: desliza e descobre a tua.\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou manda-nos mensagem.",
+  "slides": [
+    { "tipo": "capa", "topo": "As Nossas Secções", "titulo": ["QUAL É", "A TUA", "SECÇÃO?"],
+      "sub": "Dos 6 aos 22 anos, o caminho faz-se a andar.", "comeca": "começa aqui" },
+    { "tipo": "seccao", "id": "amarelo", "numeral": "6–10", "idade": "6 a 10 anos", "nome": ["LOBITOS"],
+      "linha": "Chegam a correr. Saem a cantar.", "lema": "Bando · «Da Melhor Vontade»", "foto": "lobitos/capa.jpg", "calcado": "n.º 32" },
+    { "tipo": "seccao", "id": "verde", "numeral": "10–14", "idade": "10 a 14 anos", "nome": ["EXPLORADORES"],
+      "linha": "Aprendem a atar nós. E a desatá-los, às vezes.", "lema": "Patrulha · «Sempre Alerta»", "foto": "exploradores/capa.jpg", "calcado": "n.º 38" },
+    { "tipo": "seccao", "id": "azul", "numeral": "14–18", "idade": "14 a 18 anos", "nome": ["PIONEIROS"],
+      "linha": "Têm ideias. E põem-nas de pé.", "lema": "Equipa · «Sempre Alerta para Servir»", "foto": "pioneiros/capa.jpg", "calcado": "n.º 42" },
+    { "tipo": "seccao", "id": "vermelho", "numeral": "18–22", "idade": "18 a 22 anos", "nome": ["CAMINHEIROS"],
+      "linha": "Conhecem o caminho. Ajudam quem vem atrás.", "lema": "Tribo · «Servir»", "foto": "caminheiros/capa.jpg", "calcado": "n.º 44" },
+    { "tipo": "fim", "nome": ["VEM DAR O", "PRIMEIRO PASSO"], "linha": "Num sábado, na sede, nas Caxinas.",
+      "botao": "Manda-nos mensagem", "foto": "lobitos/ficha.jpg" }
+  ]
+}

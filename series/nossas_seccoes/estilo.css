@@ -1,5 +1,4 @@
-/* «As Nossas Secções» — versão suave: creme, pastéis, cantos redondos, texto castanho.
-   Cores: --acento (secção), --suave (pastel), --profundo (tom escuro quente) vêm do JSON da parte. */
+/* «As Nossas Secções» — O Trilho: um panorama contínuo, suave, com pegadas que crescem com as idades. */
 @font-face { font-family: "Chewy"; src: url("{{ fonts }}/chewy-latin-400-normal.woff2"); }
 @font-face { font-family: "Corpo"; src: url("{{ fonts }}/roboto-condensed-latin-700-normal.woff2"); font-weight: 700; }
 @font-face { font-family: "Corpo"; src: url("{{ fonts }}/roboto-condensed-latin-900-normal.woff2"); font-weight: 900; }
@@ -7,77 +6,47 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: {{ w }}px; height: {{ h }}px; background: var(--creme); }
-.slide { position: relative; width: {{ w }}px; height: {{ h }}px; overflow: hidden; background: var(--creme);
-         color: var(--ink); font-family: var(--f-titulo); }
-.blob { position: absolute; color: var(--suave); }
-.doodles { position: absolute; inset: 0; }
-.grao { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .22;
+.pan { position: relative; overflow: hidden; font-family: var(--f-titulo); color: var(--ink); }
+.fundo, .grao, .via { position: absolute; inset: 0; }
+.grao { pointer-events: none; mix-blend-mode: multiply; opacity: .22;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6 0 0 0 0 .55 0 0 0 0 .5 0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
-.heroi svg, .heroi-c svg, .fig svg { display: block; width: auto; height: 100%; }
 
-/* rodapé suave */
-.arrasta { position: absolute; left: 80px; bottom: 72px; display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.8);
-           color: var(--profundo); font-size: 38px; padding: 10px 30px 12px; border-radius: 60px; box-shadow: 0 8px 24px rgba(74,56,46,.12); }
-.logo { position: absolute; right: 60px; bottom: 54px; display: block; filter: drop-shadow(0 6px 10px rgba(74,56,46,.18)); }
+/* estrada */
+.estrada { fill: none; stroke: rgba(255,255,255,.62); stroke-width: 118; stroke-linecap: round; stroke-linejoin: round; }
+.estrada-meio { fill: none; stroke: rgba(107,84,68,.14); stroke-width: 4; stroke-dasharray: 2 20; stroke-linecap: round; }
 
-/* ---------- capa ---------- */
-.pilula-topo { position: absolute; left: 50%; top: 74px; transform: translateX(-50%); background: rgba(255,255,255,.8); color: var(--profundo); font-family: var(--f-texto);
-               font-weight: 900; font-size: 26px; letter-spacing: 6px; text-transform: uppercase; padding: 12px 34px; border-radius: 50px; white-space: nowrap; box-shadow: 0 6px 18px rgba(74,56,46,.1); }
-.t-capa .nome { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-size: 230px; line-height: 1; color: var(--profundo); text-transform: uppercase;
-                text-shadow: 0 8px 0 rgba(255,255,255,.75); }
-.t-capa .idade { position: absolute; left: 50%; top: 400px; transform: translateX(-50%) rotate(-2deg); background: var(--acento); color: var(--texto-banda); font-size: 58px; padding: 6px 46px 10px;
-                 border-radius: 50px; box-shadow: 0 10px 22px rgba(74,56,46,.18); white-space: nowrap; }
-.t-capa .heroi { position: absolute; left: 0; right: 0; top: 500px; height: 590px; display: flex; justify-content: center; }
-.tagline { position: absolute; left: 90px; right: 90px; top: 1115px; text-align: center; font-size: 56px; line-height: 1.05; color: var(--ink); }
+.sl { position: absolute; top: 0; width: 1080px; height: 1350px; overflow: hidden; }
 
-/* ---------- cromo ---------- */
-.cromo { position: absolute; left: 130px; top: 120px; width: 820px; height: 1080px; transform: rotate(-1.2deg); background: #FFFDF8; border-radius: 54px;
-         padding: 44px 50px 0; box-shadow: 0 30px 60px rgba(74,56,46,.22); }
-.cromo::before { content: ""; position: absolute; inset: 14px; border-radius: 42px; border: 6px solid var(--suave); pointer-events: none; }
-.linha-topo { display: flex; justify-content: space-between; align-items: center; position: relative; }
-.tag { background: var(--acento); color: var(--texto-banda); font-family: var(--f-texto); font-weight: 900; font-size: 24px; letter-spacing: 4px; padding: 8px 22px; border-radius: 30px; }
-.anos { font-size: 40px; color: var(--profundo); }
-.nome-cromo { font-size: 118px; line-height: 1.02; color: var(--profundo); text-transform: uppercase; margin: 8px 0 6px; position: relative; }
-.janela { position: relative; height: 380px; border-radius: 40px; background: var(--suave); overflow: hidden; display: flex; justify-content: center; align-items: flex-end; }
-.janela .blob { color: #fff; opacity: .45 !important; }
-.heroi-c { position: relative; height: 372px; }
-.stats { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; position: relative; }
-.rotulo { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--f-texto); font-weight: 900; font-size: 25px; letter-spacing: 3px; text-transform: uppercase; color: var(--profundo); }
-.rotulo b { font-family: var(--f-titulo); font-weight: 400; font-size: 38px; letter-spacing: 0; }
-.barra { height: 20px; border-radius: 12px; background: var(--suave); overflow: hidden; margin-top: 3px; }
-.barra i { display: block; height: 100%; border-radius: 12px; background: var(--acento); min-width: 18px; }
-.rodape-cromo { position: absolute; left: 50px; right: 50px; bottom: 34px; text-align: center; font-family: var(--f-texto); font-weight: 900; font-size: 25px; letter-spacing: 3px; text-transform: uppercase; color: var(--profundo); opacity: .8; }
+/* capa */
+.pilula { position: absolute; left: 80px; top: 78px; background: rgba(255,255,255,.8); color: var(--profundo); font-family: var(--f-texto); font-weight: 900; font-size: 26px;
+          letter-spacing: 6px; text-transform: uppercase; padding: 12px 32px; border-radius: 50px; box-shadow: 0 6px 18px rgba(74,56,46,.10); }
+.titulo-capa { position: absolute; left: 80px; top: 150px; font-size: 190px; line-height: .93; color: #5B4636; text-transform: uppercase; text-shadow: 0 8px 0 rgba(255,255,255,.75); }
+.titulo-capa span { display: block; white-space: nowrap; }
+.sub-capa { position: absolute; left: 84px; top: 760px; width: 700px; font-size: 54px; line-height: 1.06; }
+.comeca { position: absolute; left: 80px; top: 880px; background: #fff; color: var(--profundo); font-size: 40px; padding: 8px 30px 10px; border-radius: 40px;
+          box-shadow: 0 8px 20px rgba(74,56,46,.16); transform: rotate(-3deg); }
 
-/* ---------- num sábado ---------- */
-.intro { position: absolute; left: 90px; top: 130px; font-size: 64px; color: var(--ink); opacity: .85; }
-.palavras { position: absolute; left: 70px; top: 250px; display: flex; flex-direction: column; gap: 34px; }
-.p { font-size: 170px; line-height: 1.0; color: var(--profundo); text-transform: uppercase; white-space: nowrap; }
-.p span { padding: 0 20px; border-radius: 20px; background: linear-gradient(transparent 56%, color-mix(in srgb, var(--acento) 50%, transparent) 56% 92%, transparent 92%); }
-.p1 { transform: rotate(-2deg); } .p2 { transform: rotate(1.6deg); margin-left: 50px; } .p3 { transform: rotate(-1.2deg); }
-.t-sabado .heroi.mini { position: absolute; right: 200px; bottom: 30px; height: 450px; }
+/* secções */
+.numeral { position: absolute; top: 90px; font-size: 250px; line-height: 1; color: var(--acento); opacity: .20; white-space: nowrap; }
+.numeral.d { left: 40px; } .numeral.e { right: 40px; }
+.arco { position: absolute; top: 140px; width: 520px; height: 520px; border-radius: 260px 260px 30px 30px; background: var(--suave) center/cover; border: 12px solid #FFFDF8;
+        box-shadow: 0 26px 50px rgba(74,56,46,.22); display: grid; place-items: center; font-size: 60px; color: var(--profundo); }
+.arco.d { right: 90px; transform: rotate(2deg); } .arco.e { left: 90px; transform: rotate(-2deg); }
+.idade { position: absolute; top: 585px; background: var(--acento); color: var(--texto-pill); font-size: 48px; padding: 6px 36px 10px; border-radius: 40px; box-shadow: 0 10px 22px rgba(74,56,46,.2); }
+.idade.d { right: 60px; transform: rotate(-4deg); } .idade.e { left: 60px; transform: rotate(4deg); }
+.nome { position: absolute; left: 80px; top: 790px; font-size: 156px; line-height: .95; color: var(--profundo); text-transform: uppercase; text-shadow: 0 6px 0 rgba(255,255,255,.7); }
+.nome span { display: block; white-space: nowrap; }
+.linha { position: absolute; left: 84px; top: 975px; width: 760px; font-size: 56px; line-height: 1.05; }
+.lema { position: absolute; left: 84px; top: 1140px; font-family: var(--f-texto); font-weight: 900; font-size: 26px; letter-spacing: 3px; text-transform: uppercase; color: var(--profundo); opacity: .8; }
+.fim .nome { font-size: 112px; top: 790px; } .fim .linha { top: 1030px; }
+.botao { position: absolute; left: 84px; top: 1150px; background: var(--acento); color: var(--texto-pill); font-size: 52px; padding: 10px 44px 14px; border-radius: 60px; box-shadow: 0 12px 26px rgba(74,56,46,.22); }
 
-/* ---------- as 4 em fila ---------- */
-.titulo-linha { position: absolute; left: 80px; right: 80px; top: 140px; font-size: 128px; line-height: .98; color: var(--profundo); text-transform: uppercase; text-align: center; text-shadow: 0 6px 0 rgba(255,255,255,.75); }
-.titulo-linha span { display: block; }
-.fila { position: absolute; left: 20px; right: 20px; top: 440px; height: 600px; display: flex; justify-content: space-around; align-items: flex-end; }
-.membro { flex: none; display: flex; flex-direction: column; align-items: center; }
-.fig { margin-bottom: 18px; }
-.etq { font-family: var(--f-texto); font-weight: 900; font-size: 21px; letter-spacing: 1px; text-transform: uppercase; padding: 8px 14px; border-radius: 30px; box-shadow: 0 6px 14px rgba(74,56,46,.18); }
-.ida { font-size: 36px; color: var(--profundo); margin-top: 6px; }
-.chao { position: absolute; left: 60px; right: 60px; top: 1000px; height: 0; border-top: 7px dotted var(--acento); opacity: .6; }
-.tagline.baixo { top: 1120px; font-size: 52px; }
+/* marcador na estrada */
+.marco { position: absolute; width: 92px; height: 92px; border-radius: 50%; background: #FFFDF8; border: 9px solid var(--acento); display: grid; place-items: center;
+         font-size: 54px; color: var(--profundo); box-shadow: 0 10px 22px rgba(74,56,46,.22); }
+.calcado { position: absolute; font-size: 38px; color: var(--ink); opacity: .6; transform: rotate(-7deg); }
 
-/* ---------- cta ---------- */
-.titulo-cta { position: absolute; left: 90px; top: 120px; font-size: 175px; line-height: .98; color: var(--profundo); text-transform: uppercase; text-shadow: 0 8px 0 rgba(255,255,255,.75); }
-.titulo-cta span { display: block; }
-.cta-h { position: absolute; left: -20px; top: 660px; height: 560px; }
-.balao { position: absolute; left: 430px; top: 600px; max-width: 560px; background: #fff; border-radius: 44px 44px 44px 6px; padding: 24px 40px 28px; font-size: 64px; line-height: 1.02; color: var(--profundo);
-         box-shadow: 0 16px 36px rgba(74,56,46,.18); transform: rotate(2deg); }
-.info-cta { position: absolute; left: 470px; top: 850px; width: 560px; }
-.info-cta small { display: block; font-family: var(--f-texto); font-weight: 900; font-size: 28px; letter-spacing: 5px; text-transform: uppercase; color: var(--profundo); opacity: .75; }
-.info-cta strong { display: block; font-weight: 400; font-size: 62px; line-height: 1.02; color: var(--ink); margin: 6px 0 26px; }
-.botao { display: inline-block; background: var(--acento); color: var(--texto-banda); font-size: 54px; padding: 12px 44px 16px; border-radius: 60px; box-shadow: 0 12px 26px rgba(74,56,46,.22); }
-
-.mini-fila { position: absolute; left: 30px; right: 30px; top: 500px; height: 400px; display: flex; justify-content: space-around; align-items: flex-end; }
-.t-cta.todos .balao { left: 610px; top: 470px; }
-.t-cta.todos .info-cta { left: 90px; top: 960px; width: 720px; }
+/* rodapé */
+.desliza { position: absolute; left: 80px; bottom: 70px; display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.82); color: var(--profundo); font-size: 38px;
+           padding: 10px 28px 12px; border-radius: 60px; box-shadow: 0 8px 24px rgba(74,56,46,.12); }
+.logo { position: absolute; right: 58px; bottom: 50px; display: block; filter: drop-shadow(0 6px 10px rgba(74,56,46,.18)); }

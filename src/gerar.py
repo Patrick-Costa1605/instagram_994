@@ -93,6 +93,63 @@ def cores_da_parte(serie: dict, parte: dict):
     return cores, pontos, veu
 
 
+# ---------------------------------------------------------------- séries panorâmicas (um trilho contínuo)
+def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Path:
+    from panorama import trilho
+    fmt = serie["formato"]
+    Wd, Hd = fmt["largura"], fmt["altura"]
+    slides = parte["slides"]
+    n = len(slides)
+    env = Environment(autoescape=False)
+    cores = dict(serie["cores"])
+    creme = _rgb(cores["creme"])
+    escuro = _rgb(cores.get("texto_escuro", "#1b1b1b"))
+
+    def _mixhex(a, b, k):
+        return "#%02X%02X%02X" % tuple(round(x + (y - x) * k) for x, y in zip(a, b))
+    secs = {}
+    for sec in serie["seccoes"]:
+        banda = _rgb(cores.get("banda_" + sec["id"], cores[sec["id"]]))
+        secs[sec["id"]] = {
+            "acento": _mixhex(banda, (0, 0, 0), 0.0), "suave": _mixhex(banda, creme, 0.74),
+            "profundo": _mixhex(banda, (28, 18, 10), 0.62), "nome": sec["nome"],
+            "texto": cores["texto_escuro"] if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]}
+    neutro = "#6B5444"
+    tons = [neutro]
+    for sl in slides[1:]:
+        tons.append(secs[sl["id"]]["profundo"] if sl.get("id") else neutro)
+    tr = trilho(n, Wd, tons)
+    stops = []
+    for i, sl in enumerate(slides):
+        c = secs[sl["id"]]["suave"] if sl.get("id") else ("#FFF3D8" if i == 0 else "#FFEFE2")
+        stops.append(f"{c} {100 * (i + 0.5) / n:.1f}%")
+    avisadas = set()
+
+    def foto_fn(nome):
+        if not nome:
+            return ""
+        fp = serie_dir / "fotos" / nome
+        if fp.exists():
+            return fp.as_uri()
+        if nome not in avisadas:
+            avisadas.add(nome)
+            print(f"  ! foto «{nome}» não existe em {serie_dir / 'fotos'}", file=sys.stderr)
+        return ""
+    env.globals["ft"] = foto_fn
+    hf = next(iter(sorted((ROOT / "assets" / "fonts").glob("*andelson*"))), None)
+    css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
+        fonts=(ROOT / "assets" / "fonts").as_uri(), w=Wd * n, h=Hd, handelson=hf.as_uri() if hf else None)
+    logo_cfg = serie.get("logo")
+    page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
+        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, tr=tr, stops=", ".join(stops),
+        rodape=serie.get("rodape"), cabecalho=serie.get("cabecalho", []),
+        logo=(serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None,
+        logo_h=(logo_cfg or {}).get("altura", 120))
+    out = tmp / "panorama.html"
+    out.write_text(page, encoding="utf-8")
+    return out
+
+
 def launch(p):
     try:
         return p.chromium.launch()
@@ -187,7 +244,17 @@ def main():
     pngs = []
     with sync_playwright() as p:
         browser = launch(p)
-        page = browser.new_page(viewport={"width": fmt["largura"], "height": fmt["altura"]}, device_scale_factor=1)
+        if serie.get("panorama"):                          # uma só página larga, cortada em slides
+            n = len(parte["slides"])
+            page = browser.new_page(viewport={"width": fmt["largura"] * n, "height": fmt["altura"]}, device_scale_factor=1)
+            page.goto(render_panorama(serie_dir, serie, parte, tmp).as_uri())
+            page.wait_for_selector("body[data-pronto='1']")
+            for i in idxs:
+                png = out_dir / f"{i + 1:02d}.png"
+                page.screenshot(path=str(png), clip={"x": i * fmt["largura"], "y": 0, "width": fmt["largura"], "height": fmt["altura"]})
+                pngs.append(png)
+                print(f"  {png.relative_to(ROOT)}")
+            idxs = []
         for i in idxs:
             h = render_html(serie_dir, serie, parte, i, tmp)
             page.goto(h.as_uri())
