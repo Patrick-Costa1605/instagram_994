@@ -4,7 +4,7 @@
 {{ css }}</style></head>
 <body>
 <div class="slide {{ s.tipo }}">
-  <div class="foto {{ 'vazia' if not foto else '' }}" {% if foto %}style="background-image:url('{{ foto }}')"{% endif %}></div>
+  <div class="foto {{ 'vazia' if not foto else '' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}"{% endif %}></div>
   <div class="velo"></div>
 
   {% if s.tipo == 'capa' %}

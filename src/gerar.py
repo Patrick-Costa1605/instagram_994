@@ -43,8 +43,10 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     fmt = serie["formato"]
     fonts = (ROOT / "assets" / "fonts").as_uri()
     env = Environment(autoescape=False)
+    # fonte da série (ex.: Handelson Four): se existir um ficheiro assets/fonts/*andelson*, é usado; senão há fallback
+    hf = next(iter(sorted((ROOT / "assets" / "fonts").glob("*andelson*"))), None)
     css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
-        fonts=fonts, w=fmt["largura"], h=fmt["altura"])
+        fonts=fonts, w=fmt["largura"], h=fmt["altura"], handelson=hf.as_uri() if hf else None)
     foto = None
     if s.get("foto"):
         fp = serie_dir / "fotos" / s["foto"]
@@ -56,7 +58,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, cores=serie["cores"], cabecalho=serie.get("cabecalho", []),
+        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=serie["cores"], cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))
     out = tmp / f"slide_{idx + 1:02d}.html"

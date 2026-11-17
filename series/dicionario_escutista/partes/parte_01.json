@@ -35,6 +35,7 @@
     {
       "tipo": "termo",
       "foto": "fogo_conselho.jpg",
+      "foto_pos": "50% 72%",
       "termo": ["FOGO DE", "CONSELHO"],
       "texto": "Fogueira com canções, jogos e histórias.\nSai-se com cheiro a fumo e sem voz."
     },
