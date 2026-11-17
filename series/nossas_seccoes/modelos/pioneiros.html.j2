@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><style>{{ css }}</style></head>
+<body>
+<div class="slide t-{{ s.tipo }}">
+  <svg class="desenho" viewBox="0 0 1080 1350">
+    <g fill="none" stroke="rgba(214,232,255,.22)" stroke-width="3">
+      <circle cx="930" cy="1180" r="300"/><circle cx="930" cy="1180" r="220" stroke-dasharray="10 12"/>
+      <path d="M 630 1180 H 1230 M 930 880 V 1480"/>
+      <path d="M 760 180 L 1000 600 M 1040 180 L 800 600 M 740 470 H 1060" stroke-width="5"/>
+      <path d="M 862 375 l 30 26 M 856 404 l 38 -32" stroke-width="3"/>
+    </g>
+  </svg>
+  <div class="moldura"></div>
+
+  {% if s.tipo == 'capa' %}
+    <div class="figura"><div style="background-image:url('{{ ft(s.foto) }}'); background-position:{{ s.foto_pos|default('50% 50%') }}"></div><span class="cantos"><i></i><i></i><i></i><i></i></span><span class="leg">{{ s.legenda }}</span></div>
+    <div class="h" data-fit="900">{{ s.titulo }}</div>
+    <div class="cota"><i></i>{{ s.idade }}<i></i></div>
+    <div class="carimbo">{% for c in s.ficha %}<div><small>{{ c[0] }}</small><b class="{{ 'amar' if c[2] is defined and c[2] else '' }}">{{ c[1] }}</b></div>{% endfor %}</div>
+
+  {% elif s.tipo == 'fazem' %}
+    <div class="h">{% for l in s.titulo %}<div>{{ l }}</div>{% endfor %}</div>
+    <p class="sub">{{ s.sub }}</p>
+    <div class="fluxo">{% for p in s.passos %}<div class="passo"><div class="n">{{ '%02d'|format(loop.index) }}</div><div class="t"><h3>{{ p[0] }}</h3><p>{{ p[1] }}</p></div></div>{% endfor %}</div>
+
+  {% elif s.tipo == 'equipas' %}
+    <div class="h">{% for l in s.titulo %}<div>{{ l }}</div>{% endfor %}</div>
+    <p class="sub">{{ s.sub }}</p>
+    <div class="org">
+      <svg viewBox="0 0 960 640"><g fill="none" stroke="#FFD45A" stroke-width="4"><path d="M480 76 V 140 M150 140 H 810 M150 140 V 210 M480 140 V 210 M810 140 V 210"/></g></svg>
+      <div class="raiz">{{ s.raiz }}</div>
+      {% for e in s.equipas %}<div class="eq" style="left:{{ [0, 330, 660][loop.index0] }}px"><div class="ret"><img src="{{ ag(e.img) }}"></div><b>{{ e.nome }}</b><small>Equipa</small></div>{% endfor %}
+    </div>
+    <p class="rodape">{{ s.nota }}</p>
+
+  {% elif s.tipo == 'fim' %}
+    <div class="h amar">{% for l in s.titulo %}<div>{{ l }}</div>{% endfor %}</div>
+    <p class="sig">{{ s.significado }}</p>
+    <div class="figura"><div style="background-image:url('{{ ft(s.foto) }}'); background-position:{{ s.foto_pos|default('50% 50%') }}"></div><span class="cantos"><i></i><i></i><i></i><i></i></span><span class="leg">{{ s.legenda }}</span></div>
+    <div class="carimbo"><div><small>Próximo passo</small><b>{{ s.convite }}</b></div>{% for c in s.contactos %}<div><small>{{ c[0] }}</small><b>{{ c[1] }}</b></div>{% endfor %}</div>
+  {% endif %}
+
+  <div class="ancora">As Nossas Secções · III</div>
+  {% if logo %}<img class="logo" src="{{ logo }}" style="height:{{ logo_h }}px">{% endif %}
+  <div class="grao"></div>
+</div>
+<script>
+document.fonts.ready.then(() => {
+  document.querySelectorAll('[data-fit]').forEach(el => { const max = +el.dataset.fit; el.style.width = 'max-content';
+    const w = el.getBoundingClientRect().width; if (w > max) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * max / w) + 'px'; });
+  document.body.dataset.pronto = '1'; });
+</script>
+</body></html>

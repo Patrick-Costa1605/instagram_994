@@ -1,57 +1,9 @@
 {
   "nome": "As Nossas Secções",
-  "formato": {
-    "largura": 1080,
-    "altura": 1350
-  },
-  "panorama": true,
-  "modelo": "modelo.html.j2",
-  "estilo": "estilo.css",
-  "cabecalho": "As Nossas Secções",
-  "corda": {
-    "y": 1082
-  },
-  "tons": {
-    "amarelo": {
-      "acento": "#E0A800",
-      "kick": "#8A6A00",
-      "profundo": "#4E3B00"
-    },
-    "verde": {
-      "acento": "#6E8B2F",
-      "kick": "#4D6B1F",
-      "profundo": "#27401A"
-    },
-    "azul": {
-      "acento": "#2B3470",
-      "kick": "#2B3470",
-      "profundo": "#19204F"
-    },
-    "vermelho": {
-      "acento": "#D4202B",
-      "kick": "#B01A24",
-      "profundo": "#6E0F17"
-    },
-    "neutro": {
-      "acento": "#B08A4A",
-      "kick": "#6B5A3A",
-      "profundo": "#14241A"
-    }
-  },
-  "logo": {
-    "ficheiro": "../../assets/logo-994.png",
-    "altura": 118
-  },
-  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde",
-  "feed": {
-    "colunas": 3,
-    "ordem": [
-      "intro",
-      "lobitos",
-      "exploradores",
-      "pioneiros",
-      "caminheiros",
-      "convite"
-    ]
-  }
+  "formato": { "largura": 1080, "altura": 1350 },
+  "modelo": "modelos/lobitos.html.j2",
+  "estilo": "modelos/lobitos.css",
+  "cores": { "banda": "#1E9E4A", "amarelo": "#F2C230", "verde": "#3FBF5F", "azul": "#3B6CF0", "vermelho": "#EE4B3A", "creme": "#F8F3E8" },
+  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 128 },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne"
 }

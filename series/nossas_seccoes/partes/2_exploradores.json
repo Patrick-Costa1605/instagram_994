@@ -1,0 +1,86 @@
+{
+  "titulo": "Exploradores",
+  "modelo": "modelos/exploradores.html.j2",
+  "estilo": "modelos/exploradores.css",
+  "motivo": "topo",
+  "legenda": "Exploradores: dos 10 aos 14 anos, a aventura faz-se em Patrulha. 🧭\nSonham, preparam e vivem as suas aventuras, à descoberta de novos locais, novos desafios e novos caminhos. Cada Patrulha tem um animal, o totem: no 994 são Golfinho, Águia, Pinguim, Castor e Pantera. Sempre Alerta!\n\nTens entre 10 e 14 anos? Vem conhecer a nossa Expedição.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne #exploradores",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Exploradores",
+      "idade_n": "10–14",
+      "lema": "Sempre Alerta",
+      "chamada": "A aventura faz-se em Patrulha.",
+      "legenda": "41°21′N · 8°45′W · Caxinas",
+      "foto": "exploradores/capa.jpg",
+      "foto_pos": "50% 40%"
+    },
+    {
+      "tipo": "fazem",
+      "titulo": "A Aventura",
+      "intro": "É a grande atividade dos exploradores. Faz-se em três passos:",
+      "destino": "AVENTURA",
+      "etapas": [
+        [
+          "Sonham",
+          "Escolhem juntos para onde querem ir."
+        ],
+        [
+          "Preparam",
+          "Planeiam tudo, em Patrulha."
+        ],
+        [
+          "Vivem",
+          "Partem à descoberta de novos locais, desafios e caminhos."
+        ]
+      ]
+    },
+    {
+      "tipo": "patrulhas",
+      "titulo": "As Patrulhas",
+      "sub": "Grupos de 4 a 8 exploradores. Cada um tem um animal: o totem.",
+      "patrulhas": [
+        {
+          "img": "patrulha_golfinho",
+          "nome": "Golfinho",
+          "lema": "Inteligentes e Engraçados"
+        },
+        {
+          "img": "patrulha_aguia",
+          "nome": "Águia",
+          "lema": "Fortes e Persistentes"
+        },
+        {
+          "img": "patrulha_pinguim",
+          "nome": "Pinguim",
+          "lema": "Nadadores e Brincalhões"
+        },
+        {
+          "img": "patrulha_castor",
+          "nome": "Castor",
+          "lema": "Trabalhadores e Perfeitos"
+        },
+        {
+          "img": "patrulha_pantera",
+          "nome": "Pantera",
+          "lema": "Astutos e Audazes"
+        }
+      ],
+      "nota": "Todas juntas formam a Expedição, que se reúne na Base."
+    },
+    {
+      "tipo": "fim",
+      "lema": "Sempre Alerta",
+      "significado": "O lema dos exploradores vem do «Be Prepared» de Baden-Powell: estar sempre preparado.",
+      "legenda": "diário de bordo",
+      "foto": "exploradores/final.jpg",
+      "foto_pos": "50% 40%",
+      "convite": "Tens 10 a 14 anos? Vem conhecer-nos",
+      "contactos": [
+        "924 428 343",
+        "geral.994@escutismo.pt",
+        "994caxinas.com"
+      ]
+    }
+  ]
+}

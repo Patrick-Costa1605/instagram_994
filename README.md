@@ -34,23 +34,22 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), o cordel
-**6 publicações seguidas que, no feed, se unem por um cordel com nós** e que, dentro de cada carrossel, o cordel continua slide a slide.
-O nó fica sempre na emenda: em cada borda lateral há meio nó, e o meio nó da capa seguinte encaixa nele.
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), 4 publicações com design próprio
+Cada secção tem um design diferente, com fontes e linguagem visual próprias. Em comum (a âncora do 994): a etiqueta
+«As Nossas Secções · I/II/III/IV» em cima à esquerda e o logótipo em baixo à direita.
 
-| | | |
+| Parte | Conceito | Fontes |
 |---|---|---|
-| Intro «Quatro secções, um só nó» | Lobitos | Exploradores |
-| Pioneiros | Caminheiros | Convite «O que os pais perguntam» |
+| `1_lobitos.json` | Livro de histórias em papel recortado (folhas da Selva, sol com a idade, autocolantes) | Baloo 2 + Nunito |
+| `2_exploradores.json` | Mapa de expedição (curvas de nível, coordenadas, trilho, carimbo, etiquetadora) | Saira Stencil One + Special Elite |
+| `3_pioneiros.json` | Planta técnica de um Empreendimento (blueprint, cotas, legenda técnica, organigrama) | Space Grotesk + Space Mono |
+| `4_caminheiros.json` | Revista editorial (capa com duotone vermelho, citação, serifa) | Fraunces + Inter |
 
-- **Publicar por esta ordem, seguidas, sem nada pelo meio:** Convite → Caminheiros → Pioneiros → Exploradores → Lobitos → Intro
-  (o Instagram mostra o mais recente em cima à esquerda).
-- Papel e cordel são iguais em todas as capas (mesma altura e mesmos nós); cada secção só muda de cor no texto.
-- **Fontes dos factos** (para verificar): site do agrupamento (994caxinas.com) e CNE (escutismo.pt: páginas das secções, Perguntas
-  Frequentes e Escutismo: Movimento Seguro). Emblemas, retratos e fotos da sede vêm do site do agrupamento (`assets/agrupamento/`).
-- Slides: `capa`, `glossario`, `grupos`, `entrar` (por secção); `tabela`, `pertenca` (intro); `qa`, `entrar` (convite).
-- O código do cordel está em `src/corda.py`; o `serie.json` define as cores de cada secção.
-- Estes slides não usam fotografias de crianças.
+- 4 slides por publicação: capa (nome, idade, lema) · o que fazem · como se organizam · lema e contactos.
+- Cada parte indica o seu `"modelo"` e `"estilo"` (em `modelos/`), por isso os designs são independentes.
+- Fontes dos factos: 994caxinas.com (bandos, patrulhas, equipas, tribos, lemas) e escutismo.pt (organização e atividades de cada secção).
+- **Fotos:** `series/nossas_seccoes/fotos/<secção>/capa.jpg`, `atividade.jpg`, `final.jpg`. As atuais são provisórias;
+  basta substituí-las com o mesmo nome (o enquadramento ajusta-se com `"foto_pos"` no JSON). Fora do git (há crianças).
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

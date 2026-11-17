@@ -1,0 +1,72 @@
+{
+  "titulo": "Caminheiros",
+  "modelo": "modelos/caminheiros.html.j2",
+  "estilo": "modelos/caminheiros.css",
+  "legenda": "Caminheiros: dos 18 aos 22 anos, o caminho faz-se a servir. 🥾\n«Os Caminheiros formam uma fraternidade do Ar Livre para Servir», escreveu Baden-Powell. No Clã, cada Tribo escolhe o seu patrono e parte em Caminhada: no 994, as Tribos Aristides de Sousa Mendes e Irena Sendler. Servir!\n\nTens entre 18 e 22 anos? Vem conhecer o nosso Clã.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne #caminheiros",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Caminheiros",
+      "esq": "IV Secção",
+      "meio": "18 — 22 anos",
+      "dir": "O Clã",
+      "lema": "Servir.",
+      "sub": "A última etapa do caminho escutista.",
+      "foto": "caminheiros/capa.jpg",
+      "foto_pos": "50% 40%"
+    },
+    {
+      "tipo": "fazem",
+      "citacao": "Os Caminheiros formam uma fraternidade do Ar Livre para Servir.»",
+      "autor": "Baden-Powell",
+      "itens": [
+        [
+          "A Caminhada",
+          "A grande atividade do Clã, preparada como um projeto."
+        ],
+        [
+          "O Serviço",
+          "Construir pontes de solidariedade, amizade e serviço."
+        ],
+        [
+          "Decidir juntos",
+          "No Conselho de Clã, os jovens tomam as decisões mais importantes."
+        ]
+      ]
+    },
+    {
+      "tipo": "tribos",
+      "titulo": [
+        "As",
+        "Tribos"
+      ],
+      "lead": "Grupos de 4 a 8 caminheiros. Cada Tribo escolhe um patrono: um santo, um benemérito ou um herói.",
+      "tribos": [
+        {
+          "img": "aristides",
+          "nome": "Aristides de Sousa Mendes",
+          "papel": "Patrono da tribo"
+        },
+        {
+          "img": "irena",
+          "nome": "Irena Sendler",
+          "papel": "Patrona da tribo"
+        }
+      ],
+      "nota": "Todas juntas formam o Clã, que se reúne no Albergue."
+    },
+    {
+      "tipo": "fim",
+      "lema": "Servir.",
+      "significado": "A divisa dos caminheiros, rumo ao ideal do Homem Novo.",
+      "foto": "caminheiros/final.jpg",
+      "foto_pos": "50% 50%",
+      "convite": "Tens 18 a 22 anos? Vem conhecer o Clã.",
+      "contactos": [
+        "924 428 343",
+        "geral.994@escutismo.pt",
+        "994caxinas.com"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "titulo": "Pioneiros",
+  "modelo": "modelos/pioneiros.html.j2",
+  "estilo": "modelos/pioneiros.css",
+  "legenda": "Pioneiros: dos 14 aos 18 anos, as ideias passam do papel à obra. 🛠️\nNa Comunidade, cada Equipa trabalha em conjunto para construir algo maior: o Empreendimento, um projeto escolhido por todos e feito com a comunidade. No 994, as Equipas chamam-se Cristóvão Colombo, Vasco da Gama e Nuno Álvares Pereira. Sempre Alerta!\n\nTens entre 14 e 18 anos? Vem conhecer a nossa Comunidade.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne #pioneiros",
+  "slides": [
+    {
+      "tipo": "capa",
+      "titulo": "Pioneiros",
+      "idade": "14 – 18 ANOS",
+      "legenda": "Fig. 01 — Empreendimento em curso",
+      "foto": "pioneiros/capa.jpg",
+      "foto_pos": "50% 55%",
+      "ficha": [
+        [
+          "Secção",
+          "III"
+        ],
+        [
+          "Unidade",
+          "Comunidade"
+        ],
+        [
+          "Lema",
+          "Sempre Alerta",
+          true
+        ]
+      ]
+    },
+    {
+      "tipo": "fazem",
+      "titulo": [
+        "O Empreen-",
+        "dimento"
+      ],
+      "sub": "A grande atividade dos pioneiros: um projeto pensado e feito por eles.",
+      "passos": [
+        [
+          "Escolher",
+          "Em Conselho de Comunidade, decidem o projeto."
+        ],
+        [
+          "Construir",
+          "Cada Equipa com a sua parte. Juntos, algo maior."
+        ],
+        [
+          "Servir",
+          "Projetos feitos com e para a comunidade."
+        ]
+      ]
+    },
+    {
+      "tipo": "equipas",
+      "titulo": [
+        "As Equipas"
+      ],
+      "sub": "Grupos de 4 a 8 pioneiros, com o nome de um santo, de um pioneiro da humanidade ou de um herói nacional.",
+      "raiz": "A Comunidade",
+      "equipas": [
+        {
+          "img": "cristovao_colombo",
+          "nome": "Cristóvão Colombo"
+        },
+        {
+          "img": "vasco_da_gama",
+          "nome": "Vasco da Gama"
+        },
+        {
+          "img": "nap",
+          "nome": "Nuno Álvares Pereira"
+        }
+      ],
+      "nota": "Reúnem-se no Abrigo. As decisões do dia a dia passam pelo Conselho de Guias."
+    },
+    {
+      "tipo": "fim",
+      "titulo": [
+        "Sempre",
+        "Alerta"
+      ],
+      "significado": "O lema dos pioneiros. O ideal da secção vai mais longe: «Sempre Mais Longe».",
+      "legenda": "Fig. 02",
+      "foto": "pioneiros/final.jpg",
+      "foto_pos": "50% 50%",
+      "convite": "Tens 14 a 18 anos? Vem conhecer-nos.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ]
+      ]
+    }
+  ]
+}

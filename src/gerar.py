@@ -155,7 +155,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     # fonte da série (ex.: Handelson Four): se existir um ficheiro assets/fonts/*andelson*, é usado; senão há fallback
     hf = next(iter(sorted((ROOT / "assets" / "fonts").glob("*andelson*"))), None)
     cores, pontos, veu = cores_da_parte(serie, parte)
-    css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
+    css = env.from_string((serie_dir / parte.get("estilo", serie["estilo"])).read_text(encoding="utf-8")).render(
         fonts=fonts, w=fmt["largura"], h=fmt["altura"], handelson=hf.as_uri() if hf else None,
         cores=cores, veu=",".join(map(str, veu)))
     avisadas = set()
@@ -174,6 +174,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
 
     env.filters["mk"] = lambda t: markup(t)
     env.globals["ft"] = foto_fn
+    env.globals["ag"] = lambda nome: (ROOT / "assets" / "agrupamento" / f"{nome}.png").as_uri()  # emblemas do agrupamento
     pers = {f.stem: f.read_text(encoding="utf-8") for f in sorted((serie_dir / "personagens").glob("*.svg"))} \
         if (serie_dir / "personagens").is_dir() else {}
     motivo = ""
@@ -190,7 +191,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
                   file=sys.stderr)
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
-    page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
+    page = env.from_string((serie_dir / parte.get("modelo", serie["modelo"])).read_text(encoding="utf-8")).render(
         css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
         sec_num=next((i + 1 for i, p in enumerate(pontos) if p["ativo"]), None), sec_total=len(pontos), cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
