@@ -1,66 +1,131 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8">
-<style>:root { {% for k, v in cores.items() %}--{{ k|replace('_','-') }}: {{ v }};{% endfor %} }
+<style>:root { --paper: var(--creme); {% for k, v in cores.items() %}--{{ k|replace('_','-') }}: {{ v }};{% endfor %} }
 {{ css }}</style></head>
 <body>
-<div class="slide {{ s.tipo }}">
-  <div class="foto {{ 'vazia' if not foto else '' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}"{% endif %}></div>
-  <div class="velo"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
+  </filter>
+</defs></svg>
 
+{% macro polaroid(nome, estilo, legenda='', fita=True) %}
+<div class="polaroid" style="{{ estilo }}">
+  {% if fita %}<i class="fita"></i>{% endif %}
+  {% if ft(nome) %}<div class="img" style="background-image:url('{{ ft(nome) }}'); background-position:{{ posicao|default('50% 50%') }}"></div>
+  {% else %}<div class="img vazia"><span>FOTO</span></div>{% endif %}
+  {% if legenda %}<p>{{ legenda }}</p>{% endif %}
+</div>
+{% endmacro %}
+
+<div class="slide t-{{ s.tipo }}">
+  <div class="motivo">{{ motivo|safe }}</div>
+
+  {# ------------------------------------------------ cabeçalho / paginação (todas menos a capa) #}
+  {% if s.tipo != 'capa' %}
+  <div class="topo"><span>{{ cabecalho|join(' ') }}</span><span class="pag">{{ '%02d'|format(pag) }}/{{ '%02d'|format(total) }}</span></div>
+  {% endif %}
+
+  {# ------------------------------------------------ CAPA #}
   {% if s.tipo == 'capa' %}
-    <div class="bloco-capa">
-      <div class="topo">{{ s.topo or ' '.join(cabecalho) }}</div>
-      <div class="titulo" data-fit="940">{% for l in s.titulo %}<span class="linha">{{ l }}</span>{% endfor %}</div>
-      {% if s.faixa_etaria %}<div class="badge">{{ s.faixa_etaria }}</div>{% endif %}
-      {% if s.subtitulo %}<div class="subtitulo">{{ s.subtitulo }}</div>{% endif %}
+    <div class="etiqueta-capa">{{ s.topo }}</div>
+    <div class="idade" data-fit="900">{{ s.idade }}</div>
+    <div class="anos">ANOS</div>
+    <div class="rotulo" data-fit="900"><span>{{ s.titulo }}</span></div>
+    <div class="gancho">{{ s.gancho|mk|safe }}
+      <svg class="onda" viewBox="0 0 300 22" width="300" height="22"><path d="M3 12 C 28 0, 48 24, 74 12 S 124 0, 150 12 S 200 24, 226 12 S 272 2, 297 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" filter="url(#rough)"/></svg>
+    </div>
+    {{ polaroid(s.foto, 'left:560px; top:900px; width:420px; height:430px; transform:rotate(4deg)', s.legenda_foto|default('')) }}
+    {% if sec_num %}<div class="carimbo" style="left:760px; top:120px"><b>SECÇÃO</b><em>{{ sec_num }}/{{ sec_total }}</em></div>{% endif %}
+
+  {# ------------------------------------------------ FICHA (passaporte) #}
+  {% elif s.tipo == 'ficha' %}
+    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+    <div class="cartao">
+      <div class="faixa-cartao">PASSAPORTE · {{ s.cartao }}</div>
+      <div class="corpo-cartao">
+        <div class="retrato">
+          {% if ft(s.foto) %}<div class="img" style="background-image:url('{{ ft(s.foto) }}')"></div>{% else %}<div class="img vazia"><span>FOTO</span></div>{% endif %}
+          <i class="canto c1"></i><i class="canto c2"></i><i class="canto c3"></i><i class="canto c4"></i>
+        </div>
+        <dl>{% for c in s.campos %}<div><dt>{{ c[0] }}</dt><dd>{{ c[1] }}</dd></div>{% endfor %}</dl>
+      </div>
+      <div class="mrz">{{ s.mrz|e }}</div>
+      {% if sec_num %}<div class="carimbo no-cartao"><b>SECÇÃO</b><em>{{ sec_num }}/{{ sec_total }}</em></div>{% endif %}
     </div>
 
-  {% elif s.tipo == 'info' %}
-    <div class="cabecalho">{% for l in cabecalho %}{{ l }}<br>{% endfor %}</div>
-    <div class="bloco">
-      {% if s.etiqueta %}<div class="etiqueta">{{ s.etiqueta }}</div>{% endif %}
-      <div class="titulo" data-fit="920">{% for l in s.titulo %}<span class="linha {{ 'banda' if loop.last else '' }}">{{ l }}</span>{% endfor %}</div>
-      <div class="regua"></div>
-      <div class="texto">{{ texto|safe }}</div>
+  {# ------------------------------------------------ PASSOS (um sábado) #}
+  {% elif s.tipo == 'passos' %}
+    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+    <div class="passos">
+      {% for p in s.passos %}
+      <div class="passo" style="transform:rotate({{ [-1.2, 0.9, -0.7, 1.1][loop.index0 % 4] }}deg)">
+        <i class="fita"></i>
+        <div class="num">{{ loop.index }}</div>
+        <div><h3>{{ p[0] }}</h3><p>{{ p[1]|mk|safe }}</p></div>
+      </div>
+      {% endfor %}
     </div>
 
+  {# ------------------------------------------------ LEVAM (o que levam daqui) #}
+  {% elif s.tipo == 'levam' %}
+    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+    {{ polaroid(s.fotos[0], 'left:50px; top:430px; width:400px; height:470px; transform:rotate(-5deg)', '') }}
+    {{ polaroid(s.fotos[1], 'left:210px; top:760px; width:330px; height:400px; transform:rotate(4deg)', '') }}
+    <ul class="ticks">
+      {% for t in s.itens %}
+      <li><svg viewBox="0 0 60 60" width="62" height="62"><path d="M8 32 L24 48 L53 10" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"/></svg><span>{{ t|mk|safe }}</span></li>
+      {% endfor %}
+    </ul>
+
+  {# ------------------------------------------------ FAQ dos pais #}
+  {% elif s.tipo == 'faq' %}
+    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+    <div class="faq">
+      {% for q in s.perguntas %}
+      <div class="par">
+        <div class="q" style="transform:rotate({{ [-1.2, 0.8, -0.6][loop.index0 % 3] }}deg)">{{ q[0] }}</div>
+        <div class="a">{{ q[1]|mk|safe }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+  {# ------------------------------------------------ CTA (bilhete) #}
   {% elif s.tipo == 'cta' %}
-    <div class="cabecalho">{% for l in cabecalho %}{{ l }}<br>{% endfor %}</div>
-    <div class="bloco">
-      <div class="titulo" data-fit="920">{% for l in s.titulo %}<span class="linha">{{ l }}</span>{% endfor %}</div>
-      <div class="regua4">{% for p in pontos %}<i style="background:{{ p.cor }}"></i>{% endfor %}</div>
-      <div class="texto">{{ texto|safe }}</div>
-      <div class="botao">{{ s.botao }}</div>
+    <h1 class="titulo-grande cta-t" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+    <div class="bilhete">
+      <div class="principal">
+        <small>BILHETE · {{ s.bilhete_de }}</small>
+        <strong>{{ s.bilhete }}</strong>
+        <dl>{% for c in s.campos %}<div><dt>{{ c[0] }}</dt><dd>{{ c[1] }}</dd></div>{% endfor %}</dl>
+      </div>
+      <div class="canhoto"><span>{{ s.canhoto }}</span></div>
+    </div>
+    <div class="chamada">{{ s.chamada }}
+      <svg class="onda" viewBox="0 0 300 22" width="420" height="30"><path d="M3 12 C 28 0, 48 24, 74 12 S 124 0, 150 12 S 200 24, 226 12 S 272 2, 297 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" filter="url(#rough)"/></svg>
     </div>
   {% endif %}
 
-  {% if pontos %}<div class="pontos">{% for p in pontos %}<i class="{{ 'ativo' if p.ativo else '' }}" style="--c:{{ p.cor }}"></i>{% endfor %}</div>{% endif %}
-
+  {# ------------------------------------------------ rodapé #}
   {% if s.tipo != 'cta' and rodape %}
   <div class="arrasta">{{ rodape }}
-    <svg width="210" height="30" viewBox="0 0 210 30"><path d="M2 15 H196 M178 3 L198 15 L178 27" fill="none" stroke="var(--amarelo)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="210" height="30" viewBox="0 0 210 30"><path d="M2 15 H196 M178 3 L198 15 L178 27" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"/></svg>
   </div>
   {% endif %}
-  {% if logo %}
-  <div class="logo {{ 'fundo' if logo_fundo else '' }}" style="{% if logo_fundo %}width:{{ logo_h + 24 }}px;height:{{ logo_h + 24 }}px{% endif %}">
-    <img src="{{ logo }}" style="height:{{ logo_h }}px">
-  </div>
-  {% endif %}
+  {% if logo %}<img class="logo" src="{{ logo }}" style="height:{{ logo_h }}px">{% endif %}
+  <div class="grao"></div>
 </div>
+
 <script>
-  // reduz o título se alguma linha ultrapassar a largura máxima (nunca amplia)
   document.fonts.ready.then(() => {
-    document.querySelectorAll('.titulo[data-fit]').forEach(t => {
-      const max = parseFloat(t.dataset.fit);
-      const w = Math.max(...[...t.querySelectorAll('.linha')].map(l => l.getBoundingClientRect().width));
-      if (w > max) t.style.fontSize = (parseFloat(getComputedStyle(t).fontSize) * max / w) + 'px';
+    // encolhe (nunca amplia) o que ultrapassar a largura máxima
+    document.querySelectorAll('[data-fit]').forEach(el => {
+      const max = parseFloat(el.dataset.fit), inner = el.firstElementChild && el.firstElementChild.tagName === 'SPAN' ? el.firstElementChild : el;
+      el.style.width = 'max-content';
+      const w = el.getBoundingClientRect().width;
+      if (w > max) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * max / w) + 'px';
     });
-    // texto longo: reduz até caber acima do rodapé (limite definido por data-limite no .bloco)
-    const bloco = document.querySelector('.bloco'), txt = document.querySelector('.bloco .texto');
-    if (bloco && txt) {
-      let fs = parseFloat(getComputedStyle(txt).fontSize);
-      while (bloco.getBoundingClientRect().bottom > 1150 && fs > 32) { fs -= 2; txt.style.fontSize = fs + 'px'; }
-    }
     document.body.dataset.pronto = '1';
   });
 </script>

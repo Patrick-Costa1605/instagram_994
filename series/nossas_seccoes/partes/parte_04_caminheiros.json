@@ -1,62 +1,136 @@
 {
   "titulo": "As Nossas Secções — Caminheiros",
   "cor_seccao": "vermelho",
-  "legenda": "Entre os 18 e os 22 anos, o caminho passa a ser servir. 🔥\nOs Caminheiros assumem compromissos, fazem voluntariado e deixam marca na comunidade.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. ❤️\n\n#caminheiros #asnossassecoes",
+  "motivo": "montanha",
+  "legenda": "Entre os 18 e os 22 anos, o caminho passa a ser servir.\nOs Caminheiros assumem compromissos, fazem voluntariado e deixam marca na comunidade.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#caminheiros #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
       "foto": "caminheiros/capa.jpg",
-      "titulo": [
-        "CAMINHEIROS"
-      ],
-      "faixa_etaria": "18 A 22 ANOS",
-      "subtitulo": "Onde se aprende a servir de verdade →"
+      "topo": "As Nossas Secções",
+      "idade": "18–22",
+      "titulo": "CAMINHEIROS",
+      "gancho": "Dos 18 aos 22, o caminho é teu. E é a servir."
     },
     {
-      "tipo": "info",
-      "foto": "caminheiros/quem_somos.jpg",
-      "etiqueta": "18–22 anos",
+      "tipo": "ficha",
+      "foto": "caminheiros/ficha.jpg",
       "titulo": [
-        "QUEM SÃO"
+        "QUEM SÃO",
+        "OS CAMINHEIROS"
       ],
-      "texto": "Têm entre **18 e 22 anos**. É a última etapa do caminho como escuteiros e a mais exigente: descobrir o seu lugar no mundo e [servir](seccao) os outros."
+      "cartao": "SECÇÃO DOS CAMINHEIROS",
+      "campos": [
+        [
+          "IDADE",
+          "18 a 22 anos"
+        ],
+        [
+          "GRUPO",
+          "Tribo"
+        ],
+        [
+          "MÍSTICA",
+          "Serviço"
+        ],
+        [
+          "LEMA",
+          "Servir"
+        ],
+        [
+          "ESTILO",
+          "Compromisso e caminhada"
+        ]
+      ],
+      "mrz": "P<CAMINHEIROS<<994<CAXINAS<<<<<<<<<<\n18<22<ANOS<TRIBO<<<<<<<<<<<<<<<<<<<<"
     },
     {
-      "tipo": "info",
-      "foto": "caminheiros/organizacao.jpg",
+      "tipo": "passos",
       "titulo": [
-        "COMO NOS",
-        "ORGANIZAMOS"
+        "UM SÁBADO",
+        "NOS CAMINHEIROS"
       ],
-      "texto": "Organizamo-nos em **Tribo**: um grupo de jovens adultos que define o seu caminho, escolhe projetos e assume responsabilidades. O Chefe acompanha, mas [o caminho é deles](seccao)."
+      "passos": [
+        [
+          "Encontro da Tribo",
+          "Ponto da situação dos compromissos e dos projetos."
+        ],
+        [
+          "Caminhada ou projeto",
+          "Pé na estrada ou mãos no terreno: serviço a sério."
+        ],
+        [
+          "Reflexão",
+          "Partilha do que se viveu e do que ficou por fazer."
+        ],
+        [
+          "Próximo passo",
+          "Quem faz o quê até ao próximo encontro."
+        ]
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "caminheiros/sabados.jpg",
+      "tipo": "levam",
       "titulo": [
-        "AOS SÁBADOS",
-        "E EM CAMPO"
+        "O QUE ELES",
+        "LEVAM DAQUI"
       ],
-      "texto": "Caminhadas, voluntariado, projetos para a comunidade e acampamentos exigentes. Menos brincadeira e mais [compromisso](seccao), sem perder o bom humor."
+      "fotos": [
+        "caminheiros/levam1.jpg",
+        "caminheiros/levam2.jpg"
+      ],
+      "itens": [
+        "Compromisso a sério",
+        "Experiência de voluntariado",
+        "Gente com quem contar",
+        "Um caminho com sentido"
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "caminheiros/lema.jpg",
+      "tipo": "faq",
       "titulo": [
-        "O NOSSO",
-        "LEMA"
+        "PERGUNTAS",
+        "DOS PAIS"
       ],
-      "texto": "«[Servir](seccao)». Ajudar os outros sem pedir nada em troca. É o maior desafio e a maior [recompensa](seccao)."
+      "perguntas": [
+        [
+          "Já passou da idade de ser escuteiro?",
+          "Os Caminheiros são a secção dos 18 aos 22. Existem para isso."
+        ],
+        [
+          "Dá para conciliar com a faculdade ou o trabalho?",
+          "Combinamos o calendário com eles. Fala connosco."
+        ],
+        [
+          "Posso experimentar primeiro?",
+          "Podes. Aparece num sábado e vê com os teus próprios olhos."
+        ]
+      ]
     },
     {
       "tipo": "cta",
-      "foto": "caminheiros/cta.jpg",
       "titulo": [
         "QUERES",
         "EXPERIMENTAR?"
       ],
-      "texto": "Tens entre 18 e 22 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem caminhar connosco!",
-      "botao": "JUNTA-TE A NÓS →"
+      "bilhete_de": "CAMINHEIROS",
+      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
+      "campos": [
+        [
+          "ONDE",
+          "Sede, nas Caxinas"
+        ],
+        [
+          "QUANDO",
+          "Num sábado"
+        ],
+        [
+          "COMO",
+          "Mensagem a @994caxinas"
+        ]
+      ],
+      "canhoto": "994",
+      "chamada": "Manda-nos mensagem e combinamos o dia."
     }
   ]
 }

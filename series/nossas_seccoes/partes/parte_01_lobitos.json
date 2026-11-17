@@ -1,63 +1,136 @@
 {
   "titulo": "As Nossas Secções — Lobitos",
   "cor_seccao": "amarelo",
-  "legenda": "Tens entre 6 e 10 anos, ou és pai/mãe de alguém que tem? 🐺\nOs Lobitos são onde tudo começa: jogos, cantigas, a Jângal e muitos amigos.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. 💛\n\n#lobitos #asnossassecoes",
-  "veu_tinto": 0.3,
+  "motivo": "folhas",
+  "legenda": "Tens entre 6 e 10 anos, ou és pai ou mãe de alguém que tem?\nOs Lobitos são onde tudo começa: jogos, cantigas, a Jângal e muitos amigos.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#lobitos #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
       "foto": "lobitos/capa.jpg",
-      "titulo": [
-        "LOBITOS"
-      ],
-      "faixa_etaria": "6 A 10 ANOS",
-      "subtitulo": "Onde tudo começa. E onde ninguém quer ir para casa →"
+      "topo": "As Nossas Secções",
+      "idade": "6–10",
+      "titulo": "LOBITOS",
+      "gancho": "Tens 6 anos e energia a mais? A Jângal é para ti."
     },
     {
-      "tipo": "info",
-      "foto": "lobitos/quem_somos.jpg",
-      "etiqueta": "6–10 anos",
+      "tipo": "ficha",
+      "foto": "lobitos/ficha.jpg",
       "titulo": [
-        "QUEM SÃO"
+        "QUEM SÃO",
+        "OS LOBITOS"
       ],
-      "texto": "Têm entre **6 e 10 anos**, curiosidade de sobra e energia para dar e vender. Vivem na [Jângal](seccao), inspirados n'O Livro da Selva: aqui aprende-se a brincar a sério e a crescer em grupo."
+      "cartao": "SECÇÃO DOS LOBITOS",
+      "campos": [
+        [
+          "IDADE",
+          "6 a 10 anos"
+        ],
+        [
+          "GRUPO",
+          "Bando"
+        ],
+        [
+          "MÍSTICA",
+          "Jângal"
+        ],
+        [
+          "LEMA",
+          "Da Melhor Vontade"
+        ],
+        [
+          "QUEM ACOMPANHA",
+          "Os Chefes"
+        ]
+      ],
+      "mrz": "P<LOBITOS<<994<CAXINAS<<<<<<<<<<<<<<\n6<10<ANOS<BANDO<<<<<<<<<<<<<<<<<<<<<"
     },
     {
-      "tipo": "info",
-      "foto": "lobitos/organizacao.jpg",
+      "tipo": "passos",
       "titulo": [
-        "COMO NOS",
-        "ORGANIZAMOS"
+        "UM SÁBADO",
+        "NOS LOBITOS"
       ],
-      "texto": "Somos um **Bando**: uma grande família onde cada lobito tem o seu lugar. Brincam, decidem e partilham tarefas em grupo, sempre com um [Chefe](seccao) por perto para ajudar."
+      "passos": [
+        [
+          "Roda inicial",
+          "Todos juntos, cada um conta o que lhe aconteceu esta semana."
+        ],
+        [
+          "Jogo grande",
+          "Correr, esconder, fazer equipas. Muitas gargalhadas."
+        ],
+        [
+          "Atividade",
+          "Um nó, uma cantiga ou uma história da Jângal."
+        ],
+        [
+          "Roda final",
+          "Balanço do dia e até para a semana."
+        ]
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "lobitos/sabados.jpg",
+      "tipo": "levam",
       "titulo": [
-        "AOS SÁBADOS",
-        "E EM CAMPO"
+        "O QUE ELES",
+        "LEVAM DAQUI"
       ],
-      "texto": "Jogos, cantigas, histórias e muita brincadeira ao ar livre. Há também **acampamentos**, onde se dorme fora de casa pela primeira vez: [saudades da mãe](seccao) e vontade de repetir."
+      "fotos": [
+        "lobitos/levam1.jpg",
+        "lobitos/levam2.jpg"
+      ],
+      "itens": [
+        "Amigos novos",
+        "Coragem para experimentar",
+        "Mãos sujas e muito orgulho",
+        "Saber ajudar os outros"
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "lobitos/lema.jpg",
+      "tipo": "faq",
       "titulo": [
-        "O NOSSO",
-        "LEMA"
+        "PERGUNTAS",
+        "DOS PAIS"
       ],
-      "texto": "«[Da Melhor Vontade](seccao)». Não é ganhar, é dar o melhor de si. Aprendem a partilhar, a ajudar os outros e a ser [bons amigos](seccao)."
+      "perguntas": [
+        [
+          "O meu filho é tímido. E agora?",
+          "É normal. No Bando ele entra ao seu ritmo, sem ninguém a empurrar."
+        ],
+        [
+          "Preciso de comprar equipamento?",
+          "Fala connosco antes: dizemos-te exatamente o que é preciso."
+        ],
+        [
+          "Posso experimentar primeiro?",
+          "Podes. Aparece num sábado e vê com os teus próprios olhos."
+        ]
+      ]
     },
     {
       "tipo": "cta",
-      "foto": "lobitos/cta.jpg",
       "titulo": [
         "QUERES",
         "EXPERIMENTAR?"
       ],
-      "texto": "Tens entre 6 e 10 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem brincar connosco!",
-      "botao": "JUNTA-TE A NÓS →"
+      "bilhete_de": "LOBITOS",
+      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
+      "campos": [
+        [
+          "ONDE",
+          "Sede, nas Caxinas"
+        ],
+        [
+          "QUANDO",
+          "Num sábado"
+        ],
+        [
+          "COMO",
+          "Mensagem a @994caxinas"
+        ]
+      ],
+      "canhoto": "994",
+      "chamada": "Manda-nos mensagem e combinamos o dia."
     }
   ]
 }

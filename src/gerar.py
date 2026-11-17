@@ -72,6 +72,10 @@ def cores_da_parte(serie: dict, parte: dict):
         cores.setdefault("acento", parte["cor_banda"])
     cores.setdefault("acento", cores["banda"])
     banda, escuro, creme = _rgb(cores["banda"]), _rgb(cores.get("texto_escuro", "#1b1b1b")), _rgb(cores["creme"])
+    def _mixhex(a, b, k):
+        return "#%02X%02X%02X" % tuple(round(x + (y - x) * k) for x, y in zip(a, b))
+    cores["escuro"] = _mixhex(banda, (0, 0, 0), 0.32)
+    cores["claro"] = _mixhex(banda, (255, 255, 255), 0.40)
     cores["texto_banda"] = cores.get("texto_escuro", "#1b1b1b") if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]
 
     # pontos de navegação (uma bolinha por secção, a atual destacada)
@@ -107,8 +111,28 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
         fonts=fonts, w=fmt["largura"], h=fmt["altura"], handelson=hf.as_uri() if hf else None,
         cores=cores, veu=",".join(map(str, veu)))
+    avisadas = set()
+
+    def foto_fn(nome):
+        """URI da foto (pasta fotos/ da série) ou '' se não existir (o modelo mostra um espaço reservado)."""
+        if not nome:
+            return ""
+        fp = serie_dir / "fotos" / nome
+        if fp.exists():
+            return fp.as_uri()
+        if nome not in avisadas:
+            avisadas.add(nome)
+            print(f"  ! slide {idx + 1}: foto «{nome}» não existe em {serie_dir / 'fotos'}", file=sys.stderr)
+        return ""
+
+    env.filters["mk"] = lambda t: markup(t)
+    env.globals["ft"] = foto_fn
+    motivo = ""
+    if parte.get("motivo"):
+        mp = serie_dir / "motivos" / f"{parte['motivo']}.svg"
+        motivo = mp.read_text(encoding="utf-8") if mp.exists() else ""
     foto = None
-    if s.get("foto"):
+    if s.get("foto") and "fotos" not in s and serie.get("modelo_usa_foto_fundo", True):
         fp = serie_dir / "fotos" / s["foto"]
         if fp.exists():
             foto = fp.as_uri()
@@ -118,7 +142,8 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, cabecalho=serie.get("cabecalho", []),
+        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pag=idx + 1, total=len(parte["slides"]),
+        sec_num=next((i + 1 for i, p in enumerate(pontos) if p["ativo"]), None), sec_total=len(pontos), cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))
     out = tmp / f"slide_{idx + 1:02d}.html"

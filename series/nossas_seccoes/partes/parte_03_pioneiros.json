@@ -1,62 +1,136 @@
 {
   "titulo": "As Nossas Secções — Pioneiros",
   "cor_seccao": "azul",
-  "legenda": "Entre os 14 e os 18 anos, é altura de pôr as ideias em prática. 🛠️\nOs Pioneiros planeiam, constroem e servem a comunidade, em equipa.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. 💙\n\n#pioneiros #asnossassecoes",
+  "motivo": "blueprint",
+  "legenda": "Entre os 14 e os 18 anos, é altura de pôr as ideias em prática.\nOs Pioneiros planeiam, constroem e servem a comunidade, em equipa.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#pioneiros #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
       "foto": "pioneiros/capa.jpg",
-      "titulo": [
-        "PIONEIROS"
-      ],
-      "faixa_etaria": "14 A 18 ANOS",
-      "subtitulo": "Onde as ideias saem do papel →"
+      "topo": "As Nossas Secções",
+      "idade": "14–18",
+      "titulo": "PIONEIROS",
+      "gancho": "Tens ideias? Aqui saem do papel e vão construir-se."
     },
     {
-      "tipo": "info",
-      "foto": "pioneiros/quem_somos.jpg",
-      "etiqueta": "14–18 anos",
+      "tipo": "ficha",
+      "foto": "pioneiros/ficha.jpg",
       "titulo": [
-        "QUEM SÃO"
+        "QUEM SÃO",
+        "OS PIONEIROS"
       ],
-      "texto": "Têm entre **14 e 18 anos**. Aqui já não é só participar: é [construir](seccao). Sonham, planeiam e põem mãos à obra em empreendimentos que deixam marca."
+      "cartao": "SECÇÃO DOS PIONEIROS",
+      "campos": [
+        [
+          "IDADE",
+          "14 a 18 anos"
+        ],
+        [
+          "GRUPO",
+          "Equipa"
+        ],
+        [
+          "MÍSTICA",
+          "Empreendimento"
+        ],
+        [
+          "LEMA",
+          "Sempre Alerta para Servir"
+        ],
+        [
+          "O QUE FAZEM",
+          "Os seus projetos"
+        ]
+      ],
+      "mrz": "P<PIONEIROS<<994<CAXINAS<<<<<<<<<<<<\n14<18<ANOS<EQUIPA<<<<<<<<<<<<<<<<<<<"
     },
     {
-      "tipo": "info",
-      "foto": "pioneiros/organizacao.jpg",
+      "tipo": "passos",
       "titulo": [
-        "COMO NOS",
-        "ORGANIZAMOS"
+        "UM SÁBADO",
+        "NOS PIONEIROS"
       ],
-      "texto": "Somos **Equipas**: grupos que escolhem os seus projetos, dividem tarefas e decidem em conjunto. Os [Chefes](seccao) acompanham e apoiam, mas as decisões são deles."
+      "passos": [
+        [
+          "Reunião de equipa",
+          "Ponto da situação do projeto em curso."
+        ],
+        [
+          "Mãos à obra",
+          "Construir, planear, ensaiar. Cada um com a sua tarefa."
+        ],
+        [
+          "Serviço",
+          "Sair da sede e fazer algo útil pela comunidade."
+        ],
+        [
+          "Avaliação",
+          "O que aprendemos e o que vamos fazer melhor."
+        ]
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "pioneiros/sabados.jpg",
+      "tipo": "levam",
       "titulo": [
-        "AOS SÁBADOS",
-        "E EM CAMPO"
+        "O QUE ELES",
+        "LEVAM DAQUI"
       ],
-      "texto": "Projetos, expedições, serviço à comunidade e acampamentos mais exigentes. Do primeiro rascunho à obra feita, [tudo planeado por eles](seccao)."
+      "fotos": [
+        "pioneiros/levam1.jpg",
+        "pioneiros/levam2.jpg"
+      ],
+      "itens": [
+        "Planear e cumprir",
+        "Liderar uma equipa",
+        "Servir a comunidade",
+        "Confiança em si"
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "pioneiros/lema.jpg",
+      "tipo": "faq",
       "titulo": [
-        "O NOSSO",
-        "LEMA"
+        "PERGUNTAS",
+        "DOS PAIS"
       ],
-      "texto": "«[Sempre Alerta para Servir](seccao)». Preparados para ajudar quem precisa. Aprendem a [liderar](seccao), a trabalhar em equipa e a cumprir o que prometem."
+      "perguntas": [
+        [
+          "O meu filho acha que isto é para miúdos.",
+          "Os Pioneiros criam os seus próprios projetos. Pergunta-lhe o que ele construiria."
+        ],
+        [
+          "E os estudos?",
+          "Combinamos o calendário com as famílias. Fala connosco."
+        ],
+        [
+          "Posso experimentar primeiro?",
+          "Podes. Aparece num sábado e vê com os teus próprios olhos."
+        ]
+      ]
     },
     {
       "tipo": "cta",
-      "foto": "pioneiros/cta.jpg",
       "titulo": [
         "QUERES",
         "EXPERIMENTAR?"
       ],
-      "texto": "Tens entre 14 e 18 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem construir connosco!",
-      "botao": "JUNTA-TE A NÓS →"
+      "bilhete_de": "PIONEIROS",
+      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
+      "campos": [
+        [
+          "ONDE",
+          "Sede, nas Caxinas"
+        ],
+        [
+          "QUANDO",
+          "Num sábado"
+        ],
+        [
+          "COMO",
+          "Mensagem a @994caxinas"
+        ]
+      ],
+      "canhoto": "994",
+      "chamada": "Manda-nos mensagem e combinamos o dia."
     }
   ]
 }

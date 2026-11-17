@@ -34,19 +34,19 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`)
-Uma parte por secção, com a **cor da secção** definida só no JSON da parte, sem CSS à parte:
+## Série «As Nossas Secções» (`series/nossas_seccoes/`) — o «Passaporte»
+Design próprio (não é o do Dicionário): cada parte é o **passaporte de uma secção**, a cores cheias, com fotos em polaroid,
+cartões de papel, post-its e um bilhete final. Cada secção tem a sua cor e o seu motivo de fundo (folhas, curvas de nível,
+papel de projeto, montanhas; gerados por `python src/motivos.py`).
 ```json
-{ "cor_seccao": "amarelo", "slides": [ ... ] }      // amarelo | verde | azul | vermelho
-{ "cor_banda": "#8A2BE2" }                           // alternativa: cor livre
-{ "veu_tinto": 0.3 }                                 // opcional: quanto a cor da secção tinge o véu das fotos (0 = verde-escuro fixo)
+{ "cor_seccao": "amarelo", "motivo": "folhas", "slides": [ ... ] }   // cor: amarelo | verde | azul | vermelho
+{ "cor_banda": "#8A2BE2" }                                           // alternativa: cor livre
 ```
-- O texto sobre a faixa muda sozinho (escuro/creme) conforme o contraste: escuro no amarelo, creme nas outras.
-- `[palavra](seccao)` e `[palavra](seccao,sub)` usam a cor da secção; `**negrito**` também funciona.
-- Tipos de slide: `capa` (`titulo`, `faixa_etaria`, `subtitulo`), `info` (`etiqueta`, `titulo`, `texto`), `cta` (`titulo`, `texto`, `botao`).
-- Quatro pontos no canto superior direito mostram em que secção estamos (a atual fica destacada).
-- Fotos em `series/nossas_seccoes/fotos/<secção>/` (ex.: `lobitos/capa.jpg`).
-- As faixas usam tons um pouco mais escuros do que o texto colorido, para o texto da faixa ter contraste (ver `serie.json`).
+- A cor de fundo e a do texto (escuro/creme, por contraste) ajustam-se sozinhas; `[palavra](seccao)` usa o destaque da secção.
+- Tipos de slide: `capa` (`idade`, `titulo`, `gancho`, `foto`), `ficha` (`cartao`, `campos`, `mrz`, `foto`), `passos` (`passos`),
+  `levam` (`itens`, `fotos`), `faq` (`perguntas`), `cta` (`bilhete`, `campos`, `chamada`).
+- Fotos em `series/nossas_seccoes/fotos/<secção>/` (`capa.jpg`, `ficha.jpg`, `levam1.jpg`, `levam2.jpg`). Se faltar uma, aparece um espaço reservado.
+- Os textos de exemplo (sábado típico, perguntas dos pais, etc.) devem ser revistos e ajustados ao que o agrupamento realmente faz.
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

@@ -1,62 +1,136 @@
 {
   "titulo": "As Nossas Secções — Exploradores",
   "cor_seccao": "verde",
-  "legenda": "Entre os 10 e os 14 anos, a aventura ganha outra dimensão. 🧭\nNos Exploradores há patrulhas, nós, fogueiras, acampamentos e amizades para a vida.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. 💚\n\n#exploradores #asnossassecoes",
+  "motivo": "topografia",
+  "legenda": "Entre os 10 e os 14 anos, a aventura ganha outra dimensão.\nNos Exploradores há patrulhas, nós, fogueiras, acampamentos e amizades para a vida.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#exploradores #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
       "foto": "exploradores/capa.jpg",
-      "titulo": [
-        "EXPLORADORES"
-      ],
-      "faixa_etaria": "10 A 14 ANOS",
-      "subtitulo": "Onde a aventura começa a sério →"
+      "topo": "As Nossas Secções",
+      "idade": "10–14",
+      "titulo": "EXPLORADORES",
+      "gancho": "Nós, tendas e fogueiras: aqui aprende-se a fazer."
     },
     {
-      "tipo": "info",
-      "foto": "exploradores/quem_somos.jpg",
-      "etiqueta": "10–14 anos",
+      "tipo": "ficha",
+      "foto": "exploradores/ficha.jpg",
       "titulo": [
-        "QUEM SÃO"
+        "QUEM SÃO",
+        "OS EXPLORADORES"
       ],
-      "texto": "Têm entre **10 e 14 anos** e estão prontos para a [aventura](seccao). Exploram o que os rodeia, descobrem do que são capazes e aprendem a contar uns com os outros."
+      "cartao": "SECÇÃO DOS EXPLORADORES",
+      "campos": [
+        [
+          "IDADE",
+          "10 a 14 anos"
+        ],
+        [
+          "GRUPO",
+          "Patrulha"
+        ],
+        [
+          "MÍSTICA",
+          "Aventura"
+        ],
+        [
+          "LEMA",
+          "Sempre Alerta"
+        ],
+        [
+          "QUEM LIDERA",
+          "Guia e Subguia"
+        ]
+      ],
+      "mrz": "P<EXPLORADORES<<994<CAXINAS<<<<<<<<<\n10<14<ANOS<PATRULHA<<<<<<<<<<<<<<<<<"
     },
     {
-      "tipo": "info",
-      "foto": "exploradores/organizacao.jpg",
+      "tipo": "passos",
       "titulo": [
-        "COMO NOS",
-        "ORGANIZAMOS"
+        "UM SÁBADO",
+        "NOS EXPLORADORES"
       ],
-      "texto": "Organizamo-nos em **Patrulhas**: pequenos grupos de amigos, cada um com um [Guia](seccao) que lidera e um Subguia que ajuda. Cada patrulha tem a sua identidade e muito orgulho nela."
+      "passos": [
+        [
+          "Chegada em patrulha",
+          "Cada patrulha junta-se e vê o que há para fazer."
+        ],
+        [
+          "Jogo ou prova",
+          "Pistas, mapas e uma boa dose de competição saudável."
+        ],
+        [
+          "Técnica",
+          "Nós, orientação, primeiros socorros ou cozinha de campo."
+        ],
+        [
+          "Balanço",
+          "O que correu bem, o que não correu e o plano para a próxima."
+        ]
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "exploradores/sabados.jpg",
+      "tipo": "levam",
       "titulo": [
-        "AOS SÁBADOS",
-        "E EM CAMPO"
+        "O QUE ELES",
+        "LEVAM DAQUI"
       ],
-      "texto": "Nós, fogueiras, tendas e jogos de pista. Em campo, cada patrulha monta o seu acampamento, cozinha as suas refeições e [aprende a desenrascar-se](seccao)."
+      "fotos": [
+        "exploradores/levam1.jpg",
+        "exploradores/levam2.jpg"
+      ],
+      "itens": [
+        "Orientar-se em qualquer lado",
+        "Desenrascar-se sozinho",
+        "Trabalhar em equipa a sério",
+        "Amigos para a vida"
+      ]
     },
     {
-      "tipo": "info",
-      "foto": "exploradores/lema.jpg",
+      "tipo": "faq",
       "titulo": [
-        "O NOSSO",
-        "LEMA"
+        "PERGUNTAS",
+        "DOS PAIS"
       ],
-      "texto": "«[Sempre Alerta](seccao)». Estar atento, preparado e pronto para ajudar em qualquer momento. É assim que se [cresce](seccao) a sério."
+      "perguntas": [
+        [
+          "Nunca foi escuteiro. Já é tarde?",
+          "Fala connosco. Explicamos como é entrar numa patrulha a meio do caminho."
+        ],
+        [
+          "Vai dormir fora?",
+          "Há acampamentos ao longo do ano. Combinamos tudo com os pais, com tempo."
+        ],
+        [
+          "Posso experimentar primeiro?",
+          "Podes. Aparece num sábado e vê com os teus próprios olhos."
+        ]
+      ]
     },
     {
       "tipo": "cta",
-      "foto": "exploradores/cta.jpg",
       "titulo": [
         "QUERES",
         "EXPERIMENTAR?"
       ],
-      "texto": "Tens entre 10 e 14 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem explorar connosco!",
-      "botao": "JUNTA-TE A NÓS →"
+      "bilhete_de": "EXPLORADORES",
+      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
+      "campos": [
+        [
+          "ONDE",
+          "Sede, nas Caxinas"
+        ],
+        [
+          "QUANDO",
+          "Num sábado"
+        ],
+        [
+          "COMO",
+          "Mensagem a @994caxinas"
+        ]
+      ],
+      "canhoto": "994",
+      "chamada": "Manda-nos mensagem e combinamos o dia."
     }
   ]
 }
