@@ -1,0 +1,55 @@
+{
+  "titulo": "Dicionário Escutista — Parte 1",
+  "legenda": "Já ouviste um escuteiro falar e ficaste a olhar para o ecrã? 😅\nTrouxemos o primeiro Dicionário Escutista, feito a pensar em pais, avós e tios que ainda não percebem o que dizemos.\n\nArrasta para o lado e diz-nos nos comentários: qual devia entrar no próximo? 👇",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "capa.jpg",
+      "titulo": ["DICIONÁRIO", "ESCUTISTA"],
+      "subtitulo": "Para pais, avós e tios que ainda não percebem o que dizemos →"
+    },
+    {
+      "tipo": "termo",
+      "foto": "lenco.jpg",
+      "termo": ["LENÇO"],
+      "texto": "Pano ao pescoço com funções ilimitadas: ligadura, saco, bandeira e, sobretudo, orgulho."
+    },
+    {
+      "tipo": "termo",
+      "foto": "seccoes.jpg",
+      "termo": ["BANDO / PATRULHA", "/ EQUIPA / TRIBO"],
+      "texto": "O grupo de amigos de cada secção.\nO nome muda com a idade,\nmas o espírito é o mesmo:\n[Bando](amarelo,sub) nos [Lobitos](amarelo),\n[Patrulha](verde,sub) nos [Exploradores](verde),\n[Equipa](azul,sub) nos [Pioneiros](azul),\n[Tribo](vermelho,sub) nos [Caminheiros](vermelho)."
+    },
+    {
+      "tipo": "termo",
+      "foto": "no.jpg",
+      "termo": ["NÓ"],
+      "texto": "Uma corda, mil maneiras de a atar e uma só de a desatar quando já ninguém se lembra de como foi feito."
+    },
+    {
+      "tipo": "termo",
+      "foto": "pioneirismo.jpg",
+      "termo": ["PIONEIRISMO"],
+      "texto": "A arte de construir mesas, torres e pontes com paus e cordas. Sem um único prego."
+    },
+    {
+      "tipo": "termo",
+      "foto": "fogo_conselho.jpg",
+      "termo": ["FOGO DE", "CONSELHO"],
+      "texto": "Fogueira com canções, jogos e histórias.\nSai-se com cheiro a fumo e sem voz."
+    },
+    {
+      "tipo": "termo",
+      "foto": "sempre_alerta.jpg",
+      "termo": ["SEMPRE", "ALERTA"],
+      "texto": "Mais do que um lema: estar pronto para ajudar, em qualquer momento."
+    },
+    {
+      "tipo": "cta",
+      "foto": "cta.jpg",
+      "titulo": ["FALTOU", "ALGUMA?"],
+      "texto": "Diz-nos nos comentários qual devia entrar no próximo dicionário!",
+      "botao": "SEGUE-NOS →"
+    }
+  ]
+}

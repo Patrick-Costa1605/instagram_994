@@ -1,0 +1,18 @@
+{
+  "nome": "Dicionário Escutista",
+  "formato": { "largura": 1080, "altura": 1350 },
+  "modelo": "modelo.html.j2",
+  "estilo": "estilo.css",
+  "cabecalho": ["DICIONÁRIO", "ESCUTISTA"],
+  "rodape": "ARRASTA PARA O LADO",
+  "cores": {
+    "banda": "#1E9E4A",
+    "amarelo": "#F2C230",
+    "verde": "#3FBF5F",
+    "azul": "#3B6CF0",
+    "vermelho": "#EE4B3A",
+    "creme": "#F8F3E8"
+  },
+  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 130, "fundo_claro": true },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta"
+}
