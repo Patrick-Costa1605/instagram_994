@@ -1,0 +1,27 @@
+{
+  "nome": "Rótulo 994",
+  "formato": {
+    "largura": 1080,
+    "altura": 1350
+  },
+  "modelo": "modelo.html.j2",
+  "estilo": "estilo.css",
+  "cores": {
+    "banda": "#F4B400",
+    "amarelo": "#F4B400",
+    "verde": "#0F5A47",
+    "azul": "#3B6CF0",
+    "vermelho": "#EE4B3A",
+    "creme": "#F8F3E8"
+  },
+  "logo": {
+    "ficheiro": "../../assets/logo-994.png",
+    "altura": 112,
+    "fundo_claro": false
+  },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #altoteoremescutismo",
+  "cabecalho": [
+    "RÓTULO DE GARANTIA 994",
+    "ALTO TEOR EM:"
+  ]
+}

@@ -61,3 +61,9 @@ Cada secção tem um design diferente, com fontes e linguagem visual próprias. 
 ## Notas
 - O logótipo (`assets/logo-994.png`, 172×242 px) vai sem fundo; `"altura"` e `"fundo_claro"` (disco claro opcional) em `serie.json`.
   Um PNG maior ou SVG melhora a nitidez.
+
+## Série «Rótulo 994» (`series/rotulo_994/`)
+Foto a ecrã inteiro, só com vinheta no topo e no fundo, e um **rótulo de garantia** («ALTO TEOR EM / MONTAR TENDAS…») que se posiciona
+por slide com `"x"` e `"y"` (percentagem, centro do rótulo; por omissão 50 / 68). Campos do slide: `foto`, `foto_pos`, `texto`
+(`|` separa linhas), `etiqueta_topo`, `cor` (faixa de baixo), `rot` (inclinação) e `legenda`.
+`python src/gerar.py series/rotulo_994/partes/parte_01.json` · Fotos em `series/rotulo_994/fotos/` (fora do git).

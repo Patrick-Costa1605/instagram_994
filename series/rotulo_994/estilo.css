@@ -1,0 +1,41 @@
+/* RÓTULO 994 — foto viva a ecrã inteiro + rótulo de garantia «alto teor em». Fontes: Chewy, Londrina Solid, Roboto Condensed. */
+@font-face { font-family: "Chewy"; src: url("{{ fonts }}/chewy-latin-400-normal.woff2"); }
+@font-face { font-family: "Londrina"; src: url("{{ fonts }}/londrina-solid-latin-900-normal.woff2"); font-weight: 900; }
+@font-face { font-family: "Cond"; src: url("{{ fonts }}/roboto-condensed-latin-900-normal.woff2"); font-weight: 900; }
+:root { --creme: #F8F3E8; --tinta: #141414; --floresta: #0F5A47; --amarelo: #F4B400; --rotulo-w: 780px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: {{ w }}px; height: {{ h }}px; background: #000; }
+.slide { position: relative; width: {{ w }}px; height: {{ h }}px; overflow: hidden; background: #1b1b1b; }
+
+/* foto viva: só vinhetas no topo e no fundo, o centro fica natural */
+.foto { position: absolute; inset: 0; background: center/cover no-repeat; }
+.vinheta { position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(12,10,6,.74) 0%, rgba(12,10,6,.46) 17%, rgba(12,10,6,0) 36%),
+    linear-gradient(0deg, rgba(12,10,6,.66) 0%, rgba(12,10,6,.34) 10%, rgba(12,10,6,0) 24%); }
+.sem-foto { background: repeating-linear-gradient(135deg, #234 0 30px, #2c4a3d 30px 60px); }
+
+/* assinatura da série */
+.topo { position: absolute; left: 70px; right: 70px; top: 62px; }
+.topo small { display: block; font-family: "Cond"; font-weight: 900; font-size: 25px; letter-spacing: 9px; text-transform: uppercase; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+.topo h1 { font-family: "Chewy"; font-weight: 400; font-size: 132px; line-height: 1; margin-top: 4px; color: var(--creme); letter-spacing: 1px;
+  -webkit-text-stroke: 2px var(--tinta); paint-order: stroke fill; text-shadow: 6px 6px 0 var(--tinta); }
+
+/* o rótulo */
+.rotulo { position: absolute; width: var(--rotulo-w); z-index: 5;
+  left: clamp(calc(var(--rotulo-w) / 2 + 28px), var(--x), calc(100% - var(--rotulo-w) / 2 - 28px)); top: var(--y);
+  transform: translate(-50%, -50%) rotate(var(--rot, -2deg));
+  display: grid; grid-template-columns: 200px 1fr; border: 4px solid var(--tinta); border-radius: 18px; background: var(--tinta); overflow: hidden;
+  box-shadow: 6px 6px 0 var(--tinta); }
+.rotulo .selo { background: var(--floresta); display: grid; place-items: center; border-right: 4px solid var(--tinta); }
+.rotulo .selo svg { width: 132px; height: 132px; }
+.rotulo .lado { display: grid; grid-template-rows: auto 1fr; }
+.rotulo .cima { background: var(--creme); color: var(--tinta); font-family: "Cond"; font-weight: 900; font-size: 31px; letter-spacing: 6px; text-transform: uppercase; padding: 10px 24px 9px; border-bottom: 4px solid var(--tinta); }
+.rotulo .baixo { background: var(--cor, var(--amarelo)); color: var(--tinta); font-family: "Londrina"; font-weight: 900; text-transform: uppercase; line-height: .94; padding: 16px 26px 14px; display: flex; align-items: center; font-size: 66px; }
+.rotulo .baixo.l2 { font-size: 56px; } .rotulo .baixo.l3 { font-size: 46px; }
+.furo { position: absolute; width: 14px; height: 14px; border-radius: 50%; background: #0000; box-shadow: inset 0 0 0 3px var(--tinta); display: none; }
+
+/* rodapé minimalista */
+.pag { position: absolute; left: 70px; bottom: 58px; font-family: "Cond"; font-weight: 900; font-size: 30px; letter-spacing: 5px; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.8); }
+.pag b { color: var(--amarelo); }
+.logo { position: absolute; right: 56px; bottom: 44px; filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 6px 10px rgba(0,0,0,.5)); }

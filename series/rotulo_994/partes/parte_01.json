@@ -1,0 +1,76 @@
+{
+  "titulo": "Rótulo 994 — Alto teor em… escutismo",
+  "legenda": "Rótulo de garantia 994: alto teor em escutismo! 🏷️\nMontar tendas em tempo recorde, fazer amigos para a vida, dar nós que ninguém desata, cantar até ficar sem voz, voltar com lama até aos joelhos, estar sempre alerta e cheiro a fumo na farda.\n\nQual destes é o teu? Conta-nos nos comentários e marca quem se reconhece. 👇\n\nVem experimentar: 924 428 343 · geral.994@escutismo.pt · 994caxinas.com",
+  "slides": [
+    {
+      "foto": "tendas.jpg",
+      "foto_pos": "50% 60%",
+      "texto": "MONTAR TENDAS|EM TEMPO RECORDE",
+      "x": 50,
+      "y": 82,
+      "rot": -2,
+      "cor": "#F4B400",
+      "legenda": "Montar tendas em tempo recorde. Desmontá-las é outra história. ⛺"
+    },
+    {
+      "foto": "amigos.jpg",
+      "foto_pos": "50% 50%",
+      "texto": "FAZER AMIGOS|PARA A VIDA",
+      "x": 34,
+      "y": 86,
+      "rot": 2,
+      "cor": "#7ED36B",
+      "legenda": "Fazer amigos para a vida. Marca já o teu bando. 🤝"
+    },
+    {
+      "foto": "nos.jpg",
+      "foto_pos": "50% 45%",
+      "texto": "DAR NÓS|QUE NINGUÉM DESATA",
+      "x": 44,
+      "y": 80,
+      "rot": -3,
+      "cor": "#F28C28",
+      "legenda": "Dar nós que ninguém desata. Nem nós, quando chega a hora de desatar. 🪢"
+    },
+    {
+      "foto": "cantar.jpg",
+      "foto_pos": "50% 50%",
+      "texto": "CANTAR ATÉ|FICAR SEM VOZ",
+      "x": 66,
+      "y": 45,
+      "rot": 2,
+      "cor": "#FFD84D",
+      "legenda": "Cantar até ficar sem voz. Segunda-feira ninguém percebe o que dizemos. 🎶"
+    },
+    {
+      "foto": "lama.jpg",
+      "foto_pos": "50% 50%",
+      "texto": "VOLTAR COM LAMA|ATÉ AOS JOELHOS",
+      "x": 40,
+      "y": 38,
+      "rot": -2,
+      "cor": "#C98A4B",
+      "legenda": "Voltar com lama até aos joelhos. E um sorriso até às orelhas. 🥾"
+    },
+    {
+      "foto": "alerta.jpg",
+      "foto_pos": "50% 50%",
+      "texto": "ESTAR SEMPRE|ALERTA",
+      "x": 44,
+      "y": 83,
+      "rot": 2,
+      "cor": "#F4B400",
+      "legenda": "Estar sempre alerta. Até para o último pão com chouriço. 👀"
+    },
+    {
+      "foto": "fumo.jpg",
+      "foto_pos": "50% 60%",
+      "texto": "CHEIRO A FUMO|NA FARDA",
+      "x": 50,
+      "y": 84,
+      "rot": -2,
+      "cor": "#E8573A",
+      "legenda": "Cheiro a fumo na farda. Três lavagens depois, continua lá. 🔥"
+    }
+  ]
+}
