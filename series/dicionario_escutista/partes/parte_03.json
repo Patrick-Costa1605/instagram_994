@@ -1,0 +1,55 @@
+{
+  "titulo": "Dicionário Escutista — Parte 3",
+  "legenda": "A coleção continua: chegou a Parte 3 do Dicionário Escutista! ⚜️🧭\nSe ainda ficas a olhar de lado quando chegam a casa a falar «escutês», este guia é para ti.\n\nArrasta para o lado e diz-nos nos comentários: qual destas expressões ouves mais aí em casa? 👇",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "capa3.jpg",
+      "titulo": ["DICIONÁRIO", "ESCUTISTA"],
+      "subtitulo": "Parte 3 · Para pais, avós e tios que ainda<br>não percebem o que dizemos →"
+    },
+    {
+      "tipo": "termo",
+      "foto": "velada_armas.heic",
+      "termo": ["VELADA DE", "ARMAS"],
+      "texto": "A noite de reflexão, silêncio e preparação espiritual antes da Promessa.\nÉ o momento mais bonito (e o único em que ninguém faz barulho)."
+    },
+    {
+      "tipo": "termo",
+      "foto": "jarreteira.jpg",
+      "termo": ["JARRETEIRA"],
+      "texto": "A fita com a cor da secção que segura as meias altas da farda.\nTem o superpoder de desaparecer em todas as atividades."
+    },
+    {
+      "tipo": "termo",
+      "foto": "insignia.webp",
+      "termo": ["INSÍGNIA"],
+      "texto": "Os emblemas cosidos na camisa que contam a história de cada escuteiro.\nSignificam progresso, etapas vencidas e muitas horas dos pais com agulha e linha na mão."
+    },
+    {
+      "tipo": "termo",
+      "foto": "cantil.jpg",
+      "termo": ["CANTIL"],
+      "texto": "Garrafa indispensável em qualquer saída ou raid.\nServe para levar água fresca, mas acaba sempre com sabor a plástico quente às três da tarde."
+    },
+    {
+      "tipo": "termo",
+      "foto": "jogo_cidade.jpg",
+      "termo": ["JOGO DE", "CIDADE"],
+      "texto": "Uma tarde a correr pelas ruas a decifrar pistas e cumprir desafios.\nOs moradores ficam sempre a tentar perceber o que tantos escuteiros andam a fazer."
+    },
+    {
+      "tipo": "termo",
+      "foto": "acampamento.jpg",
+      "termo": ["ACAMPAMENTO"],
+      "texto": "Viver dias inteiros ao ar livre, dormir em tendas e cozinhar em campo.\nVolta-se com a roupa cheia de terra, zero bateria e mil histórias para contar."
+    },
+    {
+      "tipo": "cta",
+      "foto": "cta3.jpg",
+      "titulo": ["FALTOU", "ALGUMA?"],
+      "texto": "Deixa nos comentários a palavra que não pode faltar na Parte 4!",
+      "botao": "SEGUE-NOS →"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "titulo": "Dicionário Escutista — Parte 2",
+  "legenda": "A pedido de muitas famílias, chegou a Parte 2 do nosso Dicionário Escutista! ⛺⚜️\nMais palavras que ouves em casa depois de um fim de semana de atividade e ficas sem perceber metade.\n\nArrasta para o lado e diz-nos nos comentários: quantas destas já conhecias? 👇",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "capa2.jpg",
+      "titulo": ["DICIONÁRIO", "ESCUTISTA"],
+      "subtitulo": "Parte 2 · Para pais, avós e tios que ainda<br>não percebem o que dizemos →"
+
+    },
+    {
+      "tipo": "termo",
+      "foto": "promessa.jpg",
+      "termo": ["PROMESSA"],
+      "texto": "O momento mais solene e bonito do escutismo. O dia em que se jura dar o melhor de si (e os pais choram todos na plateia)."
+    },
+    {
+      "tipo": "termo",
+      "foto": "totem.jpg",
+      "termo": ["TOTEM"],
+      "texto": "Um nome de animal e uma característica dados pela comunidade.\nServe para definir a tua personalidade e para nunca mais te chamarem pelo nome próprio."
+    },
+    {
+      "tipo": "termo",
+      "foto": "raid.jpg",
+      "termo": ["RAID"],
+      "texto": "Uma caminhada de aventura com mochila às costas.\nPara os chefes são «só mais 5 quilómetros»; para as pernas parece uma maratona."
+    },
+    {
+      "tipo": "termo",
+      "foto": "anilha.jpg",
+      "termo": ["ANILHA"],
+      "texto": "O pequeno aro que segura o lenço ao pescoço.\nDá um ar impecável à farda — até cair no meio do mato e nunca mais ninguém a encontrar."
+    },
+    {
+      "tipo": "termo",
+      "foto": "cumprimentos.jpg",
+      "termo": ["CUMPRIMENTO"],
+      "texto": "O aperto de mão escutista feito com a mão esquerda, a que está mais perto do [coração](vermelho).\nGarante que ninguém se engana a cumprimentar."
+    },
+    {
+      "tipo": "termo",
+      "foto": "alvorada.jpg",
+      "termo": ["ALVORADA"],
+      "texto": "O momento em que os chefes acordam o campo inteiro de manhã cedo.\nEnvolve apitos, canções e muita vontade de ficar mais cinco minutos no saco-cama."
+    },
+    {
+      "tipo": "cta",
+      "foto": "cta2.jpg",
+      "titulo": ["FALTOU", "ALGUMA?"],
+      "texto": "Diz-nos nos comentários qual devia entrar na Parte 3!",
+      "botao": "SEGUE-NOS →"
+    }
+  ]
+}
