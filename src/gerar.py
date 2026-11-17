@@ -19,14 +19,72 @@ from pathlib import Path
 from jinja2 import Environment
 
 ROOT = Path(__file__).resolve().parent.parent
-COR_TXT = re.compile(r"\[([^\]]+)\]\((amarelo|verde|azul|vermelho)(,sub)?\)")
+COR_TXT = re.compile(r"\[([^\]]+)\]\((amarelo|verde|azul|vermelho|seccao)(,sub)?\)")
 
 
 def markup(texto: str) -> str:
     """Escapa o HTML e aplica [palavra](cor) = texto colorido, [palavra](cor,sub) = sublinhado colorido."""
     t = html.escape(texto)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)          # **negrito**
     t = COR_TXT.sub(lambda m: f'<span class="{"s" if m.group(3) else "c"}-{m.group(2)}">{m.group(1)}</span>', t)
     return t.replace("\n", "<br>")
+
+
+# ---------------------------------------------------------------- cor por parte (opcional)
+def _rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _lum(rgb):
+    def f(c):
+        c /= 255
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = (f(c) for c in rgb)
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def _contraste(a, b):
+    la, lb = sorted((_lum(a), _lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+
+def cores_da_parte(serie: dict, parte: dict):
+    """Devolve (cores, pontos, veu) para esta parte.
+
+    Sem `cor_seccao`/`cor_banda`/`cores` no JSON da parte, as cores da série ficam exatamente como estão
+    (retrocompatível com o Dicionário Escutista). Com elas:
+      cor_seccao  = amarelo | verde | azul | vermelho  -> faixa (--banda) e destaque (--acento)
+      cor_banda   = "#RRGGBB"                          -> faixa personalizada
+      --texto-banda é escolhido automaticamente (escuro ou creme) pelo melhor contraste.
+      veu_tinto   = 0..1 (opcional) intensidade da cor da secção no véu das fotos; sobrepõe o valor da série.
+    """
+    cores = dict(serie["cores"])
+    cores.update(parte.get("cores", {}))
+    nome = parte.get("cor_seccao")
+    if nome:
+        if nome not in cores:
+            raise SystemExit(f"cor_seccao «{nome}» desconhecida. Usa: amarelo, verde, azul ou vermelho.")
+        cores["banda"] = cores.get("banda_" + nome, cores[nome])
+        cores["acento"] = cores.get("acento_" + nome, cores[nome])
+    if parte.get("cor_banda"):
+        cores["banda"] = parte["cor_banda"]
+        cores.setdefault("acento", parte["cor_banda"])
+    cores.setdefault("acento", cores["banda"])
+    banda, escuro, creme = _rgb(cores["banda"]), _rgb(cores.get("texto_escuro", "#1b1b1b")), _rgb(cores["creme"])
+    cores["texto_banda"] = cores.get("texto_escuro", "#1b1b1b") if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]
+
+    # pontos de navegação (uma bolinha por secção, a atual destacada)
+    pontos = []
+    for sec in serie.get("seccoes", []):
+        pontos.append({"nome": sec["nome"], "cor": cores.get("banda_" + sec["id"], cores[sec["id"]]),
+                       "ativo": sec["id"] == nome})
+    # véu da foto: verde-escuro por defeito; tingido com a cor da secção se `veu_tinto` > 0 na série
+    base = (6, 38, 34)
+    t = float(parte.get("veu_tinto", serie.get("veu_tinto", 0.0))) if (nome or parte.get("cor_banda")) else 0.0
+    alvo = tuple(c * 0.35 for c in banda)
+    veu = tuple(round(b + (a - b) * t) for b, a in zip(base, alvo))
+    return cores, pontos, veu
 
 
 def launch(p):
@@ -45,8 +103,10 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     env = Environment(autoescape=False)
     # fonte da série (ex.: Handelson Four): se existir um ficheiro assets/fonts/*andelson*, é usado; senão há fallback
     hf = next(iter(sorted((ROOT / "assets" / "fonts").glob("*andelson*"))), None)
+    cores, pontos, veu = cores_da_parte(serie, parte)
     css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
-        fonts=fonts, w=fmt["largura"], h=fmt["altura"], handelson=hf.as_uri() if hf else None)
+        fonts=fonts, w=fmt["largura"], h=fmt["altura"], handelson=hf.as_uri() if hf else None,
+        cores=cores, veu=",".join(map(str, veu)))
     foto = None
     if s.get("foto"):
         fp = serie_dir / "fotos" / s["foto"]
@@ -58,7 +118,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=serie["cores"], cabecalho=serie.get("cabecalho", []),
+        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))
     out = tmp / f"slide_{idx + 1:02d}.html"

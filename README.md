@@ -34,6 +34,20 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
+## Série «As Nossas Secções» (`series/nossas_seccoes/`)
+Uma parte por secção, com a **cor da secção** definida só no JSON da parte, sem CSS à parte:
+```json
+{ "cor_seccao": "amarelo", "slides": [ ... ] }      // amarelo | verde | azul | vermelho
+{ "cor_banda": "#8A2BE2" }                           // alternativa: cor livre
+{ "veu_tinto": 0.3 }                                 // opcional: quanto a cor da secção tinge o véu das fotos (0 = verde-escuro fixo)
+```
+- O texto sobre a faixa muda sozinho (escuro/creme) conforme o contraste: escuro no amarelo, creme nas outras.
+- `[palavra](seccao)` e `[palavra](seccao,sub)` usam a cor da secção; `**negrito**` também funciona.
+- Tipos de slide: `capa` (`titulo`, `faixa_etaria`, `subtitulo`), `info` (`etiqueta`, `titulo`, `texto`), `cta` (`titulo`, `texto`, `botao`).
+- Quatro pontos no canto superior direito mostram em que secção estamos (a atual fica destacada).
+- Fotos em `series/nossas_seccoes/fotos/<secção>/` (ex.: `lobitos/capa.jpg`).
+- As faixas usam tons um pouco mais escuros do que o texto colorido, para o texto da faixa ter contraste (ver `serie.json`).
+
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).
 - Título da série («Dicionário Escutista», capa, «Faltou alguma?»): **Handelson Four**. Não é distribuível aqui, por isso, por agora,

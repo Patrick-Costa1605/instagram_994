@@ -1,0 +1,63 @@
+{
+  "titulo": "As Nossas Secções — Lobitos",
+  "cor_seccao": "amarelo",
+  "legenda": "Tens entre 6 e 10 anos, ou és pai/mãe de alguém que tem? 🐺\nOs Lobitos são onde tudo começa: jogos, cantigas, a Jângal e muitos amigos.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. 💛\n\n#lobitos #asnossassecoes",
+  "veu_tinto": 0.3,
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "lobitos/capa.jpg",
+      "titulo": [
+        "LOBITOS"
+      ],
+      "faixa_etaria": "6 A 10 ANOS",
+      "subtitulo": "Onde tudo começa. E onde ninguém quer ir para casa →"
+    },
+    {
+      "tipo": "info",
+      "foto": "lobitos/quem_somos.jpg",
+      "etiqueta": "6–10 anos",
+      "titulo": [
+        "QUEM SÃO"
+      ],
+      "texto": "Têm entre **6 e 10 anos**, curiosidade de sobra e energia para dar e vender. Vivem na [Jângal](seccao), inspirados n'O Livro da Selva: aqui aprende-se a brincar a sério e a crescer em grupo."
+    },
+    {
+      "tipo": "info",
+      "foto": "lobitos/organizacao.jpg",
+      "titulo": [
+        "COMO NOS",
+        "ORGANIZAMOS"
+      ],
+      "texto": "Somos um **Bando**: uma grande família onde cada lobito tem o seu lugar. Brincam, decidem e partilham tarefas em grupo, sempre com um [Chefe](seccao) por perto para ajudar."
+    },
+    {
+      "tipo": "info",
+      "foto": "lobitos/sabados.jpg",
+      "titulo": [
+        "AOS SÁBADOS",
+        "E EM CAMPO"
+      ],
+      "texto": "Jogos, cantigas, histórias e muita brincadeira ao ar livre. Há também **acampamentos**, onde se dorme fora de casa pela primeira vez: [saudades da mãe](seccao) e vontade de repetir."
+    },
+    {
+      "tipo": "info",
+      "foto": "lobitos/lema.jpg",
+      "titulo": [
+        "O NOSSO",
+        "LEMA"
+      ],
+      "texto": "«[Da Melhor Vontade](seccao)». Não é ganhar, é dar o melhor de si. Aprendem a partilhar, a ajudar os outros e a ser [bons amigos](seccao)."
+    },
+    {
+      "tipo": "cta",
+      "foto": "lobitos/cta.jpg",
+      "titulo": [
+        "QUERES",
+        "EXPERIMENTAR?"
+      ],
+      "texto": "Tens entre 6 e 10 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem brincar connosco!",
+      "botao": "JUNTA-TE A NÓS →"
+    }
+  ]
+}

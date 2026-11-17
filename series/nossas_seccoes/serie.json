@@ -1,0 +1,25 @@
+{
+  "nome": "As Nossas Secções",
+  "formato": { "largura": 1080, "altura": 1350 },
+  "modelo": "modelo.html.j2",
+  "estilo": "estilo.css",
+  "cabecalho": ["AS NOSSAS", "SECÇÕES"],
+  "rodape": "ARRASTA PARA O LADO",
+  "veu_tinto": 0.6,
+  "seccoes": [
+    { "id": "amarelo", "nome": "Lobitos" },
+    { "id": "verde", "nome": "Exploradores" },
+    { "id": "azul", "nome": "Pioneiros" },
+    { "id": "vermelho", "nome": "Caminheiros" }
+  ],
+  "cores": {
+    "banda": "#1E9E4A",
+    "amarelo": "#F2C230", "verde": "#3FBF5F", "azul": "#3B6CF0", "vermelho": "#EE4B3A",
+    "banda_amarelo": "#F2C230", "banda_verde": "#1E9E4A", "banda_azul": "#2F5FD0", "banda_vermelho": "#D93A2B",
+    "acento_azul": "#7FA3FF", "acento_vermelho": "#FF6F5B",
+    "creme": "#F8F3E8",
+    "texto_escuro": "#1b1b1b"
+  },
+  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 165, "fundo_claro": false },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta"
+}

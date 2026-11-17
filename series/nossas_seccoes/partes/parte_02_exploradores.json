@@ -1,0 +1,62 @@
+{
+  "titulo": "As Nossas Secções — Exploradores",
+  "cor_seccao": "verde",
+  "legenda": "Entre os 10 e os 14 anos, a aventura ganha outra dimensão. 🧭\nNos Exploradores há patrulhas, nós, fogueiras, acampamentos e amizades para a vida.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. 💚\n\n#exploradores #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "exploradores/capa.jpg",
+      "titulo": [
+        "EXPLORADORES"
+      ],
+      "faixa_etaria": "10 A 14 ANOS",
+      "subtitulo": "Onde a aventura começa a sério →"
+    },
+    {
+      "tipo": "info",
+      "foto": "exploradores/quem_somos.jpg",
+      "etiqueta": "10–14 anos",
+      "titulo": [
+        "QUEM SÃO"
+      ],
+      "texto": "Têm entre **10 e 14 anos** e estão prontos para a [aventura](seccao). Exploram o que os rodeia, descobrem do que são capazes e aprendem a contar uns com os outros."
+    },
+    {
+      "tipo": "info",
+      "foto": "exploradores/organizacao.jpg",
+      "titulo": [
+        "COMO NOS",
+        "ORGANIZAMOS"
+      ],
+      "texto": "Organizamo-nos em **Patrulhas**: pequenos grupos de amigos, cada um com um [Guia](seccao) que lidera e um Subguia que ajuda. Cada patrulha tem a sua identidade e muito orgulho nela."
+    },
+    {
+      "tipo": "info",
+      "foto": "exploradores/sabados.jpg",
+      "titulo": [
+        "AOS SÁBADOS",
+        "E EM CAMPO"
+      ],
+      "texto": "Nós, fogueiras, tendas e jogos de pista. Em campo, cada patrulha monta o seu acampamento, cozinha as suas refeições e [aprende a desenrascar-se](seccao)."
+    },
+    {
+      "tipo": "info",
+      "foto": "exploradores/lema.jpg",
+      "titulo": [
+        "O NOSSO",
+        "LEMA"
+      ],
+      "texto": "«[Sempre Alerta](seccao)». Estar atento, preparado e pronto para ajudar em qualquer momento. É assim que se [cresce](seccao) a sério."
+    },
+    {
+      "tipo": "cta",
+      "foto": "exploradores/cta.jpg",
+      "titulo": [
+        "QUERES",
+        "EXPERIMENTAR?"
+      ],
+      "texto": "Tens entre 10 e 14 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem explorar connosco!",
+      "botao": "JUNTA-TE A NÓS →"
+    }
+  ]
+}

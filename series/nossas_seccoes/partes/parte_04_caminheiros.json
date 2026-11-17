@@ -1,0 +1,62 @@
+{
+  "titulo": "As Nossas Secções — Caminheiros",
+  "cor_seccao": "vermelho",
+  "legenda": "Entre os 18 e os 22 anos, o caminho passa a ser servir. 🔥\nOs Caminheiros assumem compromissos, fazem voluntariado e deixam marca na comunidade.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem. ❤️\n\n#caminheiros #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "caminheiros/capa.jpg",
+      "titulo": [
+        "CAMINHEIROS"
+      ],
+      "faixa_etaria": "18 A 22 ANOS",
+      "subtitulo": "Onde se aprende a servir de verdade →"
+    },
+    {
+      "tipo": "info",
+      "foto": "caminheiros/quem_somos.jpg",
+      "etiqueta": "18–22 anos",
+      "titulo": [
+        "QUEM SÃO"
+      ],
+      "texto": "Têm entre **18 e 22 anos**. É a última etapa do caminho como escuteiros e a mais exigente: descobrir o seu lugar no mundo e [servir](seccao) os outros."
+    },
+    {
+      "tipo": "info",
+      "foto": "caminheiros/organizacao.jpg",
+      "titulo": [
+        "COMO NOS",
+        "ORGANIZAMOS"
+      ],
+      "texto": "Organizamo-nos em **Tribo**: um grupo de jovens adultos que define o seu caminho, escolhe projetos e assume responsabilidades. O Chefe acompanha, mas [o caminho é deles](seccao)."
+    },
+    {
+      "tipo": "info",
+      "foto": "caminheiros/sabados.jpg",
+      "titulo": [
+        "AOS SÁBADOS",
+        "E EM CAMPO"
+      ],
+      "texto": "Caminhadas, voluntariado, projetos para a comunidade e acampamentos exigentes. Menos brincadeira e mais [compromisso](seccao), sem perder o bom humor."
+    },
+    {
+      "tipo": "info",
+      "foto": "caminheiros/lema.jpg",
+      "titulo": [
+        "O NOSSO",
+        "LEMA"
+      ],
+      "texto": "«[Servir](seccao)». Ajudar os outros sem pedir nada em troca. É o maior desafio e a maior [recompensa](seccao)."
+    },
+    {
+      "tipo": "cta",
+      "foto": "caminheiros/cta.jpg",
+      "titulo": [
+        "QUERES",
+        "EXPERIMENTAR?"
+      ],
+      "texto": "Tens entre 18 e 22 anos? Aparece num sábado na nossa sede, nas Caxinas, e vem caminhar connosco!",
+      "botao": "JUNTA-TE A NÓS →"
+    }
+  ]
+}
