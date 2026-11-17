@@ -255,6 +255,7 @@ def main():
                 pngs.append(png)
                 print(f"  {png.relative_to(ROOT)}")
             idxs = []
+        page = browser.new_page(viewport={"width": fmt["largura"], "height": fmt["altura"]}, device_scale_factor=1)
         for i in idxs:
             h = render_html(serie_dir, serie, parte, i, tmp)
             page.goto(h.as_uri())
