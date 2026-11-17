@@ -1,0 +1,34 @@
+{
+  "titulo": "As Nossas Secções — visão geral",
+  "cor_banda": "#2FA060",
+  "personagem": "lobitos",
+  "legenda": "Dos 6 aos 22 anos, o caminho é este. 🌱\nLobitos, Exploradores, Pioneiros e Caminheiros: qual é a tua secção?\n\nManda-nos mensagem e vem experimentar um sábado!\n\n#asnossassecoes #escutismo #994caxinas",
+  "slides": [
+    {
+      "tipo": "linha",
+      "titulo": [
+        "DO LOBITO",
+        "AO CAMINHEIRO"
+      ],
+      "idades": [
+        "6–10",
+        "10–14",
+        "14–18",
+        "18–22"
+      ],
+      "tagline": "Dos 6 aos 22 anos, o caminho é este."
+    },
+    {
+      "tipo": "cta",
+      "titulo": [
+        "QUAL É",
+        "A TUA?"
+      ],
+      "balao": "Escolhe a tua!",
+      "quando": "Num sábado",
+      "onde": "Na sede, nas Caxinas",
+      "botao": "Manda-nos mensagem",
+      "todos": true
+    }
+  ]
+}

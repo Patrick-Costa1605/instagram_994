@@ -1,136 +1,65 @@
 {
   "titulo": "As Nossas Secções — Lobitos",
   "cor_seccao": "amarelo",
-  "motivo": "folhas",
-  "legenda": "Tens entre 6 e 10 anos, ou és pai ou mãe de alguém que tem?\nOs Lobitos são onde tudo começa: jogos, cantigas, a Jângal e muitos amigos.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#lobitos #asnossassecoes",
+  "personagem": "lobitos",
+  "legenda": "Pequenos, barulhentos e imparáveis. 🐺\nOs Lobitos têm entre 6 e 10 anos e passam os sábados a brincar, a cantar e a fazer amigos.\n\nQueres experimentar um sábado? Manda-nos mensagem!\n\n#lobitos #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
-      "foto": "lobitos/capa.jpg",
       "topo": "As Nossas Secções",
-      "idade": "6–10",
       "titulo": "LOBITOS",
-      "gancho": "Tens 6 anos e energia a mais? A Jângal é para ti."
+      "idade": "6 a 10 anos",
+      "tagline": "Pequenos. Barulhentos. Imparáveis."
     },
     {
-      "tipo": "ficha",
-      "foto": "lobitos/ficha.jpg",
-      "titulo": [
-        "QUEM SÃO",
-        "OS LOBITOS"
-      ],
-      "cartao": "SECÇÃO DOS LOBITOS",
-      "campos": [
+      "tipo": "cromo",
+      "numero": "1",
+      "titulo": "LOBITOS",
+      "idade": "6 a 10 anos",
+      "stats": [
         [
-          "IDADE",
-          "6 a 10 anos"
+          "Energia",
+          "∞",
+          100
         ],
         [
-          "GRUPO",
-          "Bando"
+          "Lama",
+          "98%",
+          98
         ],
         [
-          "MÍSTICA",
-          "Jângal"
+          "Sossego",
+          "3%",
+          3
         ],
         [
-          "LEMA",
-          "Da Melhor Vontade"
-        ],
-        [
-          "QUEM ACOMPANHA",
-          "Os Chefes"
+          "Amigos novos",
+          "100%",
+          100
         ]
       ],
-      "mrz": "P<LOBITOS<<994<CAXINAS<<<<<<<<<<<<<<\n6<10<ANOS<BANDO<<<<<<<<<<<<<<<<<<<<<"
+      "grupo": "Bando",
+      "lema": "Da Melhor Vontade"
     },
     {
-      "tipo": "passos",
-      "titulo": [
-        "UM SÁBADO",
-        "NOS LOBITOS"
-      ],
-      "passos": [
-        [
-          "Roda inicial",
-          "Todos juntos, cada um conta o que lhe aconteceu esta semana."
-        ],
-        [
-          "Jogo grande",
-          "Correr, esconder, fazer equipas. Muitas gargalhadas."
-        ],
-        [
-          "Atividade",
-          "Um nó, uma cantiga ou uma história da Jângal."
-        ],
-        [
-          "Roda final",
-          "Balanço do dia e até para a semana."
-        ]
-      ]
-    },
-    {
-      "tipo": "levam",
-      "titulo": [
-        "O QUE ELES",
-        "LEVAM DAQUI"
-      ],
-      "fotos": [
-        "lobitos/levam1.jpg",
-        "lobitos/levam2.jpg"
-      ],
-      "itens": [
-        "Amigos novos",
-        "Coragem para experimentar",
-        "Mãos sujas e muito orgulho",
-        "Saber ajudar os outros"
-      ]
-    },
-    {
-      "tipo": "faq",
-      "titulo": [
-        "PERGUNTAS",
-        "DOS PAIS"
-      ],
-      "perguntas": [
-        [
-          "O meu filho é tímido. E agora?",
-          "É normal. No Bando ele entra ao seu ritmo, sem ninguém a empurrar."
-        ],
-        [
-          "Preciso de comprar equipamento?",
-          "Fala connosco antes: dizemos-te exatamente o que é preciso."
-        ],
-        [
-          "Posso experimentar primeiro?",
-          "Podes. Aparece num sábado e vê com os teus próprios olhos."
-        ]
+      "tipo": "sabado",
+      "intro": "Num sábado normal:",
+      "linhas": [
+        "Correm.",
+        "Cantam.",
+        "Voltam a correr."
       ]
     },
     {
       "tipo": "cta",
       "titulo": [
-        "QUERES",
-        "EXPERIMENTAR?"
+        "VEM",
+        "EXPERIMENTAR"
       ],
-      "bilhete_de": "LOBITOS",
-      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
-      "campos": [
-        [
-          "ONDE",
-          "Sede, nas Caxinas"
-        ],
-        [
-          "QUANDO",
-          "Num sábado"
-        ],
-        [
-          "COMO",
-          "Mensagem a @994caxinas"
-        ]
-      ],
-      "canhoto": "994",
-      "chamada": "Manda-nos mensagem e combinamos o dia."
+      "balao": "Anda brincar!",
+      "quando": "Num sábado",
+      "onde": "Na sede, nas Caxinas",
+      "botao": "Manda-nos mensagem"
     }
   ]
 }

@@ -76,12 +76,14 @@ def cores_da_parte(serie: dict, parte: dict):
         return "#%02X%02X%02X" % tuple(round(x + (y - x) * k) for x, y in zip(a, b))
     cores["escuro"] = _mixhex(banda, (0, 0, 0), 0.32)
     cores["claro"] = _mixhex(banda, (255, 255, 255), 0.40)
+    cores["suave"] = _mixhex(banda, creme, 0.74)
+    cores["profundo"] = _mixhex(banda, (28, 18, 10), 0.62)
     cores["texto_banda"] = cores.get("texto_escuro", "#1b1b1b") if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]
 
     # pontos de navegação (uma bolinha por secção, a atual destacada)
     pontos = []
     for sec in serie.get("seccoes", []):
-        pontos.append({"nome": sec["nome"], "cor": cores.get("banda_" + sec["id"], cores[sec["id"]]),
+        pontos.append({"id": sec["id"], "nome": sec["nome"], "cor": cores.get("banda_" + sec["id"], cores[sec["id"]]),
                        "ativo": sec["id"] == nome})
     # véu da foto: verde-escuro por defeito; tingido com a cor da secção se `veu_tinto` > 0 na série
     base = (6, 38, 34)
@@ -127,6 +129,8 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
 
     env.filters["mk"] = lambda t: markup(t)
     env.globals["ft"] = foto_fn
+    pers = {f.stem: f.read_text(encoding="utf-8") for f in sorted((serie_dir / "personagens").glob("*.svg"))} \
+        if (serie_dir / "personagens").is_dir() else {}
     motivo = ""
     if parte.get("motivo"):
         mp = serie_dir / "motivos" / f"{parte['motivo']}.svg"
@@ -142,7 +146,7 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pag=idx + 1, total=len(parte["slides"]),
+        css=css, s=s, foto=foto, foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
         sec_num=next((i + 1 for i, p in enumerate(pontos) if p["ativo"]), None), sec_total=len(pontos), cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))

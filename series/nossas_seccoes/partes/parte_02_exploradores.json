@@ -1,136 +1,65 @@
 {
   "titulo": "As Nossas Secções — Exploradores",
   "cor_seccao": "verde",
-  "motivo": "topografia",
-  "legenda": "Entre os 10 e os 14 anos, a aventura ganha outra dimensão.\nNos Exploradores há patrulhas, nós, fogueiras, acampamentos e amizades para a vida.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#exploradores #asnossassecoes",
+  "personagem": "exploradores",
+  "legenda": "Mapas, nós e muita curiosidade. 🧭\nOs Exploradores têm entre 10 e 14 anos e vivem a aventura em patrulha.\n\nQueres experimentar um sábado? Manda-nos mensagem!\n\n#exploradores #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
-      "foto": "exploradores/capa.jpg",
       "topo": "As Nossas Secções",
-      "idade": "10–14",
       "titulo": "EXPLORADORES",
-      "gancho": "Nós, tendas e fogueiras: aqui aprende-se a fazer."
+      "idade": "10 a 14 anos",
+      "tagline": "Mapas, nós e muita curiosidade."
     },
     {
-      "tipo": "ficha",
-      "foto": "exploradores/ficha.jpg",
-      "titulo": [
-        "QUEM SÃO",
-        "OS EXPLORADORES"
-      ],
-      "cartao": "SECÇÃO DOS EXPLORADORES",
-      "campos": [
+      "tipo": "cromo",
+      "numero": "2",
+      "titulo": "EXPLORADORES",
+      "idade": "10 a 14 anos",
+      "stats": [
         [
-          "IDADE",
-          "10 a 14 anos"
+          "Nós",
+          "90%",
+          90
         ],
         [
-          "GRUPO",
-          "Patrulha"
+          "Sentido de orientação",
+          "70%",
+          70
         ],
         [
-          "MÍSTICA",
-          "Aventura"
+          "Fome depois do jogo",
+          "150%",
+          100
         ],
         [
-          "LEMA",
-          "Sempre Alerta"
-        ],
-        [
-          "QUEM LIDERA",
-          "Guia e Subguia"
+          "Cheiro a fumo",
+          "100%",
+          100
         ]
       ],
-      "mrz": "P<EXPLORADORES<<994<CAXINAS<<<<<<<<<\n10<14<ANOS<PATRULHA<<<<<<<<<<<<<<<<<"
+      "grupo": "Patrulha",
+      "lema": "Sempre Alerta"
     },
     {
-      "tipo": "passos",
-      "titulo": [
-        "UM SÁBADO",
-        "NOS EXPLORADORES"
-      ],
-      "passos": [
-        [
-          "Chegada em patrulha",
-          "Cada patrulha junta-se e vê o que há para fazer."
-        ],
-        [
-          "Jogo ou prova",
-          "Pistas, mapas e uma boa dose de competição saudável."
-        ],
-        [
-          "Técnica",
-          "Nós, orientação, primeiros socorros ou cozinha de campo."
-        ],
-        [
-          "Balanço",
-          "O que correu bem, o que não correu e o plano para a próxima."
-        ]
-      ]
-    },
-    {
-      "tipo": "levam",
-      "titulo": [
-        "O QUE ELES",
-        "LEVAM DAQUI"
-      ],
-      "fotos": [
-        "exploradores/levam1.jpg",
-        "exploradores/levam2.jpg"
-      ],
-      "itens": [
-        "Orientar-se em qualquer lado",
-        "Desenrascar-se sozinho",
-        "Trabalhar em equipa a sério",
-        "Amigos para a vida"
-      ]
-    },
-    {
-      "tipo": "faq",
-      "titulo": [
-        "PERGUNTAS",
-        "DOS PAIS"
-      ],
-      "perguntas": [
-        [
-          "Nunca foi escuteiro. Já é tarde?",
-          "Fala connosco. Explicamos como é entrar numa patrulha a meio do caminho."
-        ],
-        [
-          "Vai dormir fora?",
-          "Há acampamentos ao longo do ano. Combinamos tudo com os pais, com tempo."
-        ],
-        [
-          "Posso experimentar primeiro?",
-          "Podes. Aparece num sábado e vê com os teus próprios olhos."
-        ]
+      "tipo": "sabado",
+      "intro": "Num sábado normal:",
+      "linhas": [
+        "Atam nós.",
+        "Montam tendas.",
+        "Desmontam tendas."
       ]
     },
     {
       "tipo": "cta",
       "titulo": [
-        "QUERES",
-        "EXPERIMENTAR?"
+        "VEM",
+        "EXPERIMENTAR"
       ],
-      "bilhete_de": "EXPLORADORES",
-      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
-      "campos": [
-        [
-          "ONDE",
-          "Sede, nas Caxinas"
-        ],
-        [
-          "QUANDO",
-          "Num sábado"
-        ],
-        [
-          "COMO",
-          "Mensagem a @994caxinas"
-        ]
-      ],
-      "canhoto": "994",
-      "chamada": "Manda-nos mensagem e combinamos o dia."
+      "balao": "Vamos explorar?",
+      "quando": "Num sábado",
+      "onde": "Na sede, nas Caxinas",
+      "botao": "Manda-nos mensagem"
     }
   ]
 }

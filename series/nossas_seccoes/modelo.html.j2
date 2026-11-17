@@ -1,130 +1,91 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8">
-<style>:root { --paper: var(--creme); {% for k, v in cores.items() %}--{{ k|replace('_','-') }}: {{ v }};{% endfor %} }
+<style>:root { {% for k, v in cores.items() %}--{{ k|replace('_','-') }}: {{ v }};{% endfor %} }
 {{ css }}</style></head>
 <body>
-<svg width="0" height="0" style="position:absolute"><defs>
-  <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
-    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="5"/>
-  </filter>
-</defs></svg>
-
-{% macro polaroid(nome, estilo, legenda='', fita=True) %}
-<div class="polaroid" style="{{ estilo }}">
-  {% if fita %}<i class="fita"></i>{% endif %}
-  {% if ft(nome) %}<div class="img" style="background-image:url('{{ ft(nome) }}'); background-position:{{ posicao|default('50% 50%') }}"></div>
-  {% else %}<div class="img vazia"><span>FOTO</span></div>{% endif %}
-  {% if legenda %}<p>{{ legenda }}</p>{% endif %}
-</div>
+{% macro blob(cls, estilo) %}<svg class="blob {{ cls }}" style="{{ estilo }}" viewBox="-100 -100 200 200"><path d="M44.7,-61.5C57.4,-52.4,67,-39.4,72.6,-24.7C78.2,-10,79.8,6.4,74.3,19.8C68.8,33.2,56.2,43.6,43.3,52.5C30.4,61.4,17.2,68.8,1.7,66.3C-13.8,63.8,-27.7,51.4,-40.2,40.7C-52.7,30,-63.8,21,-68.9,8.6C-74,-3.8,-73.1,-19.6,-65.3,-31.3C-57.5,-43,-42.8,-50.6,-29,-59C-15.2,-67.4,-2.3,-76.6,10.8,-75.8C23.9,-75,32,-70.6,44.7,-61.5Z" fill="currentColor"/></svg>{% endmacro %}
+{% macro doodles(v) %}
+<svg class="doodles" viewBox="0 0 1080 1350" width="1080" height="1350">
+  {% set P = [[(120,260,'e',34),(930,200,'f',26),(980,640,'e',20),(70,820,'p',14),(900,1120,'f',30),(150,1180,'p',18)],
+              [(940,130,'e',30),(90,560,'f',24),(1000,900,'p',16),(70,1150,'e',22),(960,1180,'f',20),(520,60,'p',12)],
+              [(100,150,'f',30),(960,330,'e',26),(60,700,'p',16),(1010,1000,'f',24),(500,1250,'p',12),(930,780,'e',18)]][v % 3] %}
+  {% for (x,y,k,r) in P %}
+    {% if k == 'e' %}<path d="M{{x}} {{y-r}} L{{x+r*0.3}} {{y-r*0.3}} L{{x+r}} {{y}} L{{x+r*0.3}} {{y+r*0.3}} L{{x}} {{y+r}} L{{x-r*0.3}} {{y+r*0.3}} L{{x-r}} {{y}} L{{x-r*0.3}} {{y-r*0.3}}Z" fill="var(--acento)" opacity=".55" stroke="var(--acento)" stroke-width="6" stroke-linejoin="round"/>
+    {% elif k == 'f' %}<circle cx="{{x}}" cy="{{y}}" r="{{r}}" fill="none" stroke="var(--acento)" stroke-width="7" opacity=".5"/>
+    {% else %}<circle cx="{{x}}" cy="{{y}}" r="{{r}}" fill="var(--profundo)" opacity=".18"/>{% endif %}
+  {% endfor %}
+</svg>
 {% endmacro %}
 
-<div class="slide t-{{ s.tipo }}">
-  <div class="motivo">{{ motivo|safe }}</div>
-
-  {# ------------------------------------------------ cabeçalho / paginação (todas menos a capa) #}
-  {% if s.tipo != 'capa' %}
-  <div class="topo"><span>{{ cabecalho|join(' ') }}</span><span class="pag">{{ '%02d'|format(pag) }}/{{ '%02d'|format(total) }}</span></div>
-  {% endif %}
+<div class="slide t-{{ s.tipo }} {{ 'todos' if s.todos else '' }}">
+  {{ blob('b1', 'left:-180px; top:380px; width:1000px; height:1000px; transform:rotate(20deg)') }}
+  {{ blob('b2', 'right:-260px; top:-120px; width:760px; height:760px; transform:rotate(-30deg); opacity:.55') }}
+  {{ doodles(pag) }}
 
   {# ------------------------------------------------ CAPA #}
   {% if s.tipo == 'capa' %}
-    <div class="etiqueta-capa">{{ s.topo }}</div>
-    <div class="idade" data-fit="900">{{ s.idade }}</div>
-    <div class="anos">ANOS</div>
-    <div class="rotulo" data-fit="900"><span>{{ s.titulo }}</span></div>
-    <div class="gancho">{{ s.gancho|mk|safe }}
-      <svg class="onda" viewBox="0 0 300 22" width="300" height="22"><path d="M3 12 C 28 0, 48 24, 74 12 S 124 0, 150 12 S 200 24, 226 12 S 272 2, 297 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" filter="url(#rough)"/></svg>
-    </div>
-    {{ polaroid(s.foto, 'left:560px; top:900px; width:420px; height:430px; transform:rotate(4deg)', s.legenda_foto|default('')) }}
-    {% if sec_num %}<div class="carimbo" style="left:760px; top:120px"><b>SECÇÃO</b><em>{{ sec_num }}/{{ sec_total }}</em></div>{% endif %}
+    <div class="pilula-topo">{{ s.topo }}</div>
+    <div class="nome" data-fit="900">{{ s.titulo }}</div>
+    <div class="idade">{{ s.idade }}</div>
+    <div class="heroi">{{ pers[parte.personagem]|safe }}</div>
+    <div class="tagline">{{ s.tagline }}</div>
 
-  {# ------------------------------------------------ FICHA (passaporte) #}
-  {% elif s.tipo == 'ficha' %}
-    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-    <div class="cartao">
-      <div class="faixa-cartao">PASSAPORTE · {{ s.cartao }}</div>
-      <div class="corpo-cartao">
-        <div class="retrato">
-          {% if ft(s.foto) %}<div class="img" style="background-image:url('{{ ft(s.foto) }}')"></div>{% else %}<div class="img vazia"><span>FOTO</span></div>{% endif %}
-          <i class="canto c1"></i><i class="canto c2"></i><i class="canto c3"></i><i class="canto c4"></i>
-        </div>
-        <dl>{% for c in s.campos %}<div><dt>{{ c[0] }}</dt><dd>{{ c[1] }}</dd></div>{% endfor %}</dl>
+  {# ------------------------------------------------ CROMO #}
+  {% elif s.tipo == 'cromo' %}
+    <div class="cromo">
+      <div class="linha-topo"><span class="tag">CROMO Nº {{ s.numero }}</span><span class="anos">{{ s.idade }}</span></div>
+      <div class="nome-cromo" data-fit="700">{{ s.titulo }}</div>
+      <div class="janela">{{ blob('jb', 'left:50%; top:50%; width:560px; height:560px; margin:-280px 0 0 -280px; opacity:.9') }}<div class="heroi-c">{{ pers[parte.personagem]|safe }}</div></div>
+      <div class="stats">
+        {% for st in s.stats %}
+        <div class="stat"><div class="rotulo"><span>{{ st[0] }}</span><b>{{ st[1] }}</b></div><div class="barra"><i style="width:{{ st[2] }}%"></i></div></div>
+        {% endfor %}
       </div>
-      <div class="mrz">{{ s.mrz|e }}</div>
-      {% if sec_num %}<div class="carimbo no-cartao"><b>SECÇÃO</b><em>{{ sec_num }}/{{ sec_total }}</em></div>{% endif %}
+      <div class="rodape-cromo">{{ s.grupo }} · «{{ s.lema }}»</div>
     </div>
 
-  {# ------------------------------------------------ PASSOS (um sábado) #}
-  {% elif s.tipo == 'passos' %}
-    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-    <div class="passos">
-      {% for p in s.passos %}
-      <div class="passo" style="transform:rotate({{ [-1.2, 0.9, -0.7, 1.1][loop.index0 % 4] }}deg)">
-        <i class="fita"></i>
-        <div class="num">{{ loop.index }}</div>
-        <div><h3>{{ p[0] }}</h3><p>{{ p[1]|mk|safe }}</p></div>
-      </div>
+  {# ------------------------------------------------ SÁBADO #}
+  {% elif s.tipo == 'sabado' %}
+    <div class="intro">{{ s.intro }}</div>
+    <div class="palavras">
+      {% for l in s.linhas %}<div class="p p{{ loop.index }}" data-fit="860"><span>{{ l }}</span></div>{% endfor %}
+    </div>
+    <div class="heroi mini">{{ pers[parte.personagem]|safe }}</div>
+
+  {# ------------------------------------------------ LINHA (as 4 em fila) #}
+  {% elif s.tipo == 'linha' %}
+    <div class="titulo-linha">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</div>
+    <div class="fila">
+      {% for p in pontos %}
+      <div class="membro"><div class="fig" style="height:{{ [235, 280, 325, 370][loop.index0] }}px">{{ pers[p.nome|lower]|safe }}</div>
+        <div class="etq" style="background:{{ p.cor }}; color:{{ '#1b1b1b' if p.id == 'amarelo' else '#fff' }}">{{ p.nome }}</div><div class="ida">{{ s.idades[loop.index0] }}</div></div>
       {% endfor %}
     </div>
+    <div class="chao"></div>
+    <div class="tagline baixo">{{ s.tagline }}</div>
 
-  {# ------------------------------------------------ LEVAM (o que levam daqui) #}
-  {% elif s.tipo == 'levam' %}
-    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-    {{ polaroid(s.fotos[0], 'left:50px; top:430px; width:400px; height:470px; transform:rotate(-5deg)', '') }}
-    {{ polaroid(s.fotos[1], 'left:210px; top:760px; width:330px; height:400px; transform:rotate(4deg)', '') }}
-    <ul class="ticks">
-      {% for t in s.itens %}
-      <li><svg viewBox="0 0 60 60" width="62" height="62"><path d="M8 32 L24 48 L53 10" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"/></svg><span>{{ t|mk|safe }}</span></li>
-      {% endfor %}
-    </ul>
-
-  {# ------------------------------------------------ FAQ dos pais #}
-  {% elif s.tipo == 'faq' %}
-    <h1 class="titulo-grande" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-    <div class="faq">
-      {% for q in s.perguntas %}
-      <div class="par">
-        <div class="q" style="transform:rotate({{ [-1.2, 0.8, -0.6][loop.index0 % 3] }}deg)">{{ q[0] }}</div>
-        <div class="a">{{ q[1]|mk|safe }}</div>
-      </div>
-      {% endfor %}
-    </div>
-
-  {# ------------------------------------------------ CTA (bilhete) #}
+  {# ------------------------------------------------ CTA #}
   {% elif s.tipo == 'cta' %}
-    <h1 class="titulo-grande cta-t" data-fit="920">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-    <div class="bilhete">
-      <div class="principal">
-        <small>BILHETE · {{ s.bilhete_de }}</small>
-        <strong>{{ s.bilhete }}</strong>
-        <dl>{% for c in s.campos %}<div><dt>{{ c[0] }}</dt><dd>{{ c[1] }}</dd></div>{% endfor %}</dl>
-      </div>
-      <div class="canhoto"><span>{{ s.canhoto }}</span></div>
-    </div>
-    <div class="chamada">{{ s.chamada }}
-      <svg class="onda" viewBox="0 0 300 22" width="420" height="30"><path d="M3 12 C 28 0, 48 24, 74 12 S 124 0, 150 12 S 200 24, 226 12 S 272 2, 297 12" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" filter="url(#rough)"/></svg>
-    </div>
+    <div class="titulo-cta" data-fit="900">{% for l in s.titulo %}<span>{{ l }}</span>{% endfor %}</div>
+    {% if s.todos %}<div class="mini-fila">{% for p in pontos %}<div class="fig" style="height:{{ [215, 255, 295, 335][loop.index0] }}px">{{ pers[p.nome|lower]|safe }}</div>{% endfor %}</div>
+    {% else %}<div class="heroi cta-h">{{ pers[parte.personagem]|safe }}</div>{% endif %}
+    <div class="balao">{{ s.balao }}</div>
+    <div class="info-cta"><small>{{ s.quando }}</small><strong>{{ s.onde }}</strong>
+      <div class="botao">{{ s.botao }}</div></div>
   {% endif %}
 
-  {# ------------------------------------------------ rodapé #}
-  {% if s.tipo != 'cta' and rodape %}
-  <div class="arrasta">{{ rodape }}
-    <svg width="210" height="30" viewBox="0 0 210 30"><path d="M2 15 H196 M178 3 L198 15 L178 27" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough)"/></svg>
-  </div>
-  {% endif %}
+  {% if rodape and s.tipo != 'cta' %}<div class="arrasta">{{ rodape }}<svg width="64" height="24" viewBox="0 0 64 24"><path d="M3 12 H58 M47 3 L59 12 L47 21" fill="none" stroke="var(--acento)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>{% endif %}
   {% if logo %}<img class="logo" src="{{ logo }}" style="height:{{ logo_h }}px">{% endif %}
   <div class="grao"></div>
 </div>
-
 <script>
   document.fonts.ready.then(() => {
-    // encolhe (nunca amplia) o que ultrapassar a largura máxima
     document.querySelectorAll('[data-fit]').forEach(el => {
-      const max = parseFloat(el.dataset.fit), inner = el.firstElementChild && el.firstElementChild.tagName === 'SPAN' ? el.firstElementChild : el;
+      const max = parseFloat(el.dataset.fit);
       el.style.width = 'max-content';
       const w = el.getBoundingClientRect().width;
       if (w > max) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * max / w) + 'px';
+      el.style.width = '';
     });
     document.body.dataset.pronto = '1';
   });

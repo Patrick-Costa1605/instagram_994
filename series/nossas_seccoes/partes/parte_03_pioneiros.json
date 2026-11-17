@@ -1,136 +1,65 @@
 {
   "titulo": "As Nossas Secções — Pioneiros",
   "cor_seccao": "azul",
-  "motivo": "blueprint",
-  "legenda": "Entre os 14 e os 18 anos, é altura de pôr as ideias em prática.\nOs Pioneiros planeiam, constroem e servem a comunidade, em equipa.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#pioneiros #asnossassecoes",
+  "personagem": "pioneiros",
+  "legenda": "Têm ideias. E ferramentas. 🛠️\nOs Pioneiros têm entre 14 e 18 anos e põem os seus projetos em prática, em equipa.\n\nQueres experimentar um sábado? Manda-nos mensagem!\n\n#pioneiros #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
-      "foto": "pioneiros/capa.jpg",
       "topo": "As Nossas Secções",
-      "idade": "14–18",
       "titulo": "PIONEIROS",
-      "gancho": "Tens ideias? Aqui saem do papel e vão construir-se."
+      "idade": "14 a 18 anos",
+      "tagline": "Têm ideias. E ferramentas."
     },
     {
-      "tipo": "ficha",
-      "foto": "pioneiros/ficha.jpg",
-      "titulo": [
-        "QUEM SÃO",
-        "OS PIONEIROS"
-      ],
-      "cartao": "SECÇÃO DOS PIONEIROS",
-      "campos": [
+      "tipo": "cromo",
+      "numero": "3",
+      "titulo": "PIONEIROS",
+      "idade": "14 a 18 anos",
+      "stats": [
         [
-          "IDADE",
-          "14 a 18 anos"
+          "Ideias",
+          "100%",
+          100
         ],
         [
-          "GRUPO",
-          "Equipa"
+          "Cordas e paus",
+          "95%",
+          95
         ],
         [
-          "MÍSTICA",
-          "Empreendimento"
+          "Vontade de acordar cedo",
+          "12%",
+          12
         ],
         [
-          "LEMA",
-          "Sempre Alerta para Servir"
-        ],
-        [
-          "O QUE FAZEM",
-          "Os seus projetos"
+          "Orgulho no que constroem",
+          "100%",
+          100
         ]
       ],
-      "mrz": "P<PIONEIROS<<994<CAXINAS<<<<<<<<<<<<\n14<18<ANOS<EQUIPA<<<<<<<<<<<<<<<<<<<"
+      "grupo": "Equipa",
+      "lema": "Sempre Alerta para Servir"
     },
     {
-      "tipo": "passos",
-      "titulo": [
-        "UM SÁBADO",
-        "NOS PIONEIROS"
-      ],
-      "passos": [
-        [
-          "Reunião de equipa",
-          "Ponto da situação do projeto em curso."
-        ],
-        [
-          "Mãos à obra",
-          "Construir, planear, ensaiar. Cada um com a sua tarefa."
-        ],
-        [
-          "Serviço",
-          "Sair da sede e fazer algo útil pela comunidade."
-        ],
-        [
-          "Avaliação",
-          "O que aprendemos e o que vamos fazer melhor."
-        ]
-      ]
-    },
-    {
-      "tipo": "levam",
-      "titulo": [
-        "O QUE ELES",
-        "LEVAM DAQUI"
-      ],
-      "fotos": [
-        "pioneiros/levam1.jpg",
-        "pioneiros/levam2.jpg"
-      ],
-      "itens": [
-        "Planear e cumprir",
-        "Liderar uma equipa",
-        "Servir a comunidade",
-        "Confiança em si"
-      ]
-    },
-    {
-      "tipo": "faq",
-      "titulo": [
-        "PERGUNTAS",
-        "DOS PAIS"
-      ],
-      "perguntas": [
-        [
-          "O meu filho acha que isto é para miúdos.",
-          "Os Pioneiros criam os seus próprios projetos. Pergunta-lhe o que ele construiria."
-        ],
-        [
-          "E os estudos?",
-          "Combinamos o calendário com as famílias. Fala connosco."
-        ],
-        [
-          "Posso experimentar primeiro?",
-          "Podes. Aparece num sábado e vê com os teus próprios olhos."
-        ]
+      "tipo": "sabado",
+      "intro": "Num sábado normal:",
+      "linhas": [
+        "Planeiam.",
+        "Constroem.",
+        "Mudam de ideias."
       ]
     },
     {
       "tipo": "cta",
       "titulo": [
-        "QUERES",
-        "EXPERIMENTAR?"
+        "VEM",
+        "EXPERIMENTAR"
       ],
-      "bilhete_de": "PIONEIROS",
-      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
-      "campos": [
-        [
-          "ONDE",
-          "Sede, nas Caxinas"
-        ],
-        [
-          "QUANDO",
-          "Num sábado"
-        ],
-        [
-          "COMO",
-          "Mensagem a @994caxinas"
-        ]
-      ],
-      "canhoto": "994",
-      "chamada": "Manda-nos mensagem e combinamos o dia."
+      "balao": "Vamos construir?",
+      "quando": "Num sábado",
+      "onde": "Na sede, nas Caxinas",
+      "botao": "Manda-nos mensagem"
     }
   ]
 }

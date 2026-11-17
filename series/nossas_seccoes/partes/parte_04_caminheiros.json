@@ -1,136 +1,65 @@
 {
   "titulo": "As Nossas Secções — Caminheiros",
   "cor_seccao": "vermelho",
-  "motivo": "montanha",
-  "legenda": "Entre os 18 e os 22 anos, o caminho passa a ser servir.\nOs Caminheiros assumem compromissos, fazem voluntariado e deixam marca na comunidade.\n\nQueres experimentar? Aparece num sábado na nossa sede, nas Caxinas, ou envia-nos mensagem.\n\n#caminheiros #asnossassecoes",
+  "personagem": "caminheiros",
+  "legenda": "Mochila às costas e coração grande. 🎒\nOs Caminheiros têm entre 18 e 22 anos e fazem do serviço o seu caminho.\n\nQueres experimentar um sábado? Manda-nos mensagem!\n\n#caminheiros #asnossassecoes",
   "slides": [
     {
       "tipo": "capa",
-      "foto": "caminheiros/capa.jpg",
       "topo": "As Nossas Secções",
-      "idade": "18–22",
       "titulo": "CAMINHEIROS",
-      "gancho": "Dos 18 aos 22, o caminho é teu. E é a servir."
+      "idade": "18 a 22 anos",
+      "tagline": "Mochila às costas, coração grande."
     },
     {
-      "tipo": "ficha",
-      "foto": "caminheiros/ficha.jpg",
-      "titulo": [
-        "QUEM SÃO",
-        "OS CAMINHEIROS"
-      ],
-      "cartao": "SECÇÃO DOS CAMINHEIROS",
-      "campos": [
+      "tipo": "cromo",
+      "numero": "4",
+      "titulo": "CAMINHEIROS",
+      "idade": "18 a 22 anos",
+      "stats": [
         [
-          "IDADE",
-          "18 a 22 anos"
+          "Quilómetros",
+          "100%",
+          100
         ],
         [
-          "GRUPO",
-          "Tribo"
+          "Mochila (peso)",
+          "110%",
+          100
         ],
         [
-          "MÍSTICA",
-          "Serviço"
+          "Sono",
+          "30%",
+          30
         ],
         [
-          "LEMA",
-          "Servir"
-        ],
-        [
-          "ESTILO",
-          "Compromisso e caminhada"
+          "Vontade de ajudar",
+          "100%",
+          100
         ]
       ],
-      "mrz": "P<CAMINHEIROS<<994<CAXINAS<<<<<<<<<<\n18<22<ANOS<TRIBO<<<<<<<<<<<<<<<<<<<<"
+      "grupo": "Tribo",
+      "lema": "Servir"
     },
     {
-      "tipo": "passos",
-      "titulo": [
-        "UM SÁBADO",
-        "NOS CAMINHEIROS"
-      ],
-      "passos": [
-        [
-          "Encontro da Tribo",
-          "Ponto da situação dos compromissos e dos projetos."
-        ],
-        [
-          "Caminhada ou projeto",
-          "Pé na estrada ou mãos no terreno: serviço a sério."
-        ],
-        [
-          "Reflexão",
-          "Partilha do que se viveu e do que ficou por fazer."
-        ],
-        [
-          "Próximo passo",
-          "Quem faz o quê até ao próximo encontro."
-        ]
-      ]
-    },
-    {
-      "tipo": "levam",
-      "titulo": [
-        "O QUE ELES",
-        "LEVAM DAQUI"
-      ],
-      "fotos": [
-        "caminheiros/levam1.jpg",
-        "caminheiros/levam2.jpg"
-      ],
-      "itens": [
-        "Compromisso a sério",
-        "Experiência de voluntariado",
-        "Gente com quem contar",
-        "Um caminho com sentido"
-      ]
-    },
-    {
-      "tipo": "faq",
-      "titulo": [
-        "PERGUNTAS",
-        "DOS PAIS"
-      ],
-      "perguntas": [
-        [
-          "Já passou da idade de ser escuteiro?",
-          "Os Caminheiros são a secção dos 18 aos 22. Existem para isso."
-        ],
-        [
-          "Dá para conciliar com a faculdade ou o trabalho?",
-          "Combinamos o calendário com eles. Fala connosco."
-        ],
-        [
-          "Posso experimentar primeiro?",
-          "Podes. Aparece num sábado e vê com os teus próprios olhos."
-        ]
+      "tipo": "sabado",
+      "intro": "Num sábado normal:",
+      "linhas": [
+        "Caminham.",
+        "Ajudam.",
+        "Chegam com fome."
       ]
     },
     {
       "tipo": "cta",
       "titulo": [
-        "QUERES",
-        "EXPERIMENTAR?"
+        "VEM",
+        "EXPERIMENTAR"
       ],
-      "bilhete_de": "CAMINHEIROS",
-      "bilhete": "1 SÁBADO PARA EXPERIMENTAR",
-      "campos": [
-        [
-          "ONDE",
-          "Sede, nas Caxinas"
-        ],
-        [
-          "QUANDO",
-          "Num sábado"
-        ],
-        [
-          "COMO",
-          "Mensagem a @994caxinas"
-        ]
-      ],
-      "canhoto": "994",
-      "chamada": "Manda-nos mensagem e combinamos o dia."
+      "balao": "Vens connosco?",
+      "quando": "Num sábado",
+      "onde": "Na sede, nas Caxinas",
+      "botao": "Manda-nos mensagem"
     }
   ]
 }

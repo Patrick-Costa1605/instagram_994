@@ -34,19 +34,16 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`) — o «Passaporte»
-Design próprio (não é o do Dicionário): cada parte é o **passaporte de uma secção**, a cores cheias, com fotos em polaroid,
-cartões de papel, post-its e um bilhete final. Cada secção tem a sua cor e o seu motivo de fundo (folhas, curvas de nível,
-papel de projeto, montanhas; gerados por `python src/motivos.py`).
-```json
-{ "cor_seccao": "amarelo", "motivo": "folhas", "slides": [ ... ] }   // cor: amarelo | verde | azul | vermelho
-{ "cor_banda": "#8A2BE2" }                                           // alternativa: cor livre
-```
-- A cor de fundo e a do texto (escuro/creme, por contraste) ajustam-se sozinhas; `[palavra](seccao)` usa o destaque da secção.
-- Tipos de slide: `capa` (`idade`, `titulo`, `gancho`, `foto`), `ficha` (`cartao`, `campos`, `mrz`, `foto`), `passos` (`passos`),
-  `levam` (`itens`, `fotos`), `faq` (`perguntas`), `cta` (`bilhete`, `campos`, `chamada`).
-- Fotos em `series/nossas_seccoes/fotos/<secção>/` (`capa.jpg`, `ficha.jpg`, `levam1.jpg`, `levam2.jpg`). Se faltar uma, aparece um espaço reservado.
-- Os textos de exemplo (sábado típico, perguntas dos pais, etc.) devem ser revistos e ajustados ao que o agrupamento realmente faz.
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), «Os Cromos»
+Design suave e com pouco texto: a mesma criança a crescer ao longo das 4 secções (lobito, explorador, pioneiro, caminheiro),
+com fundo creme, manchas pastel e a cor de cada secção. Não usa fotografias.
+- **4 slides por parte:** `capa`, `cromo` (estatísticas de brincadeira), `sabado` (3 palavras) e `cta` (convite).
+- **Parte 0** (`parte_00_visao_geral.json`): as 4 personagens em fila (`linha`) + convite com todas (`cta` com `"todos": true`).
+- Cor da parte no JSON: `"cor_seccao": "amarelo"` (amarelo | verde | azul | vermelho) ou `"cor_banda": "#RRGGBB"`;
+  o pastel, o tom escuro e a cor do texto sobre fundos coloridos calculam-se sozinhos.
+- `"personagem": "lobitos"` escolhe o desenho. As personagens são geradas por `python src/personagens.py`
+  (cores do lenço, pele, chapéus… no topo desse ficheiro).
+- Para mudar o texto, edita os JSON em `series/nossas_seccoes/partes/` (títulos, `stats`, `linhas`, `balao`, `quando`/`onde`).
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).
