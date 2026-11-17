@@ -34,15 +34,15 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), «O Trilho»
-Um carrossel **panorâmico**: o fundo e o caminho são contínuos e atravessam todos os slides, por isso ao deslizar é como andar
-por um trilho. As pegadas começam pequeninas e vão crescendo com as idades (do n.º 32 ao 44). O fundo passa suavemente de
-amarelo (Lobitos) a verde, azul e vermelho (Caminheiros). Sem bonecos, com fotografias em arco.
-- Uma só parte (`partes/parte_01_trilho.json`) gera os 6 slides: capa, 4 secções e convite final.
-- No `serie.json`, `"panorama": true` faz o gerador desenhar uma página larga e cortá-la em slides de 1080×1350.
-- Por slide de secção: `id` (amarelo | verde | azul | vermelho), `numeral`, `idade`, `nome`, `linha` (uma frase), `lema`, `foto`, `calcado`.
-- Fotos em `series/nossas_seccoes/fotos/<secção>/capa.jpg` (e `lobitos/ficha.jpg` para o slide final). Fora do git (há crianças).
-- O código do trilho (estrada e pegadas) está em `src/panorama.py`.
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), 4 publicações com informação do site
+Uma publicação (carrossel de 5 slides) por secção: `partes/lobitos.json`, `exploradores.json`, `pioneiros.json`, `caminheiros.json`.
+Os textos vêm do site do agrupamento (994caxinas.com): idades, lemas, imaginário, patronos, bandos/patrulhas/equipas/tribos e contactos.
+O fundo é um trilho contínuo (estrada + pegadas) que atravessa os 5 slides, com o imaginário de cada secção ao fundo
+(Selva, Terra Prometida, Navegação, Homem Novo). Cor e motivo vêm de `"cor_seccao"` e `"motivo"` (selva | terra | navegacao | homem_novo).
+- Slides: `seccao` (abertura), `imaginario`, `grupos` (bandos, patrulhas…), `lema` e `convite` (contactos).
+- `parte_01_trilho.json` é o post geral com as 4 secções num só trilho (pegadas a crescer com as idades).
+- No `serie.json`, `"panorama": true` desenha uma página larga e corta-a em slides de 1080×1350 (`src/panorama.py`).
+- Fotos em `series/nossas_seccoes/fotos/<secção>/` (`capa.jpg`, `ficha.jpg`, `levam1.jpg`, `levam2.jpg`). Fora do git (há crianças).
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

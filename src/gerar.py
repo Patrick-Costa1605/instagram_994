@@ -11,6 +11,7 @@ Saída: output/<serie>/<parte>/01.png … + folha.png (pré-visualização) + le
 """
 import argparse
 import html
+import math
 import json
 import re
 import sys
@@ -115,14 +116,22 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
             "profundo": _mixhex(banda, (28, 18, 10), 0.62), "nome": sec["nome"],
             "texto": cores["texto_escuro"] if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]}
     neutro = "#6B5444"
-    tons = [neutro]
-    for sl in slides[1:]:
-        tons.append(secs[sl["id"]]["profundo"] if sl.get("id") else neutro)
-    tr = trilho(n, Wd, tons)
+    pdef = secs.get(parte.get("cor_seccao")) or {"acento": "#C98A4B", "suave": "#F3E2C4", "profundo": neutro, "texto": cores["texto_escuro"]}
+    tons = [neutro] + [(secs[sl["id"]]["profundo"] if sl.get("id") else pdef["profundo"]) for sl in slides[1:]]
+    if parte.get("cor_seccao"):
+        tons[0] = pdef["profundo"]
+    pg = parte.get("pegadas", {})
+    tr = trilho(n, Wd, tons, smin=pg.get("min", 0.50), smax=pg.get("max", 1.45), y_ini=690 if parte.get("cor_seccao") else 1010, **({"y_base": 690, "amp": 34} if parte.get("cor_seccao") else {}))
     stops = []
     for i, sl in enumerate(slides):
-        c = secs[sl["id"]]["suave"] if sl.get("id") else ("#FFF3D8" if i == 0 else "#FFEFE2")
+        if parte.get("cor_seccao"):
+            k = 0.55 + 0.45 * math.sin(math.pi * (i + 0.5) / n)
+            c = _mixhex(_rgb(pdef["suave"]), creme, 1 - k)
+        else:
+            c = secs[sl["id"]]["suave"] if sl.get("id") else ("#FFF3D8" if i == 0 else "#FFEFE2")
         stops.append(f"{c} {100 * (i + 0.5) / n:.1f}%")
+    from panorama import motivo as _motivo
+    motivo_svg = _motivo(parte["motivo"], n * Wd, Hd) if parte.get("motivo") else ""
     avisadas = set()
 
     def foto_fn(nome):
@@ -141,7 +150,7 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
         fonts=(ROOT / "assets" / "fonts").as_uri(), w=Wd * n, h=Hd, handelson=hf.as_uri() if hf else None)
     logo_cfg = serie.get("logo")
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, tr=tr, stops=", ".join(stops),
+        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, pdef=pdef, motivo=motivo_svg, tr=tr, stops=", ".join(stops),
         rodape=serie.get("rodape"), cabecalho=serie.get("cabecalho", []),
         logo=(serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None,
         logo_h=(logo_cfg or {}).get("altura", 120))

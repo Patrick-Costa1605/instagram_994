@@ -1,0 +1,106 @@
+{
+  "titulo": "Pioneiros — publicação",
+  "cor_seccao": "azul",
+  "motivo": "navegacao",
+  "pegadas": {
+    "min": 0.55,
+    "max": 1.0
+  },
+  "legenda": "Navegar com Ousadia ⛵\nOs Pioneiros têm entre 14 e 18 anos: vivem em equipa, empreendem projetos e constroem caminho em serviço. As nossas Equipas? Cristóvão Colombo, Vasco da Gama e Nuno Álvares Pereira. Sempre Alerta!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#pioneiros #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "seccao",
+      "pilula": "III SECÇÃO",
+      "numeral": "14–18",
+      "idade": "14 a 18 anos",
+      "nome": [
+        "PIONEIROS"
+      ],
+      "linha": "Navegar com Ousadia",
+      "lema": "Lema · Sempre Alerta",
+      "foto": "pioneiros/capa.jpg"
+    },
+    {
+      "tipo": "imaginario",
+      "kicker": "O nosso mundo",
+      "titulo": [
+        "A NAVEGAÇÃO"
+      ],
+      "texto": "A Comunidade vive em equipa, empreende projetos e constrói caminho em serviço.",
+      "patrono": "Patrono · São João Batista",
+      "foto": "pioneiros/ficha.jpg"
+    },
+    {
+      "tipo": "grupos",
+      "titulo": [
+        "AS EQUIPAS"
+      ],
+      "sub": "Cada equipa tem identidade, lema e grito para crescer em comunidade.",
+      "colunas": 1,
+      "itens": [
+        {
+          "nome": "Cristóvão Colombo",
+          "cores": [
+            "#3B6CF0",
+            "#FFFFFF"
+          ],
+          "lema": "«Kió Kome Samiake»"
+        },
+        {
+          "nome": "Vasco da Gama",
+          "cores": [
+            "#3B6CF0",
+            "#FFFFFF"
+          ],
+          "lema": "«Chegamos à Índia!»"
+        },
+        {
+          "nome": "Nuno Álvares Pereira",
+          "cores": [
+            "#3B6CF0",
+            "#FFFFFF"
+          ],
+          "lema": "«Makana Makana Mussa»"
+        }
+      ],
+      "kicker": "Como nos organizamos"
+    },
+    {
+      "tipo": "lema",
+      "kicker": "O nosso lema",
+      "titulo": [
+        "SEMPRE",
+        "ALERTA"
+      ],
+      "texto": "O grito acaba sempre assim: «Vasco da Gama Sempre. Alerta!»",
+      "foto": "pioneiros/levam1.jpg"
+    },
+    {
+      "tipo": "convite",
+      "titulo": [
+        "O PRIMEIRO",
+        "PASSO É VIRES."
+      ],
+      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ],
+        [
+          "Sede",
+          "Av. D. Manuel I, Vila do Conde"
+        ]
+      ],
+      "foto": "pioneiros/levam2.jpg"
+    }
+  ]
+}

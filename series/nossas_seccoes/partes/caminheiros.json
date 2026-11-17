@@ -1,0 +1,98 @@
+{
+  "titulo": "Caminheiros — publicação",
+  "cor_seccao": "vermelho",
+  "motivo": "homem_novo",
+  "pegadas": {
+    "min": 0.55,
+    "max": 1.0
+  },
+  "legenda": "Nos Rumos do Homem Novo 🏔️\nOs Caminheiros têm entre 18 e 22 anos: no Clã, cada Tribo cresce em autonomia, compromisso e serviço à comunidade. Decidir, caminhar e servir em conjunto. Servir!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#caminheiros #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "seccao",
+      "pilula": "IV SECÇÃO",
+      "numeral": "18–22",
+      "idade": "18 a 22 anos",
+      "nome": [
+        "CAMINHEIROS"
+      ],
+      "linha": "Nos Rumos do Homem Novo",
+      "lema": "Lema · Servir",
+      "foto": "caminheiros/capa.jpg"
+    },
+    {
+      "tipo": "imaginario",
+      "kicker": "O nosso mundo",
+      "titulo": [
+        "O HOMEM",
+        "NOVO"
+      ],
+      "texto": "No Clã, cada Tribo cresce em autonomia, compromisso e serviço à comunidade.",
+      "patrono": "Patrono · São Francisco de Assis",
+      "foto": "caminheiros/ficha.jpg"
+    },
+    {
+      "tipo": "grupos",
+      "titulo": [
+        "AS TRIBOS"
+      ],
+      "sub": "Pequenas comunidades para decidir, caminhar e servir em conjunto.",
+      "colunas": 1,
+      "itens": [
+        {
+          "nome": "Aristides de Sousa Mendes",
+          "cores": [
+            "#E2503F",
+            "#FFFFFF"
+          ],
+          "lema": "«Deus Aceitará o Meu Sacrifício»"
+        },
+        {
+          "nome": "Irena Sendler",
+          "cores": [
+            "#E2503F",
+            "#FFFFFF"
+          ],
+          "lema": "«Justa Entre as Nações»"
+        }
+      ],
+      "kicker": "Como nos organizamos"
+    },
+    {
+      "tipo": "lema",
+      "kicker": "O nosso lema",
+      "titulo": [
+        "SERVIR"
+      ],
+      "texto": "O grito acaba sempre assim: «Tribo Irena Sendler Sempre. Servir!»",
+      "foto": "caminheiros/levam1.jpg"
+    },
+    {
+      "tipo": "convite",
+      "titulo": [
+        "O PRIMEIRO",
+        "PASSO É VIRES."
+      ],
+      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ],
+        [
+          "Sede",
+          "Av. D. Manuel I, Vila do Conde"
+        ]
+      ],
+      "foto": "caminheiros/levam2.jpg"
+    }
+  ]
+}

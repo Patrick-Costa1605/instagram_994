@@ -1,0 +1,112 @@
+{
+  "titulo": "Lobitos — publicação",
+  "cor_seccao": "amarelo",
+  "motivo": "selva",
+  "pegadas": {
+    "min": 0.55,
+    "max": 1.0
+  },
+  "legenda": "Aventura na Alcateia 🐺\nOs Lobitos têm entre 6 e 10 anos e vivem no mundo da Selva: cada dia é uma nova caçada no Livro da Selva, em Bandos de amigos (Branco, Cinzento, Preto, Castanho e Ruivo). O lema? Da Melhor Vontade!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#lobitos #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "seccao",
+      "pilula": "I SECÇÃO",
+      "numeral": "6–10",
+      "idade": "6 a 10 anos",
+      "nome": [
+        "LOBITOS"
+      ],
+      "linha": "Aventura na Alcateia",
+      "lema": "Lema · Da Melhor Vontade",
+      "foto": "lobitos/capa.jpg"
+    },
+    {
+      "tipo": "imaginario",
+      "kicker": "O nosso mundo",
+      "titulo": [
+        "A SELVA"
+      ],
+      "texto": "Onde a imaginação não tem limites e cada dia é uma nova caçada no Livro da Selva.",
+      "patrono": "Patrono · São Tarcísio",
+      "foto": "lobitos/ficha.jpg"
+    },
+    {
+      "tipo": "grupos",
+      "titulo": [
+        "OS BANDOS"
+      ],
+      "sub": "As nossas pequenas equipas de amigos.",
+      "colunas": 2,
+      "itens": [
+        {
+          "nome": "Bando Branco",
+          "cores": [
+            "#FFFFFF"
+          ]
+        },
+        {
+          "nome": "Bando Cinzento",
+          "cores": [
+            "#9A9A9A"
+          ]
+        },
+        {
+          "nome": "Bando Preto",
+          "cores": [
+            "#2B2B2B"
+          ]
+        },
+        {
+          "nome": "Bando Castanho",
+          "cores": [
+            "#8B5A2B"
+          ]
+        },
+        {
+          "nome": "Bando Ruivo",
+          "cores": [
+            "#D9692A"
+          ]
+        }
+      ],
+      "kicker": "Como nos organizamos"
+    },
+    {
+      "tipo": "lema",
+      "kicker": "O nosso lema",
+      "titulo": [
+        "DA MELHOR",
+        "VONTADE"
+      ],
+      "texto": "O grito acaba sempre assim: «Bando Branco Sempre. Da Melhor Vontade!»",
+      "foto": "lobitos/levam1.jpg"
+    },
+    {
+      "tipo": "convite",
+      "titulo": [
+        "O PRIMEIRO",
+        "PASSO É VIRES."
+      ],
+      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ],
+        [
+          "Sede",
+          "Av. D. Manuel I, Vila do Conde"
+        ]
+      ],
+      "foto": "lobitos/levam2.jpg"
+    }
+  ]
+}

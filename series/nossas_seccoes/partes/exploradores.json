@@ -1,0 +1,123 @@
+{
+  "titulo": "Exploradores — publicação",
+  "cor_seccao": "verde",
+  "motivo": "terra",
+  "pegadas": {
+    "min": 0.55,
+    "max": 1.0
+  },
+  "legenda": "A Jornada da Terra Prometida 🧭\nOs Exploradores têm entre 10 e 14 anos: quatro anos de aventura, fé e fraternidade em busca do melhor de cada um. Vivem em Patrulhas (Golfinho, Águia, Pinguim, Castor e Pantera), cada uma com um totem, um lema e um grito. Sempre Alerta!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#exploradores #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "seccao",
+      "pilula": "II SECÇÃO",
+      "numeral": "10–14",
+      "idade": "10 a 14 anos",
+      "nome": [
+        "EXPLORADORES"
+      ],
+      "linha": "A Jornada da Terra Prometida",
+      "lema": "Lema · Sempre Alerta",
+      "foto": "exploradores/capa.jpg"
+    },
+    {
+      "tipo": "imaginario",
+      "kicker": "O nosso mundo",
+      "titulo": [
+        "A TERRA",
+        "PROMETIDA"
+      ],
+      "texto": "Quatro anos de aventura, fé e fraternidade em busca do melhor de cada um.",
+      "patrono": "Patrono · São Domingos Sávio",
+      "foto": "exploradores/ficha.jpg"
+    },
+    {
+      "tipo": "grupos",
+      "titulo": [
+        "AS PATRULHAS"
+      ],
+      "sub": "Pequenos grupos unidos por um totem, um lema e um grito.",
+      "colunas": 2,
+      "itens": [
+        {
+          "nome": "Golfinho",
+          "cores": [
+            "#3B6CF0",
+            "#FFFFFF"
+          ],
+          "lema": "Inteligentes e Engraçados"
+        },
+        {
+          "nome": "Águia",
+          "cores": [
+            "#2FA060",
+            "#2B2B2B"
+          ],
+          "lema": "Fortes e Persistentes"
+        },
+        {
+          "nome": "Pinguim",
+          "cores": [
+            "#FFFFFF",
+            "#F28C28"
+          ],
+          "lema": "Nadadores e Brincalhões"
+        },
+        {
+          "nome": "Castor",
+          "cores": [
+            "#3B6CF0",
+            "#F2B705"
+          ],
+          "lema": "Trabalhadores e Perfeitos"
+        },
+        {
+          "nome": "Pantera",
+          "cores": [
+            "#F2B705",
+            "#2B2B2B"
+          ],
+          "lema": "Astutos e Audazes"
+        }
+      ],
+      "kicker": "Como nos organizamos"
+    },
+    {
+      "tipo": "lema",
+      "kicker": "O nosso lema",
+      "titulo": [
+        "SEMPRE",
+        "ALERTA"
+      ],
+      "texto": "O grito acaba sempre assim: «Patrulha Golfinho Ih Sempre. Alerta!»",
+      "foto": "exploradores/levam1.jpg"
+    },
+    {
+      "tipo": "convite",
+      "titulo": [
+        "O PRIMEIRO",
+        "PASSO É VIRES."
+      ],
+      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ],
+        [
+          "Sede",
+          "Av. D. Manuel I, Vila do Conde"
+        ]
+      ],
+      "foto": "exploradores/levam2.jpg"
+    }
+  ]
+}

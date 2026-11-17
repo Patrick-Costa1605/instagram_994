@@ -5,6 +5,7 @@
 <body>
 <div class="pan" style="width:{{ n * W }}px; height:{{ H }}px">
   <div class="fundo" style="background: linear-gradient(90deg, {{ stops }})"></div>
+  <div class="motivo" style="color:{{ pdef.profundo }}">{{ motivo|safe }}</div>
   <div class="grao"></div>
 
   {# ---------- o trilho: estrada + pegadas (atravessam todos os slides) #}
@@ -20,8 +21,8 @@
   </svg>
 
   {% for sl in slides %}
-  {% set i = loop.index0 %}{% set x0 = i * W %}{% set s = secs[sl.id] if sl.id else None %}
-  <section class="sl {{ sl.tipo }}" style="left:{{ x0 }}px; {% if s %}--acento:{{ s.acento }}; --suave:{{ s.suave }}; --profundo:{{ s.profundo }}; --texto-pill:{{ s.texto }};{% else %}--acento:#C98A4B; --suave:#F3E2C4; --profundo:#6B5444; --texto-pill:#3A2B22;{% endif %}">
+  {% set i = loop.index0 %}{% set x0 = i * W %}{% set s = secs[sl.id] if sl.id else pdef %}
+  <section class="sl t-{{ sl.tipo }}" style="left:{{ x0 }}px; --acento:{{ s.acento }}; --suave:{{ s.suave }}; --profundo:{{ s.profundo }}; --texto-pill:{{ s.texto }};">
 
     {% if sl.tipo == 'capa' %}
       <div class="pilula">{{ sl.topo }}</div>
@@ -29,7 +30,30 @@
       <p class="sub-capa">{{ sl.sub }}</p>
       <div class="comeca">{{ sl.comeca }}</div>
 
+    {% elif sl.tipo in ('imaginario', 'lema', 'convite') %}
+      <div class="arco {{ 'e' if i % 2 else 'd' }}" style="{% if ft(sl.foto) %}background-image:url('{{ ft(sl.foto) }}'); background-position:{{ sl.foto_pos|default('50% 50%') }}{% endif %}">{% if not ft(sl.foto) %}<span>FOTO</span>{% endif %}</div>
+      {% if sl.kicker %}<div class="pilula">{{ sl.kicker }}</div>{% endif %}
+      <div class="bloco-b b-{{ sl.tipo }}">
+        <h2 class="nome">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
+        <p class="linha">{{ sl.texto }}</p>
+        {% if sl.patrono %}<div class="patrono">{{ sl.patrono }}</div>{% endif %}
+        {% if sl.contactos %}<ul class="contactos">{% for c in sl.contactos %}<li><b>{{ c[0] }}</b>{{ c[1] }}</li>{% endfor %}</ul>{% endif %}
+      </div>
+
+    {% elif sl.tipo == 'grupos' %}
+      {% if sl.kicker %}<div class="pilula">{{ sl.kicker }}</div>{% endif %}
+      <h2 class="nome grupos-t">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
+      <p class="sub-grupos">{{ sl.sub }}</p>
+      <div class="chips c{{ sl.colunas|default(2) }}">
+        {% for it in sl.itens %}
+        <div class="chip"><span class="dots">{% for c in it.cores %}<i style="background:{{ c }}"></i>{% endfor %}</span>
+          <span class="ct"><b>{{ it.nome }}</b>{% if it.lema %}<em>{{ it.lema }}</em>{% endif %}</span></div>
+        {% endfor %}
+      </div>
+      {% if sl.grito %}<p class="grito">{{ sl.grito }}</p>{% endif %}
+
     {% else %}
+      {% if sl.pilula %}<div class="pilula">{{ sl.pilula }}</div>{% endif %}
       {% if sl.numeral %}<div class="numeral {{ 'e' if i % 2 else 'd' }}">{{ sl.numeral }}</div>{% endif %}
       <div class="arco {{ 'e' if i % 2 else 'd' }}" style="{% if ft(sl.foto) %}background-image:url('{{ ft(sl.foto) }}'); background-position:{{ sl.foto_pos|default('50% 50%') }}{% endif %}">{% if not ft(sl.foto) %}<span>FOTO</span>{% endif %}</div>
       {% if sl.idade %}<div class="idade {{ 'e' if i % 2 else 'd' }}">{{ sl.idade }}</div>{% endif %}
@@ -43,8 +67,8 @@
     {% if sl.tipo != 'capa' %}
     {% set cy = tr.y(x0 + W / 2) %}
     <div class="marco" style="left:{{ W / 2 - 46 }}px; top:{{ cy - 46 }}px">
-      {% if sl.tipo == 'fim' %}<svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 36 V5 M10 6 H33 L27 14 L33 22 H10" fill="none" stroke="var(--profundo)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      {% else %}{{ i }}{% endif %}
+      {% if sl.tipo in ('fim', 'convite') %}<svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 36 V5 M10 6 H33 L27 14 L33 22 H10" fill="none" stroke="var(--profundo)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      {% else %}{{ i + 1 }}{% endif %}
     </div>
     {% if sl.calcado %}<div class="calcado" style="left:{{ W / 2 + 62 }}px; top:{{ cy + 36 }}px">{{ sl.calcado }}</div>{% endif %}
     {% endif %}
