@@ -1,96 +1,98 @@
 {
   "titulo": "Caminheiros — publicação",
+  "feed_id": "caminheiros",
   "cor_seccao": "vermelho",
-  "motivo": "homem_novo",
-  "legenda": "Nos Rumos do Homem Novo 🏔️\nOs Caminheiros têm entre 18 e 22 anos: no Clã, cada Tribo cresce em autonomia, compromisso e serviço à comunidade. Decidir, caminhar e servir em conjunto. Servir!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#caminheiros #asnossassecoes",
+  "legenda": "Nos Rumos do Homem Novo. Os Caminheiros têm entre 18 e 22 anos, vivem em Tribos dentro do Clã e fazem do serviço o seu caminho. Servir!\n\nO primeiro passo? Preenche o formulário em 994caxinas.com (Quero ser escuteiro), liga 924 428 343 ou escreve para geral.994@escutismo.pt. Antes da primeira visita, confirmamos contigo o local e o horário.\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #caminheiros",
   "slides": [
     {
-      "tipo": "seccao",
-      "pilula": "IV SECÇÃO",
-      "numeral": "18–22",
-      "idade": "18 a 22 anos",
-      "nome": [
-        "CAMINHEIROS"
+      "tipo": "capa",
+      "kicker_esq": "As Nossas Secções",
+      "kicker_dir": "IV Secção",
+      "emblema": "logo_IV_Seccao",
+      "emblema_tipo": "selo",
+      "titulo": [
+        "Caminheiros"
       ],
-      "linha": "Nos Rumos do Homem Novo",
-      "lema": "Lema · Servir",
-      "foto": "caminheiros/capa.jpg",
-      "calcado": "n.º 44"
+      "sub": "18 a 22 anos · Clã",
+      "tres": [
+        "A Caminhada",
+        "O Albergue",
+        "A Tribo"
+      ]
     },
     {
-      "tipo": "imaginario",
-      "kicker": "O nosso mundo",
+      "tipo": "glossario",
+      "kicker": "Caminheiros · Clã",
       "titulo": [
-        "O HOMEM",
-        "NOVO"
+        "Falar caminheiro,",
+        "em 5 palavras"
       ],
-      "texto": "No Clã, cada Tribo cresce em autonomia, compromisso e serviço à comunidade.",
-      "patrono": "Patrono · São Francisco de Assis",
-      "foto": "caminheiros/ficha.jpg"
+      "itens": [
+        [
+          "Clã",
+          "A secção toda: os caminheiros dos 18 aos 22 anos."
+        ],
+        [
+          "Tribo",
+          "Grupo de 4 a 8 caminheiros. Cada tribo escolhe um patrono."
+        ],
+        [
+          "Albergue",
+          "O sítio onde o Clã se reúne."
+        ],
+        [
+          "Caminhada",
+          "A grande atividade, preparada como um projeto."
+        ],
+        [
+          "Conselho de Clã",
+          "Todos os caminheiros e a equipa de animação decidem o mais importante."
+        ]
+      ]
     },
     {
       "tipo": "grupos",
+      "kicker": "Caminheiros · as Tribos",
       "titulo": [
-        "AS TRIBOS"
+        "Duas tribos,",
+        "duas vidas"
       ],
-      "sub": "Pequenas comunidades para decidir, caminhar e servir em conjunto.",
-      "colunas": 1,
+      "sub": "Cada tribo escolhe um patrono: um santo, um benemérito ou um herói.",
+      "tam": "g",
       "itens": [
         {
+          "img": "aristides",
           "nome": "Aristides de Sousa Mendes",
-          "cores": [
-            "#E2503F",
-            "#FFFFFF"
-          ],
-          "lema": "«Deus Aceitará o Meu Sacrifício»"
+          "nota": "Cônsul de Portugal em Bordéus. Em 1940 salvou milhares de refugiados.",
+          "forma": "retrato"
         },
         {
+          "img": "irena",
           "nome": "Irena Sendler",
-          "cores": [
-            "#E2503F",
-            "#FFFFFF"
-          ],
-          "lema": "«Justa Entre as Nações»"
+          "nota": "Enfermeira polaca. Salvou cerca de 2500 crianças do gueto de Varsóvia.",
+          "forma": "retrato"
         }
       ],
-      "kicker": "Como nos organizamos"
+      "grito": "Tribo Irena Sendler Sempre. Servir!",
+      "grito_rotulo": "O grito da Tribo Irena Sendler"
     },
     {
-      "tipo": "lema",
-      "kicker": "O nosso lema",
+      "tipo": "entrar",
+      "kicker": "Caminheiros · como entrar",
       "titulo": [
-        "SERVIR"
+        "Do formulário",
+        "ao Albergue"
       ],
-      "texto": "O grito acaba sempre assim: «Tribo Irena Sendler Sempre. Servir!»",
-      "foto": "caminheiros/levam1.jpg"
-    },
-    {
-      "tipo": "convite",
-      "titulo": [
-        "O PRIMEIRO",
-        "PASSO É VIRES."
+      "foto": "foto_sede",
+      "passos": [
+        "Preenche o formulário em 994caxinas.com.",
+        "A equipa contacta-te e combina a primeira visita.",
+        "Há um período de adaptação antes de precisares de uniforme."
       ],
-      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
       "contactos": [
-        [
-          "Telefone",
-          "924 428 343"
-        ],
-        [
-          "Email",
-          "geral.994@escutismo.pt"
-        ],
-        [
-          "Site",
-          "994caxinas.com"
-        ],
-        [
-          "Sede",
-          "Av. D. Manuel I, Vila do Conde"
-        ]
-      ],
-      "foto": "caminheiros/levam2.jpg"
+        "924 428 343  ·  geral.994@escutismo.pt",
+        "994caxinas.com  ·  Av. D. Manuel I, Vila do Conde"
+      ]
     }
-  ],
-  "feed_id": "caminheiros"
+  ]
 }

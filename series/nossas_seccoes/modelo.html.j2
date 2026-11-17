@@ -1,87 +1,77 @@
 <!doctype html>
 <html lang="pt"><head><meta charset="utf-8">
-<style>:root { {% for k, v in cores.items() %}--{{ k|replace('_','-') }}: {{ v }};{% endfor %} }
+<style>:root { --acento: {{ tons.acento }}; --kick: {{ tons.kick }}; --profundo: {{ tons.profundo }}; }
 {{ css }}</style></head>
 <body>
 <div class="pan" style="width:{{ n * W }}px; height:{{ H }}px">
-  <div class="fundo" style="{% if fundo_img %}background: url('{{ fundo_img }}') 0 0 / 100% 100%{% else %}background: linear-gradient(90deg, {{ stops }}){% endif %}"></div>
-  <div class="motivo" style="color:{{ pdef.profundo }}">{{ motivo|safe }}</div>
-  <div class="grao"></div>
+  <div class="papel"></div>
+  <div class="fibra"></div>
+  {{ cordel|safe }}
 
-  {# ---------- o trilho: estrada + pegadas (atravessam todos os slides) #}
-  <svg class="via" width="{{ n * W }}" height="{{ H }}" viewBox="0 0 {{ n * W }} {{ H }}">
-    <path d="{{ tr.d }}" class="estrada"/>
-    <path d="{{ tr.d }}" class="estrada-meio"/>
-    {% for p in tr.pegadas %}
-    <g transform="translate({{ p.x }},{{ p.y }}) rotate({{ p.rot }}) scale({{ p.s * p.lado }},{{ p.s }})" fill="{{ p.cor }}" opacity=".62">
-      <path d="M0,-34 C13,-34 20,-18 17,-2 C15,12 8,16 0,16 C-9,16 -16,9 -17,-3 C-19,-20 -12,-34 0,-34Z"/>
-      <ellipse cx="0.5" cy="31" rx="11" ry="10.5"/>
-    </g>
-    {% endfor %}
-  </svg>
+  {% for sl in slides %}{% set i = loop.index0 %}
+  <section class="sl t-{{ sl.tipo }}" style="left:{{ i * W }}px">
 
-  {% for sl in slides %}
-  {% set i = loop.index0 %}{% set x0 = i * W %}{% set s = secs[sl.id] if sl.id else pdef %}
-  <section class="sl t-{{ sl.tipo }}" style="left:{{ x0 }}px; --acento:{{ s.acento }}; --suave:{{ s.suave }}; --profundo:{{ s.profundo }}; --texto-pill:{{ s.texto }};">
+    {# ---- barra de cima: rótulo + posição #}
+    <div class="topo"><span>{{ sl.kicker_esq|default(sl.kicker|default(cabecalho)) }}</span><span>{{ sl.kicker_dir|default('%d/%d'|format(i + 1, n)) }}</span></div>
 
     {% if sl.tipo == 'capa' %}
-      <div class="pilula">{{ sl.topo }}</div>
-      <h1 class="titulo-capa">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
-      <p class="sub-capa">{{ sl.sub }}</p>
-      <div class="comeca">{{ sl.comeca }}</div>
+      {% if sl.emblema_tipo == 'selo' %}<div class="selo"><img src="{{ ag(sl.emblema) }}"></div>
+      {% elif sl.emblema_tipo == 'cracha' %}<img class="cracha" src="{{ ag(sl.emblema) }}">
+      {% elif sl.emblema_tipo == 'foto' %}<div class="hero-foto" style="background-image:url('{{ ag(sl.emblema) }}')"></div>{% endif %}
+      <h1 class="nome-capa n{{ sl.titulo|length }}">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <div class="sub-capa">{{ sl.sub }}</div>
+      {% if sl.tres %}<div class="tres">{% for t in sl.tres %}<span>{{ t }}</span>{% endfor %}</div>{% endif %}
 
-    {% elif sl.tipo in ('imaginario', 'lema', 'convite') %}
-      <div class="arco {{ 'e' if i % 2 else 'd' }}" style="{% if ft(sl.foto) %}background-image:url('{{ ft(sl.foto) }}'); background-position:{{ sl.foto_pos|default('50% 50%') }}{% endif %}">{% if not ft(sl.foto) %}<span>FOTO</span>{% endif %}</div>
-      {% if sl.kicker %}<div class="pilula">{{ sl.kicker }}</div>{% endif %}
-      <div class="bloco-b b-{{ sl.tipo }}">
-        <h2 class="nome">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
-        <p class="linha">{{ sl.texto }}</p>
-        {% if sl.patrono %}<div class="patrono">{{ sl.patrono }}</div>{% endif %}
-        {% if sl.contactos %}<ul class="contactos">{% for c in sl.contactos %}<li><b>{{ c[0] }}</b>{{ c[1] }}</li>{% endfor %}</ul>{% endif %}
-      </div>
+    {% elif sl.tipo == 'glossario' %}
+      <h1 class="h1">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <div class="gloss">{% for it in sl.itens %}<div class="g-linha"><b>{{ it[0] }}</b><p>{{ it[1] }}</p></div>{% endfor %}</div>
 
     {% elif sl.tipo == 'grupos' %}
-      {% if sl.kicker %}<div class="pilula">{{ sl.kicker }}</div>{% endif %}
-      <h2 class="nome grupos-t l{{ sl.titulo|length }}">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
-      <p class="sub-grupos l{{ sl.titulo|length }}">{{ sl.sub }}</p>
-      <div class="chips c{{ sl.colunas|default(2) }}">
+      <h1 class="h1">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <p class="sub">{{ sl.sub }}</p>
+      <div class="meds t-{{ sl.tam }}">
         {% for it in sl.itens %}
-        <div class="chip"><span class="dots">{% for c in it.cores %}<i style="background:{{ c }}"></i>{% endfor %}</span>
-          <span class="ct"><b>{{ it.nome }}</b>{% if it.lema %}<em>{{ it.lema }}</em>{% endif %}</span></div>
+        <figure class="med"><div class="disco {{ it.forma|default('') }}"><img src="{{ ag(it.img) }}"></div>
+          <figcaption><b>{{ it.nome }}</b>{% if it.nota %}<em>{{ it.nota }}</em>{% endif %}</figcaption></figure>
         {% endfor %}
       </div>
-      {% if sl.grito %}<p class="grito">{{ sl.grito }}</p>{% endif %}
+      {% if sl.grito %}<div class="grito"><small>{{ sl.grito_rotulo }}</small><q>{{ sl.grito }}</q></div>{% endif %}
 
-    {% else %}
-      {% if sl.pilula %}<div class="pilula">{{ sl.pilula }}</div>{% endif %}
-      {% if sl.numeral %}<div class="numeral {{ 'e' if i % 2 else 'd' }}">{{ sl.numeral }}</div>{% endif %}
-      <div class="arco {{ 'e' if i % 2 else 'd' }}" style="{% if ft(sl.foto) %}background-image:url('{{ ft(sl.foto) }}'); background-position:{{ sl.foto_pos|default('50% 50%') }}{% endif %}">{% if not ft(sl.foto) %}<span>FOTO</span>{% endif %}</div>
-      {% if sl.idade %}<div class="idade {{ 'e' if i % 2 else 'd' }}">{{ sl.idade }}</div>{% endif %}
-      <h2 class="nome">{% for l in sl.nome %}<span>{{ l }}</span>{% endfor %}</h2>
-      <p class="linha">{{ sl.linha }}</p>
-      {% if sl.lema %}<p class="lema">{{ sl.lema }}</p>{% endif %}
-      {% if sl.botao %}<div class="botao">{{ sl.botao }}</div>{% endif %}
+    {% elif sl.tipo == 'entrar' %}
+      {% if sl.foto %}<div class="foto-faixa" style="background-image:url('{{ ag(sl.foto) }}')"></div>{% endif %}
+      <h1 class="h1 {{ 'com-foto' if sl.foto else '' }}">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <ol class="passos {{ 'com-foto' if sl.foto else '' }}">{% for p in sl.passos %}<li><i>{{ loop.index }}</i><span>{{ p }}</span></li>{% endfor %}</ol>
+      <div class="contacto">{% for l in sl.contactos %}<div>{{ l }}</div>{% endfor %}</div>
+
+    {% elif sl.tipo == 'tabela' %}
+      <h1 class="h1">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <div class="tabela">{% for r in sl.linhas %}
+        <div class="t-linha" style="--c:{{ r.cor }}"><span class="idade">{{ r.idade }}</span>
+          <div class="disco pequeno"><img src="{{ ag(r.img) }}"></div>
+          <div class="t-txt"><b>{{ r.nome }}</b><em>{{ r.unidade }} · {{ r.atividade }}</em></div></div>{% endfor %}
+      </div>
+
+    {% elif sl.tipo == 'pertenca' %}
+      <h1 class="h1">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <div class="pert">{% for r in sl.itens %}
+        <div class="p-linha"><div class="p-logo"><img src="{{ ag(r.img) }}"></div><div><b>{{ r.nome }}</b><p>{{ r.texto }}</p></div></div>{% endfor %}
+      </div>
+
+    {% elif sl.tipo == 'qa' %}
+      <h1 class="h1 pequeno">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h1>
+      <div class="qa">{% for q in sl.itens %}<div class="qa-bloco"><h3>{{ q.p }}</h3><p>{{ q.r }}</p></div>{% endfor %}</div>
+      {% if sl.fonte %}<div class="fonte">{{ sl.fonte }}</div>{% endif %}
     {% endif %}
 
-    {# marcador na estrada (centro do slide) #}
-    {% if sl.tipo != 'capa' %}
-    {% set cy = tr.y(x0 + W / 2) %}
-    <div class="marco" style="left:{{ W / 2 - 46 }}px; top:{{ cy - 46 }}px">
-      {% if sl.tipo in ('fim', 'convite') %}<svg viewBox="0 0 40 40" width="40" height="40"><path d="M10 36 V5 M10 6 H33 L27 14 L33 22 H10" fill="none" stroke="var(--profundo)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      {% else %}{{ i + 1 }}{% endif %}
-    </div>
-    {% if sl.calcado %}<div class="calcado" style="left:{{ W / 2 + 62 }}px; top:{{ cy + 36 }}px">{{ sl.calcado }}</div>{% endif %}
-    {% endif %}
-
-    {% if rodape and i < n - 1 %}<div class="desliza">{{ rodape }}<svg width="58" height="22" viewBox="0 0 58 22"><path d="M3 11 H52 M42 3 L53 11 L42 19" fill="none" stroke="var(--acento)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>{% endif %}
     {% if logo %}<img class="logo" src="{{ logo }}" style="height:{{ logo_h }}px">{% endif %}
+    <div class="pe">{% if i < n - 1 %}desliza <svg width="46" height="16" viewBox="0 0 46 16"><path d="M2 8 H42 M35 2 L43 8 L35 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>{% else %}994 · caxinas{% endif %}</div>
   </section>
   {% endfor %}
 </div>
 <script>
   document.fonts.ready.then(() => {
-    document.querySelectorAll('.titulo-capa, .nome').forEach(el => {
-      const max = el.classList.contains('nome') ? 900 : 920;
+    document.querySelectorAll('.nome-capa, .h1').forEach(el => {
+      const max = 920;
       const w = Math.max(...[...el.querySelectorAll('span')].map(s => s.getBoundingClientRect().width));
       if (w > max) el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * max / w) + 'px';
     });

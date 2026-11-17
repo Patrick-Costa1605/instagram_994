@@ -94,75 +94,25 @@ def cores_da_parte(serie: dict, parte: dict):
     return cores, pontos, veu
 
 
-# ---------------------------------------------------------------- séries panorâmicas (um trilho contínuo)
+# ---------------------------------------------------------------- séries panorâmicas (cordel contínuo entre slides)
 def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Path:
-    from panorama import trilho
+    """Desenha todos os slides numa só página larga (para o cordel e o papel serem contínuos) e depois corta-a."""
+    from corda import corda_svg
     fmt = serie["formato"]
     Wd, Hd = fmt["largura"], fmt["altura"]
     slides = parte["slides"]
     n = len(slides)
     env = Environment(autoescape=False)
-    cores = dict(serie["cores"])
-    creme = _rgb(cores["creme"])
-    escuro = _rgb(cores.get("texto_escuro", "#1b1b1b"))
-
-    def _mixhex(a, b, k):
-        return "#%02X%02X%02X" % tuple(round(x + (y - x) * k) for x, y in zip(a, b))
-    secs = {}
-    for sec in serie["seccoes"]:
-        banda = _rgb(cores.get("banda_" + sec["id"], cores[sec["id"]]))
-        secs[sec["id"]] = {
-            "acento": _mixhex(banda, (0, 0, 0), 0.0), "suave": _mixhex(banda, creme, 0.74),
-            "profundo": _mixhex(banda, (28, 18, 10), 0.62), "nome": sec["nome"],
-            "texto": cores["texto_escuro"] if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]}
-    neutro = "#6B5444"
-    pdef = secs.get(parte.get("cor_seccao")) or {"acento": "#C98A4B", "suave": "#F3E2C4", "profundo": neutro, "texto": cores["texto_escuro"]}
-    if parte.get("tons"):                                   # tons explícitos (ex.: publicação de convite)
-        pdef = {**pdef, **parte["tons"]}
-    tons = [neutro] + [(secs[sl["id"]]["profundo"] if sl.get("id") else pdef["profundo"]) for sl in slides[1:]]
-    tons[0] = pdef["profundo"] if not any(sl.get("id") for sl in slides) else neutro
-    pg = dict(parte.get("pegadas", {}))
-    feed = serie.get("feed")
-    fundo_img = None
-    if feed and parte.get("feed_id"):
-        import numpy as np
-        from PIL import Image
-        import feed as feedmod
-        ordem = feed["ordem"]
-        idx = ordem.index(parte["feed_id"])
-        ncols = feed.get("colunas", 3)
-        pg.setdefault("min", feed["pegadas"]["inicio"] + feed["pegadas"]["passo"] * idx)
-        pg.setdefault("max", pg["min"] + feed["pegadas"]["alcance"])
-        cores_tile = []
-        for fid in ordem:                                   # cor de cada capa (por ordem de leitura)
-            c = feed.get("cores_extra", {}).get(fid)
-            for pj in sorted((serie_dir / "partes").glob("*.json")):
-                dj = json.loads(pj.read_text(encoding="utf-8"))
-                if dj.get("feed_id") == fid and dj.get("cor_seccao"):
-                    c = secs[dj["cor_seccao"]]["suave"]
-            cores_tile.append(_rgb(c))
-        capa_bg = feedmod.capa(cores_tile, ncols, idx % ncols, idx // ncols, Wd, Hd)
-        if any(sl.get("id") for sl in slides):             # visão geral: cor muda de secção para secção
-            stops_own = [(Wd * (i + 0.5), _rgb(secs[sl["id"]]["suave"] if sl.get("id") else feed["cores_extra"].get(parte["feed_id"], "#FFEFE2")))
-                         for i, sl in enumerate(slides) if i > 0]
-        else:
-            own = _rgb(pdef["suave"]) if parte.get("cor_seccao") else cores_tile[idx]
-            stops_own = [(Wd, own), (n * Wd, own)]
-        bg = feedmod.publicacao(capa_bg, stops_own, n, Wd)
-        Image.fromarray(np.clip(bg, 0, 255).astype("uint8")).save(tmp / "fundo.png")
-        fundo_img = (tmp / "fundo.png").resolve().as_uri()
-    tr = trilho(n, Wd, tons, smin=pg.get("min", 0.50), smax=pg.get("max", 1.45), y_ini=690, y_base=690, amp=34, hump=26)
-    stops = []
-    for i, sl in enumerate(slides):
-        if parte.get("cor_seccao"):
-            k = 0.55 + 0.45 * math.sin(math.pi * (i + 0.5) / n)
-            c = _mixhex(_rgb(pdef["suave"]), creme, 1 - k)
-        else:
-            c = secs[sl["id"]]["suave"] if sl.get("id") else ("#FFF3D8" if i == 0 else "#FFEFE2")
-        stops.append(f"{c} {100 * (i + 0.5) / n:.1f}%")
-    from panorama import motivo as _motivo
-    motivo_svg = _motivo(parte["motivo"], n * Wd, Hd) if parte.get("motivo") else ""
+    tons = serie["tons"][parte.get("cor_seccao", "neutro")]
+    ag_dir = ROOT / "assets" / "agrupamento"
     avisadas = set()
+
+    def ag(nome):
+        fp = ag_dir / f"{nome}.png"
+        if not fp.exists() and nome not in avisadas:
+            avisadas.add(nome)
+            print(f"  ! recurso «{nome}» não existe em {ag_dir}", file=sys.stderr)
+        return fp.as_uri()
 
     def foto_fn(nome):
         if not nome:
@@ -174,14 +124,13 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
             avisadas.add(nome)
             print(f"  ! foto «{nome}» não existe em {serie_dir / 'fotos'}", file=sys.stderr)
         return ""
-    env.globals["ft"] = foto_fn
-    hf = next(iter(sorted((ROOT / "assets" / "fonts").glob("*andelson*"))), None)
+    env.globals.update(ag=ag, ft=foto_fn)
     css = env.from_string((serie_dir / serie["estilo"]).read_text(encoding="utf-8")).render(
-        fonts=(ROOT / "assets" / "fonts").as_uri(), w=Wd * n, h=Hd, handelson=hf.as_uri() if hf else None)
+        fonts=(ROOT / "assets" / "fonts").as_uri(), w=Wd * n, h=Hd)
     logo_cfg = serie.get("logo")
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, pdef=pdef, motivo=motivo_svg, tr=tr, stops=", ".join(stops), fundo_img=fundo_img,
-        rodape=serie.get("rodape"), cabecalho=serie.get("cabecalho", []),
+        css=css, tons=tons, slides=slides, n=n, W=Wd, H=Hd, parte=parte,
+        cordel=corda_svg(n, Wd, Hd, serie["corda"]["y"]), cabecalho=serie.get("cabecalho", ""),
         logo=(serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None,
         logo_h=(logo_cfg or {}).get("altura", 120))
     out = tmp / "panorama.html"

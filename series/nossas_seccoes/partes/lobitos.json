@@ -1,110 +1,106 @@
 {
   "titulo": "Lobitos — publicação",
+  "feed_id": "lobitos",
   "cor_seccao": "amarelo",
-  "motivo": "selva",
-  "legenda": "Aventura na Alcateia 🐺\nOs Lobitos têm entre 6 e 10 anos e vivem no mundo da Selva: cada dia é uma nova caçada no Livro da Selva, em Bandos de amigos (Branco, Cinzento, Preto, Castanho e Ruivo). O lema? Da Melhor Vontade!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#lobitos #asnossassecoes",
+  "legenda": "Aventura na Alcateia. Os Lobitos têm entre 6 e 10 anos, vivem no Livro da Selva e reúnem-se no Covil. O lema: Da Melhor Vontade!\n\nO primeiro passo? Preenche o formulário em 994caxinas.com (Quero ser escuteiro), liga 924 428 343 ou escreve para geral.994@escutismo.pt. Antes da primeira visita, confirmamos contigo o local e o horário.\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #lobitos",
   "slides": [
     {
-      "tipo": "seccao",
-      "pilula": "I SECÇÃO",
-      "numeral": "6–10",
-      "idade": "6 a 10 anos",
-      "nome": [
-        "LOBITOS"
+      "tipo": "capa",
+      "kicker_esq": "As Nossas Secções",
+      "kicker_dir": "I Secção",
+      "emblema": "logo_I_Seccao",
+      "emblema_tipo": "selo",
+      "titulo": [
+        "Lobitos"
       ],
-      "linha": "Aventura na Alcateia",
-      "lema": "Lema · Da Melhor Vontade",
-      "foto": "lobitos/capa.jpg",
-      "calcado": "n.º 30"
+      "sub": "6 a 10 anos · Alcateia",
+      "tres": [
+        "A Caçada",
+        "O Covil",
+        "O Bando"
+      ]
     },
     {
-      "tipo": "imaginario",
-      "kicker": "O nosso mundo",
+      "tipo": "glossario",
+      "kicker": "Lobitos · Alcateia",
       "titulo": [
-        "A SELVA"
+        "Falar lobito,",
+        "em 5 palavras"
       ],
-      "texto": "Onde a imaginação não tem limites e cada dia é uma nova caçada no Livro da Selva.",
-      "patrono": "Patrono · São Tarcísio",
-      "foto": "lobitos/ficha.jpg"
+      "itens": [
+        [
+          "Alcateia",
+          "A secção toda: os lobitos dos 6 aos 10 anos."
+        ],
+        [
+          "Bando",
+          "Grupo de 4 a 7 lobitos. Há cinco, um por cor."
+        ],
+        [
+          "Covil",
+          "O sítio onde a Alcateia se reúne."
+        ],
+        [
+          "Caçada",
+          "A grande atividade, preparada como um projeto."
+        ],
+        [
+          "Àquelá",
+          "Quem orienta a Alcateia. Os outros animadores usam nomes do Livro da Selva."
+        ]
+      ]
     },
     {
       "tipo": "grupos",
+      "kicker": "Lobitos · os Bandos",
       "titulo": [
-        "OS BANDOS"
+        "Cinco cores",
+        "de lobo"
       ],
-      "sub": "As nossas pequenas equipas de amigos.",
-      "colunas": 2,
+      "sub": "As cores do pelo dos lobos ao longo da vida.",
+      "tam": "p",
       "itens": [
         {
-          "nome": "Bando Branco",
-          "cores": [
-            "#FFFFFF"
-          ]
+          "img": "bando_branco",
+          "nome": "Branco"
         },
         {
-          "nome": "Bando Cinzento",
-          "cores": [
-            "#9A9A9A"
-          ]
+          "img": "bando_cinzento",
+          "nome": "Cinzento"
         },
         {
-          "nome": "Bando Preto",
-          "cores": [
-            "#2B2B2B"
-          ]
+          "img": "bando_preto",
+          "nome": "Preto"
         },
         {
-          "nome": "Bando Castanho",
-          "cores": [
-            "#8B5A2B"
-          ]
+          "img": "bando_castanho",
+          "nome": "Castanho"
         },
         {
-          "nome": "Bando Ruivo",
-          "cores": [
-            "#D9692A"
-          ]
+          "img": "bando_ruivo",
+          "nome": "Ruivo"
         }
       ],
-      "kicker": "Como nos organizamos"
+      "grito": "Bando Branco Sempre. Da Melhor Vontade!",
+      "grito_rotulo": "O grito do Bando Branco"
     },
     {
-      "tipo": "lema",
-      "kicker": "O nosso lema",
+      "tipo": "entrar",
+      "kicker": "Lobitos · como entrar",
       "titulo": [
-        "DA MELHOR",
-        "VONTADE"
+        "Do formulário",
+        "ao Covil"
       ],
-      "texto": "O grito acaba sempre assim: «Bando Branco Sempre. Da Melhor Vontade!»",
-      "foto": "lobitos/levam1.jpg"
-    },
-    {
-      "tipo": "convite",
-      "titulo": [
-        "O PRIMEIRO",
-        "PASSO É VIRES."
+      "foto": "foto_sede",
+      "passos": [
+        "Preenche o formulário em 994caxinas.com.",
+        "A equipa contacta-te e combina a primeira visita.",
+        "Entras como Pata-Tenra. O uniforme só é preciso depois do período de adaptação."
       ],
-      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
       "contactos": [
-        [
-          "Telefone",
-          "924 428 343"
-        ],
-        [
-          "Email",
-          "geral.994@escutismo.pt"
-        ],
-        [
-          "Site",
-          "994caxinas.com"
-        ],
-        [
-          "Sede",
-          "Av. D. Manuel I, Vila do Conde"
-        ]
-      ],
-      "foto": "lobitos/levam2.jpg"
+        "924 428 343  ·  geral.994@escutismo.pt",
+        "994caxinas.com  ·  Av. D. Manuel I, Vila do Conde"
+      ]
     }
-  ],
-  "feed_id": "lobitos"
+  ]
 }

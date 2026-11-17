@@ -34,25 +34,23 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), feed em puzzle
-**6 publicações que, no perfil do Instagram, se juntam numa imagem só** (grelha de 3 colunas × 2 linhas) e que, dentro de cada
-carrossel, continuam slide a slide:
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), o cordel
+**6 publicações seguidas que, no feed, se unem por um cordel com nós** e que, dentro de cada carrossel, o cordel continua slide a slide.
+O nó fica sempre na emenda: em cada borda lateral há meio nó, e o meio nó da capa seguinte encaixa nele.
 
 | | | |
 |---|---|---|
-| Intro «Qual é a tua secção?» | Lobitos | Exploradores |
-| Pioneiros | Caminheiros | Convite «O primeiro passo é vires» |
+| Intro «Quatro secções, um só nó» | Lobitos | Exploradores |
+| Pioneiros | Caminheiros | Convite «O que os pais perguntam» |
 
-- **Ordem de publicação (a mais antiga primeiro):** Convite → Caminheiros → Pioneiros → Exploradores → Lobitos → Intro.
-  O Instagram mostra o mais recente no canto superior esquerdo, por isso a Intro tem de ser a última a sair.
-- O fundo é um campo de cor contínuo entre capas vizinhas (`src/feed.py`); a estrada está à mesma altura nas bordas das capas e as
-  pegadas crescem pela ordem de leitura (`feed` em `serie.json`). Os carrosséis partem da cor da capa e juntam-se à cor própria.
-- As publicações novas que forem sendo postas depois empurram o puzzle para baixo; para ele ficar intacto, não publiques nada
-  entre as 6 (ou publica só no fim).
-- O Instagram mostra as capas em 3:4 (corta ~34 px de cada lado das imagens 1080×1350); não ponho nada importante nessa margem.
-- Textos vindos do site do agrupamento (994caxinas.com): idades, lemas, imaginário, patronos, subgrupos e contactos.
-- Partes: `partes/{parte_01_trilho (intro), lobitos, exploradores, pioneiros, caminheiros, convite}.json`; cada uma tem `"feed_id"`.
-- Fotos em `series/nossas_seccoes/fotos/<secção>/` (`capa.jpg`, `ficha.jpg`, `levam1.jpg`, `levam2.jpg`). Fora do git (há crianças).
+- **Publicar por esta ordem, seguidas, sem nada pelo meio:** Convite → Caminheiros → Pioneiros → Exploradores → Lobitos → Intro
+  (o Instagram mostra o mais recente em cima à esquerda).
+- Papel e cordel são iguais em todas as capas (mesma altura e mesmos nós); cada secção só muda de cor no texto.
+- **Fontes dos factos** (para verificar): site do agrupamento (994caxinas.com) e CNE (escutismo.pt: páginas das secções, Perguntas
+  Frequentes e Escutismo: Movimento Seguro). Emblemas, retratos e fotos da sede vêm do site do agrupamento (`assets/agrupamento/`).
+- Slides: `capa`, `glossario`, `grupos`, `entrar` (por secção); `tabela`, `pertenca` (intro); `qa`, `entrar` (convite).
+- O código do cordel está em `src/corda.py`; o `serie.json` define as cores de cada secção.
+- Estes slides não usam fotografias de crianças.
 
 ## Fontes
 - Palavras: **Chewy** · Descrições: **Roboto Condensed** (ambas livres, em `assets/fonts/`).

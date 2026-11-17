@@ -1,0 +1,93 @@
+{
+  "titulo": "Intro — Quatro secções, um só nó",
+  "feed_id": "intro",
+  "cor_seccao": "neutro",
+  "legenda": "Quatro secções, um só nó. 🪢\nDos 6 aos 22 anos, o Agrupamento 994 – Caxinas tem uma secção para cada idade: Lobitos (6–10), Exploradores (10–14), Pioneiros (14–18) e Caminheiros (18–22). Desliza para ver qual é a tua.\n\nSomos o Agrupamento 994, do Corpo Nacional de Escutas (CNE), em Vila do Conde.\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde",
+  "slides": [
+    {
+      "tipo": "capa",
+      "kicker_esq": "Agrupamento 994 · Caxinas",
+      "kicker_dir": "Vila do Conde",
+      "emblema": "patrono_agr",
+      "emblema_tipo": "cracha",
+      "titulo": [
+        "Quatro secções,",
+        "um só nó."
+      ],
+      "sub": "Dos 6 aos 22 anos",
+      "tres": [
+        "Lobitos",
+        "Exploradores",
+        "Pioneiros",
+        "Caminheiros"
+      ]
+    },
+    {
+      "tipo": "tabela",
+      "kicker": "Qual é a tua?",
+      "titulo": [
+        "Qual é a tua",
+        "secção?"
+      ],
+      "linhas": [
+        {
+          "idade": "6–10",
+          "img": "logo_I_Seccao",
+          "nome": "Lobitos",
+          "unidade": "Alcateia",
+          "atividade": "Caçada",
+          "cor": "#B58900"
+        },
+        {
+          "idade": "10–14",
+          "img": "logo_II_Seccao",
+          "nome": "Exploradores",
+          "unidade": "Expedição",
+          "atividade": "Aventura",
+          "cor": "#5E7A2B"
+        },
+        {
+          "idade": "14–18",
+          "img": "logo_III_Seccao",
+          "nome": "Pioneiros",
+          "unidade": "Comunidade",
+          "atividade": "Empreendimento",
+          "cor": "#2B3470"
+        },
+        {
+          "idade": "18–22",
+          "img": "logo_IV_Seccao",
+          "nome": "Caminheiros",
+          "unidade": "Clã",
+          "atividade": "Caminhada",
+          "cor": "#B01A24"
+        }
+      ]
+    },
+    {
+      "tipo": "pertenca",
+      "kicker": "A quem pertencemos",
+      "titulo": [
+        "De onde",
+        "somos"
+      ],
+      "itens": [
+        {
+          "img": "logo_cne",
+          "nome": "CNE",
+          "texto": "Corpo Nacional de Escutas: o escutismo católico português."
+        },
+        {
+          "img": "logo_nucleo",
+          "nome": "Núcleo Cego do Maio",
+          "texto": "17 agrupamentos locais, incluindo o nosso."
+        },
+        {
+          "img": "logo_wosm",
+          "nome": "WOSM",
+          "texto": "Organização Mundial do Movimento Escutista."
+        }
+      ]
+    }
+  ]
+}

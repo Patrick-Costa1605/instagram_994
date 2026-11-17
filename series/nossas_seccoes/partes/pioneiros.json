@@ -1,104 +1,104 @@
 {
   "titulo": "Pioneiros — publicação",
+  "feed_id": "pioneiros",
   "cor_seccao": "azul",
-  "motivo": "navegacao",
-  "legenda": "Navegar com Ousadia ⛵\nOs Pioneiros têm entre 14 e 18 anos: vivem em equipa, empreendem projetos e constroem caminho em serviço. As nossas Equipas? Cristóvão Colombo, Vasco da Gama e Nuno Álvares Pereira. Sempre Alerta!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#pioneiros #asnossassecoes",
+  "legenda": "Navegar com Ousadia. Os Pioneiros têm entre 14 e 18 anos, vivem em Equipas e constroem Empreendimentos. Sempre Alerta!\n\nO primeiro passo? Preenche o formulário em 994caxinas.com (Quero ser escuteiro), liga 924 428 343 ou escreve para geral.994@escutismo.pt. Antes da primeira visita, confirmamos contigo o local e o horário.\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #pioneiros",
   "slides": [
     {
-      "tipo": "seccao",
-      "pilula": "III SECÇÃO",
-      "numeral": "14–18",
-      "idade": "14 a 18 anos",
-      "nome": [
-        "PIONEIROS"
+      "tipo": "capa",
+      "kicker_esq": "As Nossas Secções",
+      "kicker_dir": "III Secção",
+      "emblema": "logo_III_Seccao",
+      "emblema_tipo": "selo",
+      "titulo": [
+        "Pioneiros"
       ],
-      "linha": "Navegar com Ousadia",
-      "lema": "Lema · Sempre Alerta",
-      "foto": "pioneiros/capa.jpg",
-      "calcado": "n.º 40"
+      "sub": "14 a 18 anos · Comunidade",
+      "tres": [
+        "O Empreendimento",
+        "O Abrigo",
+        "A Equipa"
+      ]
     },
     {
-      "tipo": "imaginario",
-      "kicker": "O nosso mundo",
+      "tipo": "glossario",
+      "kicker": "Pioneiros · Comunidade",
       "titulo": [
-        "A NAVEGAÇÃO"
+        "Falar pioneiro,",
+        "em 5 palavras"
       ],
-      "texto": "A Comunidade vive em equipa, empreende projetos e constrói caminho em serviço.",
-      "patrono": "Patrono · São João Batista",
-      "foto": "pioneiros/ficha.jpg"
+      "itens": [
+        [
+          "Comunidade",
+          "A secção toda: os pioneiros dos 14 aos 18 anos."
+        ],
+        [
+          "Equipa",
+          "Grupo de 4 a 8 pioneiros, com o nome de um santo ou de um herói."
+        ],
+        [
+          "Abrigo",
+          "O sítio onde a equipa se reúne."
+        ],
+        [
+          "Empreendimento",
+          "A grande atividade: um projeto escolhido por todos."
+        ],
+        [
+          "Conselho de Comunidade",
+          "Onde se escolhe o projeto do Empreendimento."
+        ]
+      ]
     },
     {
       "tipo": "grupos",
+      "kicker": "Pioneiros · as Equipas",
       "titulo": [
-        "AS EQUIPAS"
+        "Três equipas,",
+        "três lemas"
       ],
-      "sub": "Cada equipa tem identidade, lema e grito para crescer em comunidade.",
-      "colunas": 1,
+      "sub": "Cada equipa tem identidade, lema e grito.",
+      "tam": "m",
       "itens": [
         {
+          "img": "cristovao_colombo",
           "nome": "Cristóvão Colombo",
-          "cores": [
-            "#3B6CF0",
-            "#FFFFFF"
-          ],
-          "lema": "«Kió Kome Samiake»"
+          "nota": "«Kió Kome Samiake»",
+          "forma": "retrato"
         },
         {
+          "img": "vasco_da_gama",
           "nome": "Vasco da Gama",
-          "cores": [
-            "#3B6CF0",
-            "#FFFFFF"
-          ],
-          "lema": "«Chegamos à Índia!»"
+          "nota": "«Chegamos à Índia!»",
+          "forma": "retrato"
         },
         {
+          "img": "nap",
           "nome": "Nuno Álvares Pereira",
-          "cores": [
-            "#3B6CF0",
-            "#FFFFFF"
-          ],
-          "lema": "«Makana Makana Mussa»"
+          "nota": "«Makana Makana Mussa»",
+          "forma": "retrato"
         }
       ],
-      "kicker": "Como nos organizamos"
+      "grito": "Vasco da Gama Sempre. Alerta!",
+      "grito_rotulo": "O grito da Equipa Vasco da Gama"
     },
     {
-      "tipo": "lema",
-      "kicker": "O nosso lema",
+      "tipo": "entrar",
+      "kicker": "Pioneiros · como entrar",
       "titulo": [
-        "SEMPRE",
-        "ALERTA"
+        "Do formulário",
+        "ao Abrigo"
       ],
-      "texto": "O grito acaba sempre assim: «Vasco da Gama Sempre. Alerta!»",
-      "foto": "pioneiros/levam1.jpg"
-    },
-    {
-      "tipo": "convite",
-      "titulo": [
-        "O PRIMEIRO",
-        "PASSO É VIRES."
+      "foto": "foto_sede",
+      "passos": [
+        "Preenche o formulário em 994caxinas.com.",
+        "A equipa contacta-te e combina a primeira visita.",
+        "Há um período de adaptação antes de precisares de uniforme."
       ],
-      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
       "contactos": [
-        [
-          "Telefone",
-          "924 428 343"
-        ],
-        [
-          "Email",
-          "geral.994@escutismo.pt"
-        ],
-        [
-          "Site",
-          "994caxinas.com"
-        ],
-        [
-          "Sede",
-          "Av. D. Manuel I, Vila do Conde"
-        ]
-      ],
-      "foto": "pioneiros/levam2.jpg"
+        "924 428 343  ·  geral.994@escutismo.pt",
+        "994caxinas.com  ·  Av. D. Manuel I, Vila do Conde"
+      ]
     }
-  ],
-  "feed_id": "pioneiros"
+  ]
 }

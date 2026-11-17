@@ -7,47 +7,42 @@
   "panorama": true,
   "modelo": "modelo.html.j2",
   "estilo": "estilo.css",
-  "cabecalho": [
-    "AS NOSSAS",
-    "SECÇÕES"
-  ],
-  "rodape": "desliza",
-  "seccoes": [
-    {
-      "id": "amarelo",
-      "nome": "Lobitos"
+  "cabecalho": "As Nossas Secções",
+  "corda": {
+    "y": 1082
+  },
+  "tons": {
+    "amarelo": {
+      "acento": "#E0A800",
+      "kick": "#8A6A00",
+      "profundo": "#4E3B00"
     },
-    {
-      "id": "verde",
-      "nome": "Exploradores"
+    "verde": {
+      "acento": "#6E8B2F",
+      "kick": "#4D6B1F",
+      "profundo": "#27401A"
     },
-    {
-      "id": "azul",
-      "nome": "Pioneiros"
+    "azul": {
+      "acento": "#2B3470",
+      "kick": "#2B3470",
+      "profundo": "#19204F"
     },
-    {
-      "id": "vermelho",
-      "nome": "Caminheiros"
+    "vermelho": {
+      "acento": "#D4202B",
+      "kick": "#B01A24",
+      "profundo": "#6E0F17"
+    },
+    "neutro": {
+      "acento": "#B08A4A",
+      "kick": "#6B5A3A",
+      "profundo": "#14241A"
     }
-  ],
-  "cores": {
-    "amarelo": "#F2B705",
-    "verde": "#3FBF5F",
-    "azul": "#3B6CF0",
-    "vermelho": "#EE4B3A",
-    "banda_amarelo": "#F2B705",
-    "banda_verde": "#2FA060",
-    "banda_azul": "#3D68D8",
-    "banda_vermelho": "#E2503F",
-    "creme": "#FFF7E8",
-    "texto_escuro": "#3A2B22"
   },
   "logo": {
     "ficheiro": "../../assets/logo-994.png",
-    "altura": 150,
-    "fundo_claro": false
+    "altura": 118
   },
-  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta",
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde",
   "feed": {
     "colunas": 3,
     "ordem": [
@@ -57,15 +52,6 @@
       "pioneiros",
       "caminheiros",
       "convite"
-    ],
-    "cores_extra": {
-      "intro": "#FFF1DA",
-      "convite": "#FFE7D3"
-    },
-    "pegadas": {
-      "inicio": 0.4,
-      "passo": 0.12,
-      "alcance": 0.6
-    }
+    ]
   }
 }
