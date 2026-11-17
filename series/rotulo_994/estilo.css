@@ -17,7 +17,7 @@ html, body { width: {{ w }}px; height: {{ h }}px; background: #000; }
 
 /* assinatura da série */
 .topo { position: absolute; left: 70px; right: 70px; top: 62px; }
-.topo small { display: block; font-family: "Cond"; font-weight: 900; font-size: 25px; letter-spacing: 9px; text-transform: uppercase; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+.topo small { display: block; font-family: "Cond"; font-weight: 900; font-size: 37px; letter-spacing: 9px; text-transform: uppercase; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.7); }
 .topo h1 { font-family: "Chewy"; font-weight: 400; font-size: 132px; line-height: 1; margin-top: 4px; color: var(--creme); letter-spacing: 1px;
   -webkit-text-stroke: 2px var(--tinta); paint-order: stroke fill; text-shadow: 6px 6px 0 var(--tinta); }
 
@@ -28,7 +28,7 @@ html, body { width: {{ w }}px; height: {{ h }}px; background: #000; }
   display: grid; grid-template-columns: 200px 1fr; border: 4px solid var(--tinta); border-radius: 18px; background: var(--tinta); overflow: hidden;
   box-shadow: 6px 6px 0 var(--tinta); }
 .rotulo .selo { background: var(--floresta); display: grid; place-items: center; border-right: 4px solid var(--tinta); }
-.rotulo .selo svg { width: 132px; height: 132px; }
+.rotulo .selo svg { width: 156px; height: 156px; }
 .rotulo .lado { display: grid; grid-template-rows: auto 1fr; }
 .rotulo .cima { background: var(--creme); color: var(--tinta); font-family: "Cond"; font-weight: 900; font-size: 31px; letter-spacing: 6px; text-transform: uppercase; padding: 10px 24px 9px; border-bottom: 4px solid var(--tinta); }
 .rotulo .baixo { background: var(--cor, var(--amarelo)); color: var(--tinta); font-family: "Londrina"; font-weight: 900; text-transform: uppercase; line-height: .94; padding: 16px 26px 14px; display: flex; align-items: center; font-size: 66px; }
@@ -38,4 +38,12 @@ html, body { width: {{ w }}px; height: {{ h }}px; background: #000; }
 /* rodapé minimalista */
 .pag { position: absolute; left: 70px; bottom: 58px; font-family: "Cond"; font-weight: 900; font-size: 30px; letter-spacing: 5px; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.8); }
 .pag b { color: var(--amarelo); }
-.logo { position: absolute; right: 56px; bottom: 44px; filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 6px 10px rgba(0,0,0,.5)); }
+
+/* logo aumentado em 45% mantendo o alinhamento no canto inferior direito */
+.logo { 
+  position: absolute; 
+  right: 56px; 
+  bottom: 44px; 
+  transform: scale(1.45); 
+  transform-origin: bottom right; 
+}

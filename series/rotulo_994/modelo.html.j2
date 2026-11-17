@@ -11,18 +11,61 @@
   {% set linhas = slide.texto.split('|') %}
   <div class="rotulo" style="--x:{{ slide.x | default(50) }}%; --y:{{ slide.y | default(68) }}%; --rot:{{ slide.rot | default(-2) }}deg; {% if slide.cor %}--cor:{{ slide.cor }};{% endif %}">
     <div class="selo">
-      <svg viewBox="0 0 100 100" aria-label="flor-de-lis">
-        <g fill="#F8F3E8">
-          <path d="M50 4 C 63 18 66 36 50 58 C 34 36 37 18 50 4 Z"/>
-          <path d="M43 52 C 30 62 8 60 6 38 C 6 28 14 20 22 20 C 16 32 20 42 32 44 C 30 34 32 24 40 16 C 40 28 40 42 43 52 Z"/>
-          <path d="M57 52 C 70 62 92 60 94 38 C 94 28 86 20 78 20 C 84 32 80 42 68 44 C 70 34 68 24 60 16 C 60 28 60 42 57 52 Z"/>
-          <rect x="27" y="60" width="46" height="9" rx="4.5"/>
-          <path d="M42 72 H58 L63 96 L50 87 L37 96 Z"/>
+      <svg xmlns="http://w3.org" viewBox="0 0 128 128" width="156" height="156">
+        <defs>
+          <!-- Degradês Dourados -->
+          <linearGradient id="ouroClaro" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF08A"/>
+            <stop offset="50%" stop-color="#FCC21B"/>
+            <stop offset="100%" stop-color="#E59400"/>
+          </linearGradient>
+          <linearGradient id="ouroSombra" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#F59E0B"/>
+            <stop offset="100%" stop-color="#B45309"/>
+          </linearGradient>
+          <linearGradient id="ouroBrilho" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#FDE047" stop-opacity="0.2"/>
+          </linearGradient>
+          <!-- Sombra projetada no estilo do rótulo -->
+          <filter id="sombraSelo" x="-10%" y="-10%" width="130%" height="130%">
+            <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#141414"/>
+          </filter>
+        </defs>
+
+        <g filter="url(#sombraSelo)" stroke="#141414" stroke-width="2.5" stroke-linejoin="round">
+          <!-- Haste Vertical Inferior -->
+          <path fill="url(#ouroClaro)" d="M57 76h14v26c0 6-3.5 12-7 15-3.5-3-7-9-7-15V76z"/>
+          <path fill="url(#ouroSombra)" stroke="none" d="M64 77h6v25c0 5-3 10-6 13V77z"/>
+
+          <!-- Pétala Lateral Esquerda -->
+          <path fill="url(#ouroClaro)" d="M57 76c-2-18-14-30-29-30-13 0-22 9-22 21 0 10 7 17 15 17 4.5 0 7.5-3 7.5-6.5 0-3-2-5-4.5-6-2-1-3-2.5-3-4.5 0-5 4.5-8.5 10.5-8.5 9 0 15.5 7.5 17.5 17.5H57z"/>
+          <!-- Volta inferior esquerda -->
+          <path fill="url(#ouroSombra)" d="M49 81c-1.5 9-7 14-14 14-6 0-10.5-3.5-10.5-8 0-3.5 2.5-6 5.5-6 2.5 0 4.5 2 4.5 4 0 1.5-1 2.5-2.5 2.5 1 1 2.5 1.5 4 1.5 3.5 0 6.5-3 7.5-8H49z"/>
+
+          <!-- Pétala Lateral Direita -->
+          <path fill="url(#ouroClaro)" d="M71 76c2-18 14-30 29-30 13 0 22 9 22 21 0 10-7 17-15 17-4.5 0-7.5-3-7.5-6.5 0-3 2-5 4.5-6 2-1 3-2.5 3-4.5 0-5-4.5-8.5-10.5-8.5-9 0-15.5 7.5-17.5 17.5H71z"/>
+          <!-- Volta inferior direita -->
+          <path fill="url(#ouroSombra)" d="M79 81c1.5 9 7 14 14 14 6 0 10.5-3.5 10.5-8 0-3.5-2.5-6-5.5-6-2.5 0-4.5 2-4.5 4 0 1.5 1 2.5 2.5 2.5-1 1-2.5 1.5-4 1.5-3.5 0-6.5-3-7.5-8H79z"/>
+
+          <!-- Pétala Central Principal -->
+          <path fill="url(#ouroClaro)" d="M64 11c-11 13-19 27-19 41 0 10 5.5 17 12 21v3h14v-3c6.5-4 12-11 12-21 0-14-8-28-19-41z"/>
+          <!-- Sombra direita da pétala central -->
+          <path fill="url(#ouroSombra)" stroke="none" d="M64 13v62h6v-3c6-4 11.5-10.5 11.5-20 0-13-7.5-26-17.5-39z"/>
+          <!-- Brilho esquerdo da pétala central -->
+          <path fill="url(#ouroBrilho)" stroke="none" d="M62 18c-7 10-13 21-13 33 0 7 3.5 13 8 16 1.5-15 3.5-32 5-49z"/>
+
+          <!-- Brilhos superiores nas laterais -->
+          <path fill="url(#ouroBrilho)" stroke="none" d="M28 50c-9 0-16 5.5-17.5 13.5 3-5.5 9.5-9 17.5-9 10.5 0 19 7.5 22 17h3.5C50.5 59 41 50 28 50z"/>
+          <path fill="url(#ouroBrilho)" stroke="none" d="M100 50c9 0 16 5.5 17.5 13.5-3-5.5-9.5-9-17.5-9-10.5 0-19 7.5-22 17h-3.5C77.5 59 87 50 100 50z"/>
+
+          <!-- Anel / Barra Horizontal Central -->
+          <rect x="42" y="73" width="44" height="8" rx="4" fill="url(#ouroClaro)"/>
+          <rect x="44" y="74.5" width="40" height="2.5" rx="1.2" fill="#FFF7AD" stroke="none"/>
         </g>
       </svg>
     </div>
     <div class="lado">
-      <div class="cima">{{ slide.etiqueta_topo | default('ALTO TEOR EM') }}</div>
       <div class="baixo l{{ linhas|length }}"><span>{% for l in linhas %}{{ l }}{% if not loop.last %}<br>{% endif %}{% endfor %}</span></div>
     </div>
   </div>
