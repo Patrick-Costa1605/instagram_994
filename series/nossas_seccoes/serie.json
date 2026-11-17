@@ -1,22 +1,71 @@
 {
   "nome": "As Nossas Secções",
-  "formato": { "largura": 1080, "altura": 1350 },
+  "formato": {
+    "largura": 1080,
+    "altura": 1350
+  },
   "panorama": true,
   "modelo": "modelo.html.j2",
   "estilo": "estilo.css",
-  "cabecalho": ["AS NOSSAS", "SECÇÕES"],
+  "cabecalho": [
+    "AS NOSSAS",
+    "SECÇÕES"
+  ],
   "rodape": "desliza",
   "seccoes": [
-    { "id": "amarelo", "nome": "Lobitos" },
-    { "id": "verde", "nome": "Exploradores" },
-    { "id": "azul", "nome": "Pioneiros" },
-    { "id": "vermelho", "nome": "Caminheiros" }
+    {
+      "id": "amarelo",
+      "nome": "Lobitos"
+    },
+    {
+      "id": "verde",
+      "nome": "Exploradores"
+    },
+    {
+      "id": "azul",
+      "nome": "Pioneiros"
+    },
+    {
+      "id": "vermelho",
+      "nome": "Caminheiros"
+    }
   ],
   "cores": {
-    "amarelo": "#F2B705", "verde": "#3FBF5F", "azul": "#3B6CF0", "vermelho": "#EE4B3A",
-    "banda_amarelo": "#F2B705", "banda_verde": "#2FA060", "banda_azul": "#3D68D8", "banda_vermelho": "#E2503F",
-    "creme": "#FFF7E8", "texto_escuro": "#3A2B22"
+    "amarelo": "#F2B705",
+    "verde": "#3FBF5F",
+    "azul": "#3B6CF0",
+    "vermelho": "#EE4B3A",
+    "banda_amarelo": "#F2B705",
+    "banda_verde": "#2FA060",
+    "banda_azul": "#3D68D8",
+    "banda_vermelho": "#E2503F",
+    "creme": "#FFF7E8",
+    "texto_escuro": "#3A2B22"
   },
-  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 150, "fundo_claro": false },
-  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta"
+  "logo": {
+    "ficheiro": "../../assets/logo-994.png",
+    "altura": 150,
+    "fundo_claro": false
+  },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #sempreAlerta",
+  "feed": {
+    "colunas": 3,
+    "ordem": [
+      "intro",
+      "lobitos",
+      "exploradores",
+      "pioneiros",
+      "caminheiros",
+      "convite"
+    ],
+    "cores_extra": {
+      "intro": "#FFF1DA",
+      "convite": "#FFE7D3"
+    },
+    "pegadas": {
+      "inicio": 0.4,
+      "passo": 0.12,
+      "alcance": 0.6
+    }
+  }
 }

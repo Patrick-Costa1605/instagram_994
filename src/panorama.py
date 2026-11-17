@@ -17,13 +17,15 @@ def _rgb(h):
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
 
-def trilho(n, W, tons, y_base=705, passo=76, smin=0.50, smax=1.45, y_ini=1010, amp=62):
+def trilho(n, W, tons, y_base=705, passo=76, smin=0.50, smax=1.45, y_ini=1010, amp=62, hump=0):
     """Devolve a estrada (path SVG), as pegadas e a altura da estrada em cada x.
 
     tons = cores (hex) dos pés de cada slide, do 1.º (capa) ao último, para a pegada ir mudando de cor."""
     total = n * W
 
     def y(x):
+        if hump and 0 <= x <= W:
+            return y_base + hump * math.sin(math.pi * x / W)
         if x < W * 1.05:
             return y_ini * (1 - _ss(x / (W * 1.05))) + y_base * _ss(x / (W * 1.05))
         return y_base + amp * math.sin((x - W * 1.05) / 1150 * 2 * math.pi)

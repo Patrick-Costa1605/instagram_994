@@ -2,10 +2,6 @@
   "titulo": "Lobitos — publicação",
   "cor_seccao": "amarelo",
   "motivo": "selva",
-  "pegadas": {
-    "min": 0.55,
-    "max": 1.0
-  },
   "legenda": "Aventura na Alcateia 🐺\nOs Lobitos têm entre 6 e 10 anos e vivem no mundo da Selva: cada dia é uma nova caçada no Livro da Selva, em Bandos de amigos (Branco, Cinzento, Preto, Castanho e Ruivo). O lema? Da Melhor Vontade!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#lobitos #asnossassecoes",
   "slides": [
     {
@@ -18,7 +14,8 @@
       ],
       "linha": "Aventura na Alcateia",
       "lema": "Lema · Da Melhor Vontade",
-      "foto": "lobitos/capa.jpg"
+      "foto": "lobitos/capa.jpg",
+      "calcado": "n.º 30"
     },
     {
       "tipo": "imaginario",
@@ -108,5 +105,6 @@
       ],
       "foto": "lobitos/levam2.jpg"
     }
-  ]
+  ],
+  "feed_id": "lobitos"
 }

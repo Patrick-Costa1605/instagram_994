@@ -117,11 +117,41 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
             "texto": cores["texto_escuro"] if _contraste(banda, escuro) > _contraste(banda, creme) else cores["creme"]}
     neutro = "#6B5444"
     pdef = secs.get(parte.get("cor_seccao")) or {"acento": "#C98A4B", "suave": "#F3E2C4", "profundo": neutro, "texto": cores["texto_escuro"]}
+    if parte.get("tons"):                                   # tons explícitos (ex.: publicação de convite)
+        pdef = {**pdef, **parte["tons"]}
     tons = [neutro] + [(secs[sl["id"]]["profundo"] if sl.get("id") else pdef["profundo"]) for sl in slides[1:]]
-    if parte.get("cor_seccao"):
-        tons[0] = pdef["profundo"]
-    pg = parte.get("pegadas", {})
-    tr = trilho(n, Wd, tons, smin=pg.get("min", 0.50), smax=pg.get("max", 1.45), y_ini=690 if parte.get("cor_seccao") else 1010, **({"y_base": 690, "amp": 34} if parte.get("cor_seccao") else {}))
+    tons[0] = pdef["profundo"] if not any(sl.get("id") for sl in slides) else neutro
+    pg = dict(parte.get("pegadas", {}))
+    feed = serie.get("feed")
+    fundo_img = None
+    if feed and parte.get("feed_id"):
+        import numpy as np
+        from PIL import Image
+        import feed as feedmod
+        ordem = feed["ordem"]
+        idx = ordem.index(parte["feed_id"])
+        ncols = feed.get("colunas", 3)
+        pg.setdefault("min", feed["pegadas"]["inicio"] + feed["pegadas"]["passo"] * idx)
+        pg.setdefault("max", pg["min"] + feed["pegadas"]["alcance"])
+        cores_tile = []
+        for fid in ordem:                                   # cor de cada capa (por ordem de leitura)
+            c = feed.get("cores_extra", {}).get(fid)
+            for pj in sorted((serie_dir / "partes").glob("*.json")):
+                dj = json.loads(pj.read_text(encoding="utf-8"))
+                if dj.get("feed_id") == fid and dj.get("cor_seccao"):
+                    c = secs[dj["cor_seccao"]]["suave"]
+            cores_tile.append(_rgb(c))
+        capa_bg = feedmod.capa(cores_tile, ncols, idx % ncols, idx // ncols, Wd, Hd)
+        if any(sl.get("id") for sl in slides):             # visão geral: cor muda de secção para secção
+            stops_own = [(Wd * (i + 0.5), _rgb(secs[sl["id"]]["suave"] if sl.get("id") else feed["cores_extra"].get(parte["feed_id"], "#FFEFE2")))
+                         for i, sl in enumerate(slides) if i > 0]
+        else:
+            own = _rgb(pdef["suave"]) if parte.get("cor_seccao") else cores_tile[idx]
+            stops_own = [(Wd, own), (n * Wd, own)]
+        bg = feedmod.publicacao(capa_bg, stops_own, n, Wd)
+        Image.fromarray(np.clip(bg, 0, 255).astype("uint8")).save(tmp / "fundo.png")
+        fundo_img = (tmp / "fundo.png").resolve().as_uri()
+    tr = trilho(n, Wd, tons, smin=pg.get("min", 0.50), smax=pg.get("max", 1.45), y_ini=690, y_base=690, amp=34, hump=26)
     stops = []
     for i, sl in enumerate(slides):
         if parte.get("cor_seccao"):
@@ -150,7 +180,7 @@ def render_panorama(serie_dir: Path, serie: dict, parte: dict, tmp: Path) -> Pat
         fonts=(ROOT / "assets" / "fonts").as_uri(), w=Wd * n, h=Hd, handelson=hf.as_uri() if hf else None)
     logo_cfg = serie.get("logo")
     page = env.from_string((serie_dir / serie["modelo"]).read_text(encoding="utf-8")).render(
-        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, pdef=pdef, motivo=motivo_svg, tr=tr, stops=", ".join(stops),
+        css=css, cores=cores, slides=slides, n=n, W=Wd, H=Hd, secs=secs, pdef=pdef, motivo=motivo_svg, tr=tr, stops=", ".join(stops), fundo_img=fundo_img,
         rodape=serie.get("rodape"), cabecalho=serie.get("cabecalho", []),
         logo=(serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None,
         logo_h=(logo_cfg or {}).get("altura", 120))

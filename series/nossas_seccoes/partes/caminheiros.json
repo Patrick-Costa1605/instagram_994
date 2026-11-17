@@ -2,10 +2,6 @@
   "titulo": "Caminheiros — publicação",
   "cor_seccao": "vermelho",
   "motivo": "homem_novo",
-  "pegadas": {
-    "min": 0.55,
-    "max": 1.0
-  },
   "legenda": "Nos Rumos do Homem Novo 🏔️\nOs Caminheiros têm entre 18 e 22 anos: no Clã, cada Tribo cresce em autonomia, compromisso e serviço à comunidade. Decidir, caminhar e servir em conjunto. Servir!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#caminheiros #asnossassecoes",
   "slides": [
     {
@@ -18,7 +14,8 @@
       ],
       "linha": "Nos Rumos do Homem Novo",
       "lema": "Lema · Servir",
-      "foto": "caminheiros/capa.jpg"
+      "foto": "caminheiros/capa.jpg",
+      "calcado": "n.º 44"
     },
     {
       "tipo": "imaginario",
@@ -94,5 +91,6 @@
       ],
       "foto": "caminheiros/levam2.jpg"
     }
-  ]
+  ],
+  "feed_id": "caminheiros"
 }

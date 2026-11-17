@@ -1,0 +1,85 @@
+{
+  "titulo": "Convite — O primeiro passo é vires",
+  "feed_id": "convite",
+  "motivo": "selva",
+  "tons": {
+    "acento": "#2FA060",
+    "suave": "#FFE7D3",
+    "profundo": "#6B4A3A",
+    "texto": "#FFFFFF"
+  },
+  "legenda": "O primeiro passo é vires. 👣\nNo escutismo aprende-se fazendo: nas atividades, no serviço à comunidade e nas amizades que se constroem pelo caminho. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n\nDúvidas? É normal. Fala connosco:\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com (Quero ser escuteiro)\nConfirmamos o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #asnossassecoes",
+  "slides": [
+    {
+      "tipo": "convite",
+      "kicker": "Vem conhecer-nos",
+      "titulo": [
+        "O PRIMEIRO",
+        "PASSO É VIRES."
+      ],
+      "texto": "Não precisas de saber já como funciona: basta teres vontade de experimentar.",
+      "calcado": "chegaste!",
+      "foto": "lobitos/ficha.jpg"
+    },
+    {
+      "tipo": "grupos",
+      "kicker": "Perguntas de quem está a pensar",
+      "titulo": [
+        "DÚVIDAS?",
+        "É NORMAL."
+      ],
+      "sub": "As respostas mais comuns.",
+      "colunas": 1,
+      "itens": [
+        {
+          "nome": "Que idades?",
+          "cores": [
+            "#F2B705",
+            "#2FA060",
+            "#3D68D8",
+            "#E2503F"
+          ],
+          "lema": "Dos 6 aos 22 anos, em 4 secções."
+        },
+        {
+          "nome": "Como começo?",
+          "cores": [],
+          "lema": "Preenche o formulário em 994caxinas.com e entramos em contacto."
+        },
+        {
+          "nome": "Custos e horários?",
+          "cores": [],
+          "lema": "Contacta-nos: dizemos-te tudo e confirmamos o local."
+        }
+      ]
+    },
+    {
+      "tipo": "convite",
+      "kicker": "Fala connosco",
+      "titulo": [
+        "FALA",
+        "CONNOSCO."
+      ],
+      "texto": "Confirmamos o local e o horário contigo antes da primeira visita.",
+      "contactos": [
+        [
+          "Telefone",
+          "924 428 343"
+        ],
+        [
+          "Email",
+          "geral.994@escutismo.pt"
+        ],
+        [
+          "Site",
+          "994caxinas.com"
+        ],
+        [
+          "Sede",
+          "Av. D. Manuel I, Vila do Conde"
+        ]
+      ],
+      "foto": "caminheiros/levam2.jpg"
+    }
+  ]
+}

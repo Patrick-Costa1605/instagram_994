@@ -73,3 +73,5 @@ html, body { width: {{ w }}px; height: {{ h }}px; background: var(--creme); }
 .dots i:last-child { margin-right: 0; }
 .ct b { display: block; font-weight: 400; font-size: 42px; line-height: 1; color: var(--profundo); }
 .ct em { display: block; font-style: normal; font-family: var(--f-texto); font-weight: 700; font-size: 25px; line-height: 1.1; color: var(--ink); opacity: .85; margin-top: 4px; }
+
+.grupos-t.l2 { font-size: 118px; line-height: .95; } .sub-grupos.l2 { top: 450px; }

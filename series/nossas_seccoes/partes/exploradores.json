@@ -2,10 +2,6 @@
   "titulo": "Exploradores — publicação",
   "cor_seccao": "verde",
   "motivo": "terra",
-  "pegadas": {
-    "min": 0.55,
-    "max": 1.0
-  },
   "legenda": "A Jornada da Terra Prometida 🧭\nOs Exploradores têm entre 10 e 14 anos: quatro anos de aventura, fé e fraternidade em busca do melhor de cada um. Vivem em Patrulhas (Golfinho, Águia, Pinguim, Castor e Pantera), cada uma com um totem, um lema e um grito. Sempre Alerta!\n\nO primeiro passo é vires. Não precisas de saber já como funciona: basta teres vontade de experimentar.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\nConfirma connosco o local e o horário antes da primeira visita. 📍 Av. D. Manuel I, Vila do Conde\n\n#exploradores #asnossassecoes",
   "slides": [
     {
@@ -18,7 +14,8 @@
       ],
       "linha": "A Jornada da Terra Prometida",
       "lema": "Lema · Sempre Alerta",
-      "foto": "exploradores/capa.jpg"
+      "foto": "exploradores/capa.jpg",
+      "calcado": "n.º 36"
     },
     {
       "tipo": "imaginario",
@@ -119,5 +116,6 @@
       ],
       "foto": "exploradores/levam2.jpg"
     }
-  ]
+  ],
+  "feed_id": "exploradores"
 }

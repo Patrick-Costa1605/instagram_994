@@ -34,14 +34,24 @@ Copia a pasta `series/dicionario_escutista/` para `series/<nova_serie>/` e edita
 - `estilo.css` e `modelo.html.j2` — o aspeto (cada slide é uma página HTML 1080×1350);
 - `partes/` — os conteúdos.
 
-## Série «As Nossas Secções» (`series/nossas_seccoes/`), 4 publicações com informação do site
-Uma publicação (carrossel de 5 slides) por secção: `partes/lobitos.json`, `exploradores.json`, `pioneiros.json`, `caminheiros.json`.
-Os textos vêm do site do agrupamento (994caxinas.com): idades, lemas, imaginário, patronos, bandos/patrulhas/equipas/tribos e contactos.
-O fundo é um trilho contínuo (estrada + pegadas) que atravessa os 5 slides, com o imaginário de cada secção ao fundo
-(Selva, Terra Prometida, Navegação, Homem Novo). Cor e motivo vêm de `"cor_seccao"` e `"motivo"` (selva | terra | navegacao | homem_novo).
-- Slides: `seccao` (abertura), `imaginario`, `grupos` (bandos, patrulhas…), `lema` e `convite` (contactos).
-- `parte_01_trilho.json` é o post geral com as 4 secções num só trilho (pegadas a crescer com as idades).
-- No `serie.json`, `"panorama": true` desenha uma página larga e corta-a em slides de 1080×1350 (`src/panorama.py`).
+## Série «As Nossas Secções» (`series/nossas_seccoes/`), feed em puzzle
+**6 publicações que, no perfil do Instagram, se juntam numa imagem só** (grelha de 3 colunas × 2 linhas) e que, dentro de cada
+carrossel, continuam slide a slide:
+
+| | | |
+|---|---|---|
+| Intro «Qual é a tua secção?» | Lobitos | Exploradores |
+| Pioneiros | Caminheiros | Convite «O primeiro passo é vires» |
+
+- **Ordem de publicação (a mais antiga primeiro):** Convite → Caminheiros → Pioneiros → Exploradores → Lobitos → Intro.
+  O Instagram mostra o mais recente no canto superior esquerdo, por isso a Intro tem de ser a última a sair.
+- O fundo é um campo de cor contínuo entre capas vizinhas (`src/feed.py`); a estrada está à mesma altura nas bordas das capas e as
+  pegadas crescem pela ordem de leitura (`feed` em `serie.json`). Os carrosséis partem da cor da capa e juntam-se à cor própria.
+- As publicações novas que forem sendo postas depois empurram o puzzle para baixo; para ele ficar intacto, não publiques nada
+  entre as 6 (ou publica só no fim).
+- O Instagram mostra as capas em 3:4 (corta ~34 px de cada lado das imagens 1080×1350); não ponho nada importante nessa margem.
+- Textos vindos do site do agrupamento (994caxinas.com): idades, lemas, imaginário, patronos, subgrupos e contactos.
+- Partes: `partes/{parte_01_trilho (intro), lobitos, exploradores, pioneiros, caminheiros, convite}.json`; cada uma tem `"feed_id"`.
 - Fotos em `series/nossas_seccoes/fotos/<secção>/` (`capa.jpg`, `ficha.jpg`, `levam1.jpg`, `levam2.jpg`). Fora do git (há crianças).
 
 ## Fontes

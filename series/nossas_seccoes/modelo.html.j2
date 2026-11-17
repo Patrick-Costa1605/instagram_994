@@ -4,7 +4,7 @@
 {{ css }}</style></head>
 <body>
 <div class="pan" style="width:{{ n * W }}px; height:{{ H }}px">
-  <div class="fundo" style="background: linear-gradient(90deg, {{ stops }})"></div>
+  <div class="fundo" style="{% if fundo_img %}background: url('{{ fundo_img }}') 0 0 / 100% 100%{% else %}background: linear-gradient(90deg, {{ stops }}){% endif %}"></div>
   <div class="motivo" style="color:{{ pdef.profundo }}">{{ motivo|safe }}</div>
   <div class="grao"></div>
 
@@ -42,8 +42,8 @@
 
     {% elif sl.tipo == 'grupos' %}
       {% if sl.kicker %}<div class="pilula">{{ sl.kicker }}</div>{% endif %}
-      <h2 class="nome grupos-t">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
-      <p class="sub-grupos">{{ sl.sub }}</p>
+      <h2 class="nome grupos-t l{{ sl.titulo|length }}">{% for l in sl.titulo %}<span>{{ l }}</span>{% endfor %}</h2>
+      <p class="sub-grupos l{{ sl.titulo|length }}">{{ sl.sub }}</p>
       <div class="chips c{{ sl.colunas|default(2) }}">
         {% for it in sl.itens %}
         <div class="chip"><span class="dots">{% for c in it.cores %}<i style="background:{{ c }}"></i>{% endfor %}</span>
