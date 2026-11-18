@@ -42,6 +42,9 @@ não de um modelo gráfico isolado.
 
 - 4 slides por publicação: capa (nome, idade, lema) · o que fazem · como se organizam · lema e contactos.
 - As partes usam `modelos/unificado.html.j2` e `modelos/unificado.css`.
+- Capa e slide final usam exactamente o mesmo modelo editorial em todas as secções: fotografia ampla,
+  cartão creme à esquerda, emblema da secção no cartão e logo do agrupamento no canto inferior direito.
+  Muda apenas a cor, a fotografia e o texto.
 - As unidades e patronos seguem a página oficial do agrupamento em `994caxinas.com/agrupamento`.
 - **Fotos:** cada parte declara a sua pasta em `"pasta_fotos"`:
   `series/nossas_seccoes/fotos/lobitos/`, `exploradores/`, `pioneiros/` ou `caminheiros/`.
@@ -55,6 +58,9 @@ não de um modelo gráfico isolado.
   usa-se a Londrina Solid como substituta. Para usar a original, copia o ficheiro (`.otf`/`.ttf`/`.woff2`) para `assets/fonts/`
   com «Handelson» no nome (ex.: `HandelsonFour.otf`) — é detetado automaticamente. Confirma que a licença permite o uso.
 - `"foto_pos": "50% 72%"` num slide ajusta o enquadramento da foto (horizontal vertical).
+- `"foto_zoom": 115` amplia a foto 15% antes do corte. Use `foto_zoom: 100` para manter o
+  tamanho normal. `"foto_pos"` controla a parte da imagem que permanece visível:
+  `50% 50%` centra, `50% 30%` mantém mais a parte superior e `70% 50%` mantém mais o lado direito.
 
 ## Notas
 - O logótipo (`assets/logo-994.png`, 172×242 px) vai sem fundo; `"altura"` e `"fundo_claro"` (disco claro opcional) em `serie.json`.

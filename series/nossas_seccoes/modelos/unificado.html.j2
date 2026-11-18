@@ -25,12 +25,12 @@
         <p class="motto">“{{ s.lema }}”</p>
         <p class="cover-signature">Agrupamento 994 · Caxinas</p>
       </div>
-      <div class="cover-photo photo" style="--photo: url('{{ foto }}'); --photo-pos: {{ foto_pos }};"></div>
+      <div class="cover-photo photo" style="--photo: url('{{ foto }}'); --photo-pos: {{ foto_pos }}; --photo-size: {{ foto_zoom }};"></div>
       <img class="cover-stamp" src="{{ logo }}" alt="Agrupamento 994 Caxinas">
     </main>
 
     {% elif s.tipo == "fazem" %}
-    <main class="content{% if foto_fundo %} has-content-photo{% endif %}"{% if foto_fundo %} style="--content-photo: url('{{ foto_fundo }}'); --content-photo-pos: {{ foto_fundo_pos }};"{% endif %}>
+    <main class="content{% if foto_fundo %} has-content-photo{% endif %}"{% if foto_fundo %} style="--content-photo: url('{{ foto_fundo }}'); --content-photo-pos: {{ foto_fundo_pos }}; --content-photo-size: {{ foto_fundo_zoom }};"{% endif %}>
       <div class="content-heading">
         <p class="eyebrow">02 / UM SÁBADO QUALQUER</p>
         {% if s.titulo is string %}
@@ -71,7 +71,7 @@
     </main>
 
     {% elif s.tipo in ["bandos", "patrulhas", "equipas", "tribos"] %}
-    <main class="content groups-page{% if foto_fundo %} has-content-photo{% endif %}"{% if foto_fundo %} style="--content-photo: url('{{ foto_fundo }}'); --content-photo-pos: {{ foto_fundo_pos }};"{% endif %}>
+    <main class="content groups-page{% if foto_fundo %} has-content-photo{% endif %}"{% if foto_fundo %} style="--content-photo: url('{{ foto_fundo }}'); --content-photo-pos: {{ foto_fundo_pos }}; --content-photo-size: {{ foto_fundo_zoom }};"{% endif %}>
       <div class="content-heading">
         <p class="eyebrow">03 / COM QUEM CRESCEMOS</p>
         <h1>{{ s.titulo if s.titulo is string else s.titulo|join(" ") }}</h1>
@@ -98,9 +98,10 @@
 
     {% elif s.tipo == "fim" %}
     <main class="closing">
-      <div class="closing-photo photo" style="--photo: url('{{ foto }}'); --photo-pos: {{ foto_pos }};"></div>
+      <div class="closing-photo photo" style="--photo: url('{{ foto }}'); --photo-pos: {{ foto_pos }}; --photo-size: {{ foto_zoom }};"></div>
       <div class="closing-panel">
         <p class="eyebrow">04 / SE FIZER SENTIDO PARA TI</p>
+        <img class="closing-section-mark" src="{{ secao(parte.simbolo_secao) }}" alt="">
         {% if s.titulo %}
           {% if s.titulo is string %}<h1>{{ s.titulo }}</h1>
           {% else %}<h1>{% for line in s.titulo %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</h1>{% endif %}
@@ -113,6 +114,7 @@
           {% endfor %}
         </div>
       </div>
+      <img class="closing-stamp" src="{{ logo }}" alt="Agrupamento 994 Caxinas">
     </main>
     {% endif %}
 

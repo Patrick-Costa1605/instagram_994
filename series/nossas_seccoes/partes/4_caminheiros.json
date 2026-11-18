@@ -3,7 +3,7 @@
   "modelo": "modelos/unificado.html.j2",
   "estilo": "modelos/unificado.css",
   "numero": 4,
-  "unidade_nome": "Clã",
+  "unidade_nome": "Clã 255",
   "unidade_patrono": "São Francisco de Assis",
   "simbolo_secao": "logo_IV_Seccao_transparente.png",
   "pasta_fotos": "caminheiros",
@@ -17,6 +17,8 @@
     {
       "tipo": "capa",
       "titulo": "Caminheiros",
+      "idade": "18 – 22 ANOS",
+      "chamada": "A última etapa do caminho escutista.",
       "esq": "IV Secção",
       "meio": "18 — 22 anos",
       "dir": "O Clã",
@@ -27,22 +29,28 @@
     },
     {
       "tipo": "fazem",
+      "titulo": "O que fazem?",
       "citacao": "Os Caminheiros formam uma fraternidade do Ar Livre para Servir.",
       "autor": "Baden-Powell",
-      "itens": [
-        [
-          "A Caminhada",
-          "Um caminho escolhido e preparado por todos."
-        ],
-        [
-          "O Serviço",
-          "Estar onde é preciso. Fazer a diferença com as próprias mãos."
-        ],
-        [
-          "Decidir juntos",
-          "No Conselho de Clã, cada voz conta."
-        ]
-      ]
+      "itens":[
+  [
+    "A CAMINHADA",
+    "Traçam o próprio rumo, percorrem trilhos exigentes e descobrem quem são a cada passo."
+  ],
+  [
+    "O SERVIÇO",
+    "Olham para a sociedade com sentido crítico e metem as mãos à obra onde faz mais falta."
+  ],
+  [
+    "O CLÃ",
+    "Em comunidade de jovens adultos, partilham ideias, debatem escolhas e decidem juntos."
+  ],
+  [
+    "A PARTIDA",
+    "Preparam-se para a vida adulta com valores sólidos, prontos a deixar o mundo melhor."
+  ]
+]
+
     },
     {
       "tipo": "tribos",
@@ -55,21 +63,23 @@
         {
           "img": "aristides",
           "nome": "Aristides de Sousa Mendes",
-          "papel": "Patrono da tribo"
+          "papel": ""
         },
         {
           "img": "irena",
           "nome": "Irena Sendler",
-          "papel": "Patrona da tribo"
+          "papel": ""
         }
       ],
       "nota": "Todas juntas formam o Clã, que se reúne no Albergue."
     },
     {
       "tipo": "fim",
-      "lema": "Servir.",
-      "significado": "A divisa dos caminheiros, rumo ao ideal do Homem Novo.",
-      "foto": "final.jpg",
+      "titulo": [
+  "Servir."
+],
+"significado": "A divisa dos caminheiros: colocar a vida ao serviço dos outros, rumo ao ideal do Homem Novo.",
+      "foto": "caminheiros/final.jpg",
       "foto_pos": "50% 50%",
       "convite": "Tens 18 a 22 anos? Vem conhecer o Clã.",
       "contactos": [

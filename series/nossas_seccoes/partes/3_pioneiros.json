@@ -3,7 +3,7 @@
   "modelo": "modelos/unificado.html.j2",
   "estilo": "modelos/unificado.css",
   "numero": 3,
-  "unidade_nome": "Comunidade",
+  "unidade_nome": "Comunidade 255",
   "unidade_patrono": "São João Batista",
   "simbolo_secao": "logo_III_Seccao_transparente.png",
   "pasta_fotos": "pioneiros",
@@ -19,6 +19,7 @@
       "titulo": "Pioneiros",
       "idade": "14 – 18 ANOS",
       "chamada": "As ideias passam do papel à obra.",
+      "lema": "Sempre Alerta",
       "legenda": "Fig. 01 — Empreendimento em curso",
       "foto": "capa_iii.png",
       "foto_pos": "50% 55%",
@@ -40,23 +41,24 @@
     },
     {
       "tipo": "fazem",
-      "titulo": [
-        "O Empreen-",
-        "dimento"
-      ],
-      "sub": "Uma ideia escolhida por todos, levada do papel para a vida.",
+      "titulo": "O Empreendimento",
+      "sub": "Escolhem uma ideia juntos e começam a fazer dela algo real.",
       "passos": [
         [
-          "Escolher",
-          "No Conselho de Comunidade, escolhem o que querem fazer."
+          "TU DECIDES",
+          "Os dirigentes orientam, mas são os Pioneiros que escolhem os projetos, os destinos e os desafios."
         ],
         [
-          "Construir",
-          "Cada Equipa pega numa parte. Juntos, fazem algo maior."
+          "TÉCNICA AVANÇADA",
+          "Raids, construções e atividades que testam a resistência física e mental."
         ],
         [
-          "Servir",
-          "O que fazem ganha sentido quando chega à comunidade."
+          "COMPROMISSO", "Assumimos escolhas conscientes, defendemos os nossos valores e honramos a palavra dada."
+      ],
+
+        [
+          "INTERVENÇÃO",
+          "Não ficamos à espera que os outros mudem o mundo, fazemos a nossa parte, aqui e agora."
         ]
       ]
     },
@@ -81,7 +83,7 @@
           "nome": "Nuno Álvares Pereira"
         }
       ],
-      "nota": "Reúnem-se no Abrigo. As decisões do dia a dia passam pelo Conselho de Guias."
+      "nota": "Todos juntos formam a Comunidade, que se reúne no Abrigo."
     },
     {
       "tipo": "fim",
@@ -89,9 +91,9 @@
         "Sempre",
         "Alerta"
       ],
-      "significado": "O lema dos pioneiros. O ideal da secção vai mais longe: «Sempre Mais Longe».",
+      "significado": "O lema dos pioneiros mantém o \"Sempre Alerta\", mas agora com maturidade: estar pronto para agir, liderar e construir.",
       "legenda": "Fig. 02",
-      "foto": "final.jpg",
+      "foto": "pioneiros/final.jpg",
       "foto_pos": "50% 50%",
       "convite": "Tens 14 a 18 anos? Vem conhecer-nos.",
       "contactos": [

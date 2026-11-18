@@ -3,7 +3,7 @@
   "modelo": "modelos/unificado.html.j2",
   "estilo": "modelos/unificado.css",
   "numero": 2,
-  "unidade_nome": "Expedição",
+  "unidade_nome": "Expedição 255",
   "unidade_patrono": "São Domingos de Sávio",
   "simbolo_secao": "logo_II_Seccao_transparente.png",
   "pasta_fotos": "exploradores",
@@ -23,25 +23,30 @@
       "chamada": "A aventura faz-se em Patrulha.",
       "legenda": "41°21′N · 8°45′W · Caxinas",
       "foto": "capa_ii.png",
-      "foto_pos": "50% 40%"
+      "foto_pos": "50% 80%",
+      "foto_zoom": 265
     },
     {
       "tipo": "fazem",
-      "titulo": "A Aventura",
-      "intro": "Uma aventura começa numa ideia e ganha vida em Patrulha.",
+      "titulo": "O QUE É SER EXPLORADOR?",
+      "intro": "Uma ideia começa a ganhar forma quando damos a nossa parte.",
       "destino": "AVENTURA",
       "etapas": [
         [
-          "Sonham",
-          "Escolhem juntos o caminho que querem descobrir."
+          "A LEI E A PROMESSA",
+          "Assumimos um código de honra. A nossa palavra vale ouro e a Lei do Escuta guia todas as nossas ações."
         ],
         [
-          "Preparam",
-          "Pensam em cada detalhe, em Patrulha."
+          "A TÉCNICA E O TERRENO",
+          "Dominamos a orientação, o pioneirismo e a vida no campo, o saber fazer que nos dá liberdade para ir mais longe."
         ],
         [
-          "Vivem",
-          "Partem. O resto aprende-se pelo caminho."
+          "O SISTEMA DE PATRULHAS",
+          "• A grande ideia do nosso fundador: somos nós que organizamos o grupo, decidimos o rumo e fazemos a aventura acontecer."
+        ],
+        [
+          "A DESCOBERTA",
+          "• Saímos da zona de conforto, exploramos novos horizontes e transformamos cada atividade em mémorias inesquecíveis."
         ]
       ]
     },
@@ -80,10 +85,13 @@
     },
     {
       "tipo": "fim",
-      "lema": "Sempre Alerta",
-      "significado": "O lema dos exploradores vem do «Be Prepared» de Baden-Powell: estar sempre preparado.",
+      "titulo": [
+        "Sempre",
+        "Alerta"
+      ],
+      "significado": "Do «Be Prepared» deixado por Baden-Powell nasce o nosso «Sempre Alerta»: estar pronto de corpo e espírito para qualquer desafio ou serviço.",
       "legenda": "diário de bordo",
-      "foto": "final.jpg",
+      "foto": "exploradores/final.jpg",
       "foto_pos": "50% 40%",
       "convite": "Tens 10 a 14 anos? Vem conhecer-nos",
       "contactos": [

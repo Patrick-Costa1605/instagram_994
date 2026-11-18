@@ -1,4 +1,10 @@
-python src/gerar.py series/nossas_seccoes/partes/1_lobitos.json
-#python src/gerar.py series/nossas_seccoes/partes/2_exploradores.json
-#python src/gerar.py series/nossas_seccoes/partes/3_pioneiros.json
-#python src/gerar.py series/nossas_seccoes/partes/4_caminheiros.json
+$ErrorActionPreference = "Stop"
+
+python src\gerar.py series\nossas_seccoes\partes\1_lobitos.json
+if ($LASTEXITCODE -ne 0) { throw "Falha ao renderizar Lobitos" }
+python src\gerar.py series\nossas_seccoes\partes\2_exploradores.json
+if ($LASTEXITCODE -ne 0) { throw "Falha ao renderizar Exploradores" }
+python src\gerar.py series\nossas_seccoes\partes\3_pioneiros.json
+if ($LASTEXITCODE -ne 0) { throw "Falha ao renderizar Pioneiros" }
+python src\gerar.py series\nossas_seccoes\partes\4_caminheiros.json
+if ($LASTEXITCODE -ne 0) { throw "Falha ao renderizar Caminheiros" }

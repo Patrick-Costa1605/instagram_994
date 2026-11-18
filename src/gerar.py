@@ -158,6 +158,42 @@ def launch(p):
         raise
 
 
+def screenshot_com_tentativas(page, destino: Path, clip: dict):
+    """Captura o PNG com duas tentativas antes de declarar falha."""
+    import time
+    for tentativa in range(1, 4):
+        try:
+            page.screenshot(path=str(destino), clip=clip)
+            return
+        except Exception as exc:
+            if tentativa == 3:
+                raise RuntimeError(
+                    f"O Chromium não conseguiu guardar {destino}. "
+                    "Fecha outras instâncias do gerador ou verifica espaço/permissões em OneDrive."
+                ) from exc
+            time.sleep(0.5)
+
+
+def tamanho_foto(valor):
+    """Converte foto_zoom para CSS background-size.
+
+    100 / "cover" preserva o comportamento atual.
+    120 amplia 20%; "120%" aceita diretamente.
+    """
+    if valor is None:
+        return "cover"
+    texto = str(valor).strip()
+    if texto.lower() in ("", "cover", "100", "100%"):
+        return "cover"
+    if texto.endswith("%"):
+        return texto
+    try:
+        numero = float(texto)
+        return f"{numero:g}%"
+    except ValueError:
+        return "cover"
+
+
 def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) -> Path:
     s = parte["slides"][idx]
     fmt = serie["formato"]
@@ -207,7 +243,12 @@ def render_html(serie_dir: Path, serie: dict, parte: dict, idx: int, tmp: Path) 
     logo_cfg = serie.get("logo")
     logo = (serie_dir / logo_cfg["ficheiro"]).resolve().as_uri() if logo_cfg else None
     page = env.from_string((serie_dir / parte.get("modelo", serie["modelo"])).read_text(encoding="utf-8")).render(
-        css=css, s=s, foto=foto, foto_fundo=foto_fundo, foto_fundo_pos=s.get("foto_fundo_pos", "50% 50%"), foto_pos=s.get("foto_pos", "50% 50%"), cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
+        css=css, s=s, foto=foto, foto_fundo=foto_fundo,
+        foto_fundo_pos=s.get("foto_fundo_pos", "50% 50%"),
+        foto_fundo_zoom=tamanho_foto(s.get("foto_fundo_zoom")),
+        foto_pos=s.get("foto_pos", "50% 50%"),
+        foto_zoom=tamanho_foto(s.get("foto_zoom")),
+        cores=cores, pontos=pontos, parte=parte, motivo=motivo, pers=pers, pag=idx + 1, total=len(parte["slides"]),
         sec_num=next((i + 1 for i, p in enumerate(pontos) if p["ativo"]), None), sec_total=len(pontos), cabecalho=serie.get("cabecalho", []),
         rodape=serie.get("rodape"), logo=logo, logo_h=(logo_cfg or {}).get("altura", 120),
         logo_fundo=(logo_cfg or {}).get("fundo_claro", False), texto=markup(s.get("texto", "")))
@@ -255,7 +296,7 @@ def main():
             page.wait_for_selector("body[data-pronto='1']")
             for i in idxs:
                 png = out_dir / f"{i + 1:02d}.png"
-                page.screenshot(path=str(png), clip={"x": i * fmt["largura"], "y": 0, "width": fmt["largura"], "height": fmt["altura"]})
+                screenshot_com_tentativas(page, png, {"x": i * fmt["largura"], "y": 0, "width": fmt["largura"], "height": fmt["altura"]})
                 pngs.append(png)
                 print(f"  {png.relative_to(ROOT)}")
             idxs = []
@@ -265,7 +306,7 @@ def main():
             page.goto(h.as_uri())
             page.wait_for_selector("body[data-pronto='1']")
             png = out_dir / f"{i + 1:02d}.png"
-            page.screenshot(path=str(png), clip={"x": 0, "y": 0, "width": fmt["largura"], "height": fmt["altura"]})
+            screenshot_com_tentativas(page, png, {"x": 0, "y": 0, "width": fmt["largura"], "height": fmt["altura"]})
             pngs.append(png)
             print(f"  {png.relative_to(ROOT)}")
         browser.close()

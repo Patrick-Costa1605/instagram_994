@@ -3,7 +3,7 @@
 <body>
 {% set slide = s %}
 <div class="slide">
-  <div class="foto {{ '' if foto else 'sem-foto' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}"{% endif %}></div>
+  <div class="foto {{ '' if foto else 'sem-foto' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}; background-size:{{ foto_zoom }}"{% endif %}></div>
   <div class="vinheta"></div>
 
   <div class="topo"><small>{{ cabecalho[0] }}</small><h1>{{ cabecalho[1] }}</h1></div>
