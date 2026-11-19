@@ -4,10 +4,11 @@
 {% set cor = s.cor | default('#FFD84D') %}
 {% set pos = s.pos | default('baixo') %}
 <div class="slide t-{{ s.tipo | default('item') }}" style="--cor: {{ cor }}">
-  <div class="foto {{ '' if foto else 'sem-foto' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}"{% endif %}></div>
+  {% if s.inteira and foto %}<div class="fundo-desf" style="background-image:url('{{ foto }}')"></div>{% endif %}
+  <div class="foto {{ 'inteira' if s.inteira else '' }} {{ '' if foto else 'sem-foto' }}" {% if foto %}style="background-image:url('{{ foto }}'); background-position:{{ foto_pos }}"{% endif %}></div>
   <div class="sombra {{ pos }}"></div>
 
-  <div class="bloco {{ pos }} {{ 'centro' if s.alinha == 'centro' else '' }}" {% if s.y %}style="top:{{ s.y }}%; bottom:auto; transform:none"{% endif %}>
+  <div class="bloco {{ pos }} {{ 'centro' if s.alinha == 'centro' else '' }} {{ 'pequeno' if s.pequeno else '' }}" {% if s.y %}style="top:{{ s.y }}%; bottom:auto; transform:none"{% endif %}>
     {% if s.pre %}<div class="pre">{{ s.pre }}</div>{% endif %}
     <div class="linhas">
       {% for linha in s.texto.split('|') %}<span>{% for parte_ in linha.split('*') %}{% if loop.index0 is odd %}<mark>{{ parte_ }}</mark>{% else %}{{ parte_ }}{% endif %}{% endfor %}</span>{% endfor %}

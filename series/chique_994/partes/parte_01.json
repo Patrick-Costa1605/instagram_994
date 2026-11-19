@@ -3,64 +3,85 @@
   "slides": [
     {
       "tipo": "capa",
-      "foto": "capa.jpg",
-      "foto_pos": "50% 40%",
+      "foto": "f14.jpg",
+      "foto_pos": "50% 30%",
       "pos": "baixo",
       "cor": "#FFD84D",
       "texto": "coisas que achamos|*chique*"
     },
     {
-      "foto": "lencos.jpg",
-      "foto_pos": "50% 50%",
-      "pos": "topo",
+      "foto": "f42.jpg",
+      "foto_pos": "50% 0%",
+      "pos": "baixo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "ter *4 lenços*|em casa"
+      "texto": "ir às compras *do acampamento*|e voltar com sacos de papel",
+      "pequeno": true
     },
     {
-      "foto": "nos.jpg",
-      "foto_pos": "50% 40%",
+      "foto": "f41.jpg",
+      "foto_pos": "50% 0%",
       "pos": "baixo",
       "cor": "#7BD88F",
       "pre": "chique é",
-      "texto": "atar um nó que|*ninguém* desata"
+      "texto": "a lista dizer *uma coisa*|e voltarmos com dez",
+      "pequeno": true
     },
     {
-      "foto": "fumo.jpg",
-      "foto_pos": "50% 60%",
+      "foto": "f22.jpg",
+      "foto_pos": "50% 70%",
       "pos": "topo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "cheirar a *fumo*|na segunda-feira"
+      "texto": "descansar depois da|caminhada: *cinco minutos*"
     },
     {
-      "foto": "tenda.jpg",
-      "foto_pos": "50% 60%",
+      "foto": "f30.jpg",
+      "foto_pos": "50% 55%",
+      "pos": "baixo",
+      "cor": "#7BD88F",
+      "pre": "chique é",
+      "texto": "um *banho de rio*|como prémio"
+    },
+    {
+      "foto": "f19.jpg",
+      "foto_pos": "50% 30%",
       "pos": "baixo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "montar a tenda|*à primeira*",
-      "nota": "(e não a desmontar à quarta)"
+      "texto": "saber *quem* faz|o churrasco"
     },
     {
-      "foto": "cantar.jpg",
+      "foto": "f39.jpg",
       "foto_pos": "50% 50%",
-      "pos": "meio",
-      "alinha": "centro",
-      "cor": "#7BD88F",
+      "pos": "baixo",
+      "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "cantar sem saber|a letra, mas *com convicção*"
+      "texto": "pintar paredes e ficar|com as *mãos* pintadas",
+      "inteira": true,
+      "pequeno": true
+    },
+    {
+      "foto": "f25.jpg",
+      "foto_pos": "50% 40%",
+      "pos": "baixo",
+      "cor": "#FFD84D",
+      "pre": "chique é",
+      "texto": "cantar com as *lanternas*|no ar"
     },
     {
       "tipo": "fim",
-      "foto": "fim.jpg",
+      "foto": "f18.jpg",
       "foto_pos": "50% 50%",
       "pos": "baixo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "ser *escuteiro*",
-      "nota": "Agrupamento 994 · Caxinas. E tu, o que achas chique?"
+      "texto": "a foto de grupo que|*demora* vinte minutos",
+      "nota": "E tu, o que achas chique no escutismo?",
+      "inteira": true,
+      "pequeno": true
     }
   ],
-  "legenda": "Coisas que achamos chique. ✨\nTer 4 lenços em casa, atar um nó que ninguém desata, cheirar a fumo na segunda-feira, montar a tenda à primeira, cantar sem saber a letra mas com convicção.\n\nE tu, o que achas chique no escutismo? Conta-nos nos comentários e marca quem se reconhece. 👇\n\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com"
+  "legenda": "Coisas que achamos chique. ✨\nIr às compras do acampamento e voltar com sacos de papel, a lista dizer uma coisa e voltarmos com dez, descansar cinco minutos depois da caminhada, um banho de rio como prémio, saber quem faz o churrasco, pintar paredes e ficar com as mãos pintadas, cantar com as lanternas no ar e a foto de grupo que demora vinte minutos.\n\nE tu, o que achas chique no escutismo? Conta-nos nos comentários e marca quem se reconhece. 👇\n\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #achamoschique",
+  "pasta_fotos": "novas"
 }
