@@ -1,0 +1,40 @@
+/* ACHAMOS CHIQUE — fotos a ecrã inteiro e uma frase escrita por cima, como num bilhete.
+   «chique é» em Fraunces itálico (a cor de cada slide) + o resto em Inter Extra-Bold. */
+@font-face { font-family: "Fraunces"; src: url("{{ fonts }}/fraunces-latin-900-italic.woff2"); font-weight: 900; font-style: italic; }
+@font-face { font-family: "Fraunces"; src: url("{{ fonts }}/fraunces-latin-400-italic.woff2"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Inter"; src: url("{{ fonts }}/inter-latin-800-normal.woff2"); font-weight: 800; }
+@font-face { font-family: "Inter"; src: url("{{ fonts }}/inter-latin-500-normal.woff2"); font-weight: 500; }
+:root { --creme: #F8F3E8; --tinta: #141414; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: {{ w }}px; height: {{ h }}px; background: #000; }
+.slide { position: relative; width: {{ w }}px; height: {{ h }}px; overflow: hidden; background: #1a1a1a; }
+.foto { position: absolute; inset: 0; background: center/cover no-repeat; }
+.sem-foto { background: repeating-linear-gradient(135deg, #263 0 30px, #2d4a3c 30px 60px); }
+
+/* só escurece onde há texto, para a foto ficar viva */
+.sombra { position: absolute; inset: 0; pointer-events: none; }
+.sombra.topo  { background: linear-gradient(180deg, rgba(10,8,5,.72) 0%, rgba(10,8,5,.5) 26%, rgba(10,8,5,0) 52%); }
+.sombra.meio  { background: radial-gradient(ellipse 120% 46% at 50% 50%, rgba(10,8,5,.62) 0%, rgba(10,8,5,.4) 55%, rgba(10,8,5,0) 100%); }
+.sombra.baixo { background: linear-gradient(0deg, rgba(10,8,5,.78) 0%, rgba(10,8,5,.52) 30%, rgba(10,8,5,0) 58%); }
+
+/* o texto */
+.bloco { position: absolute; left: 72px; right: 72px; color: var(--creme); }
+.bloco.topo  { top: 96px; }
+.bloco.meio  { top: 50%; transform: translateY(-50%); }
+.bloco.baixo { bottom: 150px; }
+.bloco.centro { text-align: center; }
+.pre { font-family: "Fraunces"; font-style: italic; font-weight: 900; font-size: 164px; line-height: .92; letter-spacing: -5px; color: var(--cor); }
+.linhas { font-family: "Inter"; font-weight: 800; font-size: 112px; line-height: 1.0; letter-spacing: -3px; margin-top: 10px; text-shadow: 0 3px 24px rgba(0,0,0,.45); }
+.linhas span { display: block; }
+.linhas mark { background: none; color: var(--cor); font-family: "Fraunces"; font-style: italic; font-weight: 900; letter-spacing: -2px;
+  text-decoration: underline; text-decoration-thickness: 7px; text-underline-offset: 10px; text-decoration-skip-ink: none; }
+.nota { font-family: "Inter"; font-weight: 500; font-size: 36px; line-height: 1.25; margin-top: 24px; opacity: .92; }
+
+/* capa */
+.t-capa .linhas { font-size: 124px; margin-top: 0; }
+.t-capa .linhas mark { display: block; font-size: 268px; line-height: .9; letter-spacing: -9px; margin-top: 4px; text-decoration: none; }
+
+/* rodapé minimalista */
+.marca { position: absolute; left: 72px; bottom: 56px; font-family: "Inter"; font-weight: 800; font-size: 25px; letter-spacing: 6px; text-transform: uppercase; color: var(--creme); text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+.marca b { color: var(--cor); }
+.logo { position: absolute; right: 54px; bottom: 42px; filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 6px 10px rgba(0,0,0,.5)); }

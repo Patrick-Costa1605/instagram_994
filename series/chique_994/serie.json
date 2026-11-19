@@ -1,0 +1,10 @@
+{
+  "nome": "Achamos Chique",
+  "formato": { "largura": 1080, "altura": 1350 },
+  "modelo": "modelo.html.j2",
+  "estilo": "estilo.css",
+  "cabecalho": "achamos chique",
+  "cores": { "banda": "#FFD84D", "amarelo": "#FFD84D", "verde": "#7BD88F", "azul": "#3B6CF0", "vermelho": "#EE4B3A", "creme": "#F8F3E8" },
+  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 104 },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #achamoschique"
+}

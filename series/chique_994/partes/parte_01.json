@@ -1,0 +1,66 @@
+{
+  "titulo": "Achamos chique — parte 1",
+  "slides": [
+    {
+      "tipo": "capa",
+      "foto": "capa.jpg",
+      "foto_pos": "50% 40%",
+      "pos": "baixo",
+      "cor": "#FFD84D",
+      "texto": "coisas que achamos|*chique*"
+    },
+    {
+      "foto": "lencos.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "topo",
+      "cor": "#FFD84D",
+      "pre": "chique é",
+      "texto": "ter *4 lenços*|em casa"
+    },
+    {
+      "foto": "nos.jpg",
+      "foto_pos": "50% 40%",
+      "pos": "baixo",
+      "cor": "#7BD88F",
+      "pre": "chique é",
+      "texto": "atar um nó que|*ninguém* desata"
+    },
+    {
+      "foto": "fumo.jpg",
+      "foto_pos": "50% 60%",
+      "pos": "topo",
+      "cor": "#FF9A4D",
+      "pre": "chique é",
+      "texto": "cheirar a *fumo*|na segunda-feira"
+    },
+    {
+      "foto": "tenda.jpg",
+      "foto_pos": "50% 60%",
+      "pos": "baixo",
+      "cor": "#FFD84D",
+      "pre": "chique é",
+      "texto": "montar a tenda|*à primeira*",
+      "nota": "(e não a desmontar à quarta)"
+    },
+    {
+      "foto": "cantar.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "meio",
+      "alinha": "centro",
+      "cor": "#7BD88F",
+      "pre": "chique é",
+      "texto": "cantar sem saber|a letra, mas *com convicção*"
+    },
+    {
+      "tipo": "fim",
+      "foto": "fim.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "baixo",
+      "cor": "#FFD84D",
+      "pre": "chique é",
+      "texto": "ser *escuteiro*",
+      "nota": "Agrupamento 994 · Caxinas. E tu, o que achas chique?"
+    }
+  ],
+  "legenda": "Coisas que achamos chique. ✨\nTer 4 lenços em casa, atar um nó que ninguém desata, cheirar a fumo na segunda-feira, montar a tenda à primeira, cantar sem saber a letra mas com convicção.\n\nE tu, o que achas chique no escutismo? Conta-nos nos comentários e marca quem se reconhece. 👇\n\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com"
+}

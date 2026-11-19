@@ -71,3 +71,10 @@ Foto a ecrã inteiro, só com vinheta no topo e no fundo, e um **rótulo de gara
 por slide com `"x"` e `"y"` (percentagem, centro do rótulo; por omissão 50 / 68). Campos do slide: `foto`, `foto_pos`, `texto`
 (`|` separa linhas), `etiqueta_topo`, `cor` (faixa de baixo), `rot` (inclinação) e `legenda`.
 `python src/gerar.py series/rotulo_994/partes/parte_01.json` · Fotos em `series/rotulo_994/fotos/` (fora do git).
+
+## Série «Achamos Chique» (`series/chique_994/`)
+Fotos a ecrã inteiro com uma frase escrita por cima, no formato «chique é…». Sem rótulos nem molduras: só a foto e o texto.
+Por slide: `foto`, `foto_pos`, `pre` («chique é», em itálico serifado na cor do slide), `texto` (`|` quebra a linha,
+`*palavra*` destaca a sublinhado e a cor), `pos` (`topo` | `meio` | `baixo`), `alinha` (`centro`), `cor`, `nota` (linha pequena),
+`y` (posição vertical em %, opcional) e `tipo` (`capa` faz «chique» gigante). A vinheta escurece só onde há texto.
+`python src/gerar.py series/chique_994/partes/parte_01.json` · fotos em `series/chique_994/fotos/` (fora do git).
