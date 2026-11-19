@@ -4,84 +4,94 @@
     {
       "tipo": "capa",
       "foto": "f14.jpg",
-      "foto_pos": "50% 30%",
-      "pos": "baixo",
+      "inteira": true,
+      "foto_pos": "50% 100%",
+      "pos": "topo",
       "cor": "#FFD84D",
       "texto": "coisas que achamos|*chique*"
     },
     {
-      "foto": "f42.jpg",
-      "foto_pos": "50% 0%",
+      "foto": "f30.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "topo",
+      "cor": "#7BD88F",
+      "pre": "chique é",
+      "texto": "ser feliz com *pouco*"
+    },
+    {
+      "foto": "f10.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "baixo",
+      "cor": "#FF9A4D",
+      "pre": "chique é",
+      "texto": "dizer *«é rápido»*|e já ser noite",
+      "pequeno": true
+    },
+    {
+      "foto": "f17.jpg",
+      "foto_pos": "50% 40%",
       "pos": "baixo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "ir às compras *do acampamento*|e voltar com sacos de papel",
+      "texto": "ter uma família|que *escolhemos*",
       "pequeno": true
     },
     {
-      "foto": "f41.jpg",
-      "foto_pos": "50% 0%",
+      "foto": "f39.jpg",
+      "foto_pos": "50% 40%",
       "pos": "baixo",
-      "cor": "#7BD88F",
-      "pre": "chique é",
-      "texto": "a lista dizer *uma coisa*|e voltarmos com dez",
-      "pequeno": true
-    },
-    {
-      "foto": "f22.jpg",
-      "foto_pos": "50% 70%",
-      "pos": "topo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "descansar depois da|caminhada: *cinco minutos*"
-    },
-    {
-      "foto": "f30.jpg",
-      "foto_pos": "50% 55%",
-      "pos": "baixo",
-      "cor": "#7BD88F",
-      "pre": "chique é",
-      "texto": "um *banho de rio*|como prémio"
+      "texto": "cheirar a *fogueira*|na segunda-feira",
+      "pequeno": true
     },
     {
       "foto": "f19.jpg",
       "foto_pos": "50% 30%",
       "pos": "baixo",
-      "cor": "#FFD84D",
+      "cor": "#7BD88F",
       "pre": "chique é",
-      "texto": "saber *quem* faz|o churrasco"
+      "texto": "*rir* de nós próprios",
+      "pequeno": true
     },
     {
-      "foto": "f39.jpg",
+      "foto": "f26.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "topo",
+      "cor": "#FFD84D",
+      "pre": "chique é",
+      "texto": "*cumprir* o que|se promete",
+      "pequeno": true
+    },
+    {
+      "foto": "f12.jpg",
       "foto_pos": "50% 50%",
       "pos": "baixo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "pintar paredes e ficar|com as *mãos* pintadas",
-      "inteira": true,
+      "texto": "dizer *«eu vou!»*|sem saber para onde",
       "pequeno": true
     },
     {
-      "foto": "f25.jpg",
-      "foto_pos": "50% 40%",
-      "pos": "baixo",
-      "cor": "#FFD84D",
+      "foto": "f36.jpg",
+      "foto_pos": "50% 50%",
+      "pos": "topo",
+      "cor": "#7BD88F",
       "pre": "chique é",
-      "texto": "cantar com as *lanternas*|no ar"
+      "texto": "deixar o sítio *melhor*|do que o encontrámos",
+      "pequeno": true
     },
     {
       "tipo": "fim",
       "foto": "f18.jpg",
       "foto_pos": "50% 50%",
-      "pos": "baixo",
+      "pos": "topo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "a foto de grupo que|*demora* vinte minutos",
-      "nota": "E tu, o que achas chique no escutismo?",
-      "inteira": true,
-      "pequeno": true
+      "texto": "ser *escuteiro*",
+      "nota": "Agrupamento 994 · Caxinas. E tu, o que achas chique?"
     }
   ],
-  "legenda": "Coisas que achamos chique. ✨\nIr às compras do acampamento e voltar com sacos de papel, a lista dizer uma coisa e voltarmos com dez, descansar cinco minutos depois da caminhada, um banho de rio como prémio, saber quem faz o churrasco, pintar paredes e ficar com as mãos pintadas, cantar com as lanternas no ar e a foto de grupo que demora vinte minutos.\n\nE tu, o que achas chique no escutismo? Conta-nos nos comentários e marca quem se reconhece. 👇\n\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #achamoschique",
+  "legenda": "Coisas que achamos chique. ✨\nSer feliz com pouco. Dizer «é rápido» e já ser noite. Ter uma família que escolhemos. Cheirar a fogueira na segunda-feira. Rir de nós próprios. Cumprir o que se promete. Dizer «eu vou!» sem saber para onde. Deixar o sítio melhor do que o encontrámos. Ser escuteiro.\n\nE tu, o que achas chique? Conta-nos nos comentários e marca quem se reconhece. 👇\n\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com\n\n#escutismo #994caxinas #escuteiros #caxinas #viladoconde #achamoschique",
   "pasta_fotos": "novas"
 }
