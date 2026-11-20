@@ -1,0 +1,90 @@
+{
+ "titulo": "Caminheiros",
+ "modelo": "modelos/seccoes.html.j2",
+ "estilo": "modelos/seccoes.css",
+ "cor_banda": "#D7352B",
+ "pasta_fotos": "caminheiros",
+ "legenda": "Caminheiros: a última etapa do caminho escutista. 🚶\nDos 18 aos 22 anos, em Clã, percorrem trilhos exigentes, põem as mãos à obra onde faz mais falta e preparam-se para a vida adulta. A divisa? Servir.\n\nTens entre 18 e 22 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, contacta-nos.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "simbolo": "logo_IV_Seccao_transparente.png",
+ "slides": [
+  {
+   "tipo": "capa",
+   "lado": "dir",
+   "foto": "rua.jpg",
+   "foto_pos": "50% 75%",
+   "etiqueta": "Caminheiros",
+   "tab": "A última etapa do caminho escutista.",
+   "grande": "18–22",
+   "unidade": "Anos",
+   "lema": "Servir."
+  },
+  {
+   "tipo": "sabado",
+   "grande": "Uma fraternidade do ar livre para servir.",
+   "kicker": "Baden-Powell",
+   "titulo": "O Clã.",
+   "texto": "Preparam-se para a vida adulta com valores sólidos, prontos a deixar o mundo melhor."
+  },
+  {
+   "tipo": "fazem",
+   "titulo": "O que fazem?",
+   "itens": [
+    [
+     "A caminhada",
+     "Traçam o próprio rumo, percorrem trilhos exigentes e descobrem quem são a cada passo."
+    ],
+    [
+     "O serviço",
+     "Olham para a sociedade com sentido crítico e metem as mãos à obra onde faz mais falta."
+    ],
+    [
+     "O Clã",
+     "Em comunidade de jovens adultos, partilham ideias, debatem escolhas e decidem juntos."
+    ]
+   ]
+  },
+  {
+   "tipo": "organiza",
+   "kicker": "Como se organizam",
+   "titulo": "As Tribos.",
+   "sub": "Grupos de 4 a 8 caminheiros. Cada Tribo escolhe um patrono: um santo, um benemérito ou um herói.",
+   "emblemas": [
+    {
+     "img": "aristides",
+     "nome": "Aristides de Sousa Mendes"
+    },
+    {
+     "img": "irena",
+     "nome": "Irena Sendler"
+    }
+   ],
+   "nota": "Todas juntas formam o Clã, que se reúne no Albergue."
+  },
+  {
+   "tipo": "lema",
+   "titulo": "Servir.",
+   "texto": "A divisa dos Caminheiros: colocar a vida ao serviço dos outros, rumo ao ideal do Homem Novo."
+  },
+  {
+   "tipo": "convite",
+   "kicker": "Sábado à tarde, na nossa sede",
+   "titulo": "Tens 18 a 22 anos?",
+   "texto": "Vem conhecer o Clã.",
+   "contactos": [
+    [
+     "Telefone",
+     "924 428 343"
+    ],
+    [
+     "Email",
+     "geral.994@escutismo.pt"
+    ],
+    [
+     "Site",
+     "994caxinas.com"
+    ]
+   ],
+   "grande": "O caminho\ncontinua."
+  }
+ ]
+}

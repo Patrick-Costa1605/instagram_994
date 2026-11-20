@@ -1,0 +1,104 @@
+{
+ "titulo": "Lobitos",
+ "modelo": "modelos/seccoes.html.j2",
+ "estilo": "modelos/seccoes.css",
+ "cor_banda": "#F2B01E",
+ "pasta_fotos": "lobitos",
+ "legenda": "Lobitos, a primeira aventura no escutismo. 🐺\nDos 6 aos 10 anos, vivem na Alcateia, em Bando, entre jogos, histórias e desafios ao ar livre. O lema? Da melhor vontade!\n\nTens entre 6 e 10 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, contacta-nos.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "simbolo": "logo_I_Seccao_transparente.png",
+ "slides": [
+  {
+   "tipo": "capa",
+   "lado": "esq",
+   "foto": "construir.jpg",
+   "foto_pos": "45% 40%",
+   "etiqueta": "Lobitos",
+   "tab": "A primeira aventura no escutismo.",
+   "grande": "6–10",
+   "unidade": "Anos",
+   "lema": "Da melhor vontade"
+  },
+  {
+   "tipo": "sabado",
+   "foto": "bandeira.jpg",
+   "foto_pos": "50% 35%",
+   "kicker": "Sábado à tarde, na sede",
+   "titulo": "Jogos, histórias e desafios ao ar livre.",
+   "texto": "É assim que descobrem o mundo: a brincar, a partilhar e a crescer juntos, com alegria."
+  },
+  {
+   "tipo": "fazem",
+   "titulo": "A vida na Alcateia.",
+   "itens": [
+    [
+     "Explorar a selva",
+     "Descobrimos o mundo através de jogos, histórias e desafios ao ar livre."
+    ],
+    [
+     "Viver em Bando",
+     "Brincamos, partilhamos e aprendemos a crescer juntos, com alegria."
+    ],
+    [
+     "Partir à caçada",
+     "Ajudamos quem precisa com pequenos gestos, todos os dias."
+    ]
+   ]
+  },
+  {
+   "tipo": "organiza",
+   "kicker": "Como se organizam",
+   "titulo": "Vivem em Bandos.",
+   "sub": "Grupos de 4 a 7 lobitos. Cada Bando tem a cor do pelo de um lobo.",
+   "emblemas": [
+    {
+     "img": "bando_branco",
+     "nome": "Branco"
+    },
+    {
+     "img": "bando_cinzento",
+     "nome": "Cinzento"
+    },
+    {
+     "img": "bando_preto",
+     "nome": "Preto"
+    },
+    {
+     "img": "bando_castanho",
+     "nome": "Castanho"
+    },
+    {
+     "img": "bando_ruivo",
+     "nome": "Ruivo"
+    }
+   ],
+   "nota": "Todos juntos são a Alcateia, que se reúne no Covil."
+  },
+  {
+   "tipo": "lema",
+   "titulo": "Da melhor\nvontade!",
+   "texto": "O lema dos Lobitos lembra-nos que todos os dias podemos dar o nosso melhor."
+  },
+  {
+   "tipo": "convite",
+   "kicker": "Sábado à tarde, na nossa sede",
+   "titulo": "Tens 6 a 10 anos?",
+   "texto": "Vem conhecer a Alcateia.",
+   "contactos": [
+    [
+     "Telefone",
+     "924 428 343"
+    ],
+    [
+     "Email",
+     "geral.994@escutismo.pt"
+    ],
+    [
+     "Site",
+     "994caxinas.com"
+    ]
+   ],
+   "foto": "grupo.jpg",
+   "foto_pos": "50% 40%"
+  }
+ ]
+}

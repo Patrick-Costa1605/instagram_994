@@ -1,0 +1,65 @@
+{
+ "titulo": "Vem conhecer-nos",
+ "modelo": "modelos/seccoes.html.j2",
+ "estilo": "modelos/seccoes.css",
+ "cor_banda": "#0B9544",
+ "pasta_fotos": "agrupamento",
+ "legenda": "Aparece num sábado à tarde na nossa sede. ✨\nHá uma secção para cada idade, dos 6 aos 22 anos. Este ano, o nosso desafio é chegar aos 150 escuteiros — ajuda-nos a lá chegar.\n\nPara mais informação, contacta-nos.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "slides": [
+  {
+   "tipo": "capa",
+   "lado": "dir",
+   "foto": "sede.png",
+   "foto_pos": "28% 50%",
+   "etiqueta": "Agrupamento 994 · Caxinas",
+   "tab": "Aparece.",
+   "grande": "Sáb.",
+   "unidade": "À tarde",
+   "lema": "na nossa sede"
+  },
+  {
+   "tipo": "passos",
+   "kicker": "É simples",
+   "passos": [
+    [
+     "Aparece.",
+     "Num sábado à tarde, na nossa sede."
+    ],
+    [
+     "Conhece.",
+     "Há uma secção para cada idade, dos 6 aos 22 anos."
+    ],
+    [
+     "Fala connosco.",
+     "Para mais informação, contacta-nos."
+    ]
+   ]
+  },
+  {
+   "tipo": "meta",
+   "kicker": "O nosso desafio",
+   "numero": "150",
+   "titulo": "escuteiros: a nossa meta este ano.",
+   "texto": "Ajuda-nos a lá chegar."
+  },
+  {
+   "tipo": "fim",
+   "kicker": "Fala connosco",
+   "titulo": "Para mais\ninformação.",
+   "contactos": [
+    [
+     "Telefone",
+     "924 428 343"
+    ],
+    [
+     "Email",
+     "geral.994@escutismo.pt"
+    ],
+    [
+     "Site",
+     "994caxinas.com"
+    ]
+   ]
+  }
+ ]
+}
