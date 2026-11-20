@@ -1,0 +1,113 @@
+{
+ "titulo": "PIONEIROS",
+ "tam": 150,
+ "papel": "mm",
+ "cor_banda": "#2748B8",
+ "simbolo": "logo_III_Seccao_transparente.png",
+ "indice": 2,
+ "todas": [
+  {
+   "nome": "Lobitos",
+   "de": 6,
+   "ate": 10,
+   "cor": "#F2B01E"
+  },
+  {
+   "nome": "Exploradores",
+   "de": 10,
+   "ate": 14,
+   "cor": "#1F8A4C"
+  },
+  {
+   "nome": "Pioneiros",
+   "de": 14,
+   "ate": 18,
+   "cor": "#2748B8"
+  },
+  {
+   "nome": "Caminheiros",
+   "de": 18,
+   "ate": 22,
+   "cor": "#D7352B"
+  }
+ ],
+ "pasta_fotos": "pioneiros",
+ "legenda": "Pioneiros: as ideias passam do papel à obra. 🛠️\nDos 14 aos 18 anos, escolhem uma ideia juntos e fazem dela algo real: raids, construções e projetos decididos por eles.\n\nTens entre 14 e 18 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "slides": [
+  {
+   "tipo": "capa",
+   "gancho": "as ideias passam do papel à obra",
+   "idade": "14–18",
+   "foto_desc": "pioneiros a construir, mãos à obra",
+   "legenda": "a nossa Comunidade"
+  },
+  {
+   "tipo": "sabado",
+   "titulo": "Escolhem uma ideia. **Fazem-na acontecer.**",
+   "fotos": [
+    "a equipa a planear",
+    "o projeto feito"
+   ],
+   "legendas": [
+    "o plano",
+    "a obra"
+   ],
+   "nota": "o Empreendimento"
+  },
+  {
+   "tipo": "fazem",
+   "titulo": "O que **fazem**:",
+   "itens": [
+    [
+     "Tu decides",
+     "Os pioneiros escolhem os projetos, os destinos e os desafios."
+    ],
+    [
+     "Técnica avançada",
+     "Raids, construções e atividades que testam a resistência."
+    ],
+    [
+     "Compromisso",
+     "Escolhas conscientes e a palavra dada honrada."
+    ],
+    [
+     "Intervenção",
+     "Não esperamos que os outros mudem o mundo: fazemos a nossa parte."
+    ]
+   ]
+  },
+  {
+   "tipo": "organiza",
+   "titulo": "As **Equipas**.",
+   "sub": "Grupos de 4 a 8 pioneiros, com o nome de um santo, de um pioneiro da humanidade ou de um herói nacional.",
+   "emblemas": [
+    {
+     "img": "cristovao_colombo",
+     "nome": "Cristóvão Colombo"
+    },
+    {
+     "img": "vasco_da_gama",
+     "nome": "Vasco da Gama"
+    },
+    {
+     "img": "nap",
+     "nome": "Nuno Álvares Pereira"
+    }
+   ],
+   "nota": "todos juntos formam a Comunidade, que se reúne no Abrigo"
+  },
+  {
+   "tipo": "lema",
+   "titulo": "Sempre\n**alerta!**",
+   "texto": "O lema dos Pioneiros mantém o «Sempre Alerta», mas agora com maturidade: estar pronto para agir, liderar e construir."
+  },
+  {
+   "tipo": "idades"
+  },
+  {
+   "tipo": "convite",
+   "idade_txt": "Tens 14 a 18 anos?",
+   "foto_desc": "a fachada da sede, com o emblema"
+  }
+ ]
+}

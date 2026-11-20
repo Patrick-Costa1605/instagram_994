@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><style>{{ css }}</style></head>
+{# ---------------- peças desenhadas à mão ---------------- #}
+{% macro fita(x, y, w, rot) %}<div class="fita" style="left:{{ x }}px;top:{{ y }}px;width:{{ w }}px;transform:rotate({{ rot }}deg)"></div>{% endmacro %}
+{% macro pol(x, y, w, h, rot, desc, leg='', fita_rot=-3) %}
+<div class="pol" style="left:{{ x }}px;top:{{ y }}px;width:{{ w }}px;transform:rotate({{ rot }}deg)">
+  <div class="ft" style="height:{{ h }}px"><b>FOTO</b>{{ desc }}</div>
+  <div class="leg">{{ leg }}</div>
+</div>
+{{ fita(x + w / 2 - 110, y - 26, 220, fita_rot) }}
+{% endmacro %}
+{% macro seta(x, y, w, h, rot=0, sw=7, cor='var(--tinta)') %}
+<svg class="risco" style="left:{{ x }}px;top:{{ y }}px;transform:rotate({{ rot }}deg)" width="{{ w }}" height="{{ h }}" viewBox="0 0 {{ w }} {{ h }}">
+  <path d="M 8 {{ h - 8 }} C {{ w * 0.25 }} {{ h * 0.35 }}, {{ w * 0.62 }} {{ h * 0.08 }}, {{ w - 12 }} 16" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
+  <path d="M {{ w - 12 }} 16 L {{ w - 50 }} 14 M {{ w - 12 }} 16 L {{ w - 26 }} 52" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
+</svg>{% endmacro %}
+{% macro laco(x, y, w, h, rot=0, sw=8, cor='var(--cor-escura)') %}
+<svg class="risco" style="left:{{ x }}px;top:{{ y }}px;transform:rotate({{ rot }}deg)" width="{{ w }}" height="{{ h }}" viewBox="0 0 {{ w }} {{ h }}">
+  <path d="M {{ w * 0.10 }} {{ h * 0.42 }} C {{ w * 0.06 }} {{ h * 0.04 }}, {{ w * 0.86 }} {{ h * 0.00 }}, {{ w * 0.97 }} {{ h * 0.46 }} C {{ w * 1.0 }} {{ h * 0.86 }}, {{ w * 0.34 }} {{ h * 1.0 }}, {{ w * 0.08 }} {{ h * 0.78 }} C {{ w * -0.02 }} {{ h * 0.60 }}, {{ w * 0.14 }} {{ h * 0.16 }}, {{ w * 0.44 }} {{ h * 0.08 }}" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
+</svg>{% endmacro %}
+{% macro caixa(x, y, s=70, feito=True) %}
+<svg class="risco" style="left:{{ x }}px;top:{{ y }}px" width="{{ s + 30 }}" height="{{ s + 20 }}" viewBox="0 0 {{ s + 30 }} {{ s + 20 }}">
+  <path d="M 6 10 L {{ s + 2 }} 6 L {{ s + 4 }} {{ s + 4 }} L 8 {{ s + 2 }} Z" stroke="var(--tinta)" stroke-width="5"/>
+  {% if feito %}<path d="M 14 {{ s * 0.52 }} C 22 {{ s * 0.62 }}, 28 {{ s * 0.76 }}, 34 {{ s * 0.9 }} C 48 {{ s * 0.5 }}, 66 {{ s * 0.2 }}, {{ s + 26 }} 2" stroke="var(--cor-escura)" stroke-width="10"/>{% endif %}
+</svg>{% endmacro %}
+{% macro fundo() %}
+  {% if parte.papel == 'quad' %}<div class="margem"></div>{% endif %}
+  {% if parte.papel == 'kraft' %}<div class="fibra"></div>{% endif %}
+  {% if motivo %}<div class="motivo" style="opacity:{{ parte.motivo_opac or 0.5 }}">{{ motivo }}</div>{% endif %}
+{% endmacro %}
+{% macro remate() %}
+  {% if s.tipo not in ("convite", "capa") %}<div class="pag">{{ pag }}/{{ total }}</div>{% endif %}
+  <img class="logo" src="{{ logo }}" alt="Agrupamento 994 Caxinas">
+  <div class="grao"></div><div class="luz"></div>
+{% endmacro %}
+<body data-pronto="1">
+{% set t = s.tipo %}
+<div class="pg papel-{{ parte.papel }} {{ 'kraft' if parte.papel == 'kraft' else '' }}">
+{{ fundo() }}
+
+{% if t == 'capa' %}
+  <div class="marker" style="position:absolute;left:56px;top:86px;font-size:{{ parte.tam }}px">{{ parte.titulo }}</div>
+  <div class="mao" style="position:absolute;left:62px;top:{{ 120 + parte.tam }}px;font-size:58px;max-width:620px;transform:rotate(-2deg)">{{ s.gancho }}</div>
+  {{ seta(560, 150 + parte.tam, 170, 150, 28) }}
+  {{ pol(330, 470, 690, 610, 3, s.foto_desc, s.legenda, -4) }}
+  <div class="carimbo" style="left:46px;top:820px;transform:rotate(-9deg)">{{ s.idade }}<small>ANOS</small></div>
+
+{% elif t == 'sabado' %}
+  <div class="marker" style="position:absolute;left:58px;top:78px;width:960px;font-size:88px">{{ s.titulo|mk|safe }}</div>
+  {{ pol(56, 430, 560, 470, -4, s.fotos[0], s.legendas[0], 4) }}
+  {{ pol(486, 660, 540, 440, 5, s.fotos[1], s.legendas[1], -6) }}
+  <div class="mao" style="position:absolute;left:66px;top:1120px;font-size:48px;max-width:410px;transform:rotate(-3deg)">{{ s.nota }}</div>
+
+{% elif t == 'fazem' %}
+  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:100px">{{ s.titulo|mk|safe }}</div>
+  {% set poucos = s.itens|length < 4 %}{% set passo = 320 if poucos else 245 %}
+  {% for i in s.itens %}
+    {% set y0 = (400 if poucos else 350) + loop.index0 * passo %}
+    {{ caixa(56, y0 + 4, 64) }}
+    <div class="mao" style="position:absolute;left:170px;top:{{ y0 - 6 }}px;font-size:{{ 76 if poucos else 62 }}px">{{ i[0] }}</div>
+    <div class="maq" style="position:absolute;left:172px;top:{{ y0 + (92 if poucos else 78) }}px;width:830px;font-size:{{ 41 if poucos else 37 }}px">{{ i[1] }}</div>
+  {% endfor %}
+
+{% elif t == 'organiza' %}
+  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:108px">{{ s.titulo|mk|safe }}</div>
+  <div class="maq" style="position:absolute;left:62px;top:{{ 230 if s.titulo|length < 14 else 330 }}px;width:900px">{{ s.sub }}</div>
+  {% set n = s.emblemas|length %}
+  {% set pos = {5: ([(70,470,-6),(410,440,4),(745,490,-3),(230,800,6),(590,820,-5)] if s.emblemas[0].lema else [(70,560,-6),(410,520,4),(745,575,-3),(230,900,6),(590,925,-5)]), 3: [(80,600,-5),(420,560,4),(760,620,-3)], 2: [(140,600,-4),(590,640,5)]}[n] %}
+  {% for e in s.emblemas %}{% set p = pos[loop.index0] %}
+    <div class="autocolante {{ 'foto' if e.foto else '' }}" style="left:{{ p[0] }}px;top:{{ p[1] }}px;width:{{ 300 if n < 4 else 260 }}px;transform:rotate({{ p[2] }}deg)">
+      <img src="{{ ag(e.img) }}" alt="" style="{% if n < 4 %}width:190px;height:190px{% endif %}"><b>{{ e.nome }}</b>{% if e.lema %}<span>{{ e.lema }}</span>{% endif %}
+    </div>
+  {% endfor %}
+  <div class="mao cor-t" style="position:absolute;left:62px;top:1205px;width:760px;font-size:46px;transform:rotate(-2deg)">{{ s.nota }}</div>
+
+{% elif t == 'lema' %}
+  {% if parte.simbolo %}<img src="{{ secao(parte.simbolo) }}" alt="" style="position:absolute;right:70px;top:80px;width:210px;transform:rotate(8deg);filter:drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 12px 12px rgba(40,28,10,.3))">{% endif %}
+  <div class="mao" style="position:absolute;left:62px;top:110px;font-size:52px;transform:rotate(-3deg)">o nosso lema:</div>
+  <div class="marker" style="position:absolute;left:56px;top:300px;width:980px;font-size:{{ s.tam or 168 }}px">{{ s.titulo|mk|safe }}</div>
+  <div class="sombra" style="left:90px;top:{{ s.tira_y or 860 }}px;transform:rotate(-2deg)"><div class="tira" style="position:relative;width:820px"><div class="maq" style="font-size:38px">{{ s.texto }}</div></div></div>
+  {{ fita(380, (s.tira_y or 860) - 30, 230, 4) }}
+
+{% elif t == 'idades' %}
+  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:96px">Há uma secção<br>para cada idade.</div>
+  {% set x0, x1, yr = 110, 970, 560 %}
+  {% set dx = (x1 - x0) / 16 %}
+  <svg class="risco" style="left:0;top:0" width="1080" height="1440" viewBox="0 0 1080 1440">
+    <path d="M {{ x0 - 52 }} {{ yr }} L {{ x1 + 52 }} {{ yr + 4 }} L {{ x1 + 50 }} {{ yr + 128 }} L {{ x0 - 50 }} {{ yr + 124 }} Z" fill="#FFFDF6" stroke="var(--tinta)" stroke-width="5"/>
+    {% for a in range(17) %}<path d="M {{ x0 + a * dx }} {{ yr + 2 }} L {{ x0 + a * dx + 1 }} {{ yr + (40 if a % 4 == 0 else 22) }}" stroke="var(--tinta)" stroke-width="{{ 5 if a % 4 == 0 else 3 }}"/>{% endfor %}
+    {% for sec in parte.todas %}{% set a0, a1 = sec.de - 6, sec.ate - 6 %}
+      <path d="M {{ x0 + a0 * dx + 14 }} {{ yr + 200 + loop.index0 % 2 * 4 }} L {{ x0 + a1 * dx - 14 }} {{ yr + 196 + loop.index0 % 2 * 6 }}" stroke="{{ sec.cor }}" stroke-width="34" opacity=".92"/>
+    {% endfor %}
+  </svg>
+  {% for a in range(0, 17, 4) %}<div class="maq" style="position:absolute;left:{{ x0 + a * dx - 40 }}px;top:{{ yr + 52 }}px;width:80px;text-align:center;font-weight:700;font-size:46px">{{ 6 + a }}</div>{% endfor %}
+  {% for sec in parte.todas %}{% set a0 = sec.de - 6 %}
+    <div class="mao" style="position:absolute;left:{{ x0 + a0 * dx + 6 }}px;top:{{ yr + 240 }}px;width:{{ 4 * dx - 12 }}px;text-align:center;font-size:{{ 44 if sec.nome|length < 10 else 37 }}px">{{ sec.nome }}</div>
+  {% endfor %}
+  {% set cur = parte.todas[parte.indice] %}
+  {{ laco(x0 + (cur.de - 6) * dx - 26, yr + 156, 4 * dx + 52, 180, -3) }}
+  <div class="mao cor-t" style="position:absolute;left:{{ [x0 + (cur.de - 6) * dx - 40, 600]|min }}px;top:{{ yr + 370 }}px;font-size:66px;transform:rotate(-4deg)">estás aqui!</div>
+  <div class="maq" style="position:absolute;left:62px;top:1110px;width:780px;font-size:42px">Não é a tua idade? As outras secções estão no nosso perfil.</div>
+
+{% elif t == 'convite' %}
+  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:104px">Aparece num<br><span class="marca">sábado à tarde.</span></div>
+  {{ pol(420, 420, 600, 440, 3, s.foto_desc, 'a nossa sede', -5) }}
+  <div class="mao" style="position:absolute;left:62px;top:520px;font-size:54px;max-width:330px;transform:rotate(-4deg)">{{ s.idade_txt }}</div>
+  {{ seta(130, 690, 260, 150, 8) }}
+  <div class="mao" style="position:absolute;left:62px;top:1052px;font-size:44px;transform:rotate(-2deg)">para mais informação:</div>
+  <div style="position:absolute;left:58px;top:1128px"><span class="dymo cor" style="transform:rotate(-1.5deg)">924 428 343</span></div>
+  <div style="position:absolute;left:74px;top:1218px"><span class="dymo" style="transform:rotate(1deg)">geral.994@escutismo.pt</span></div>
+  <div style="position:absolute;left:62px;top:1306px"><span class="dymo" style="transform:rotate(-.8deg)">994caxinas.com</span></div>
+{% endif %}
+
+{{ remate() }}
+</div>
+</body></html>

@@ -1,0 +1,117 @@
+{
+ "titulo": "LOBITOS",
+ "tam": 182,
+ "papel": "quad",
+ "cor_banda": "#F2B01E",
+ "simbolo": "logo_I_Seccao_transparente.png",
+ "indice": 0,
+ "todas": [
+  {
+   "nome": "Lobitos",
+   "de": 6,
+   "ate": 10,
+   "cor": "#F2B01E"
+  },
+  {
+   "nome": "Exploradores",
+   "de": 10,
+   "ate": 14,
+   "cor": "#1F8A4C"
+  },
+  {
+   "nome": "Pioneiros",
+   "de": 14,
+   "ate": 18,
+   "cor": "#2748B8"
+  },
+  {
+   "nome": "Caminheiros",
+   "de": 18,
+   "ate": 22,
+   "cor": "#D7352B"
+  }
+ ],
+ "pasta_fotos": "lobitos",
+ "legenda": "Lobitos: a primeira aventura no escutismo. 🐺\nDos 6 aos 10 anos, vivem na Alcateia, em Bando, entre jogos, histórias e desafios ao ar livre. O lema? Da melhor vontade!\n\nTens entre 6 e 10 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "slides": [
+  {
+   "tipo": "capa",
+   "gancho": "a primeira aventura no escutismo",
+   "idade": "6–10",
+   "foto_desc": "lobitos a rir, perto da câmara",
+   "legenda": "a nossa Alcateia"
+  },
+  {
+   "tipo": "sabado",
+   "titulo": "Jogos, histórias e **desafios ao ar livre.**",
+   "fotos": [
+    "um jogo, em movimento",
+    "um Bando à volta de uma história"
+   ],
+   "legendas": [
+    "jogos",
+    "histórias"
+   ],
+   "nota": "sábado à tarde!"
+  },
+  {
+   "tipo": "fazem",
+   "titulo": "Na **Alcateia**:",
+   "itens": [
+    [
+     "Explorar a selva",
+     "Descobrimos o mundo através de jogos, histórias e desafios ao ar livre."
+    ],
+    [
+     "Viver em Bando",
+     "Brincamos, partilhamos e aprendemos a crescer juntos, com alegria."
+    ],
+    [
+     "Partir à caçada",
+     "Ajudamos quem precisa com pequenos gestos, todos os dias."
+    ]
+   ]
+  },
+  {
+   "tipo": "organiza",
+   "titulo": "Vivem em **Bandos**.",
+   "sub": "Grupos de 4 a 7 lobitos. Cada Bando tem a cor do pelo de um lobo.",
+   "emblemas": [
+    {
+     "img": "bando_branco",
+     "nome": "Branco"
+    },
+    {
+     "img": "bando_cinzento",
+     "nome": "Cinzento"
+    },
+    {
+     "img": "bando_preto",
+     "nome": "Preto"
+    },
+    {
+     "img": "bando_castanho",
+     "nome": "Castanho"
+    },
+    {
+     "img": "bando_ruivo",
+     "nome": "Ruivo"
+    }
+   ],
+   "nota": "todos juntos são a Alcateia, que se reúne no Covil"
+  },
+  {
+   "tipo": "lema",
+   "titulo": "Da melhor\n**vontade!**",
+   "texto": "O lema dos Lobitos lembra-nos que todos os dias podemos dar o nosso melhor."
+  },
+  {
+   "tipo": "idades"
+  },
+  {
+   "tipo": "convite",
+   "idade_txt": "Tens 6 a 10 anos?",
+   "foto_desc": "a fachada da sede, com o emblema"
+  }
+ ]
+}

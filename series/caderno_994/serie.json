@@ -1,0 +1,9 @@
+{
+  "nome": "Caderno do 994",
+  "formato": { "largura": 1080, "altura": 1440 },
+  "modelo": "modelos/caderno.html.j2",
+  "estilo": "modelos/caderno.css",
+  "cores": { "banda": "#0B9544", "amarelo": "#F2B01E", "verde": "#1F8A4C", "azul": "#2748B8", "vermelho": "#D7352B", "creme": "#F6F2E8", "texto_escuro": "#1D1B18" },
+  "logo": { "ficheiro": "../../assets/agrupamento/logo_994Caxinas.png", "altura": 126 },
+  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde"
+}

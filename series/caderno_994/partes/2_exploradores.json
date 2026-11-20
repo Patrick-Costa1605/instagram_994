@@ -1,0 +1,129 @@
+{
+ "titulo": "EXPLORADORES",
+ "tam": 118,
+ "papel": "topo",
+ "cor_banda": "#1F8A4C",
+ "simbolo": "logo_II_Seccao_transparente.png",
+ "indice": 1,
+ "todas": [
+  {
+   "nome": "Lobitos",
+   "de": 6,
+   "ate": 10,
+   "cor": "#F2B01E"
+  },
+  {
+   "nome": "Exploradores",
+   "de": 10,
+   "ate": 14,
+   "cor": "#1F8A4C"
+  },
+  {
+   "nome": "Pioneiros",
+   "de": 14,
+   "ate": 18,
+   "cor": "#2748B8"
+  },
+  {
+   "nome": "Caminheiros",
+   "de": 18,
+   "ate": 22,
+   "cor": "#D7352B"
+  }
+ ],
+ "pasta_fotos": "exploradores",
+ "legenda": "Exploradores: a aventura faz-se em Patrulha. 🧭\nDos 10 aos 14 anos, são os próprios exploradores que organizam o grupo, decidem o rumo e fazem a aventura acontecer.\n\nTens entre 10 e 14 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "motivo": "topo",
+ "motivo_opac": 0.55,
+ "slides": [
+  {
+   "tipo": "capa",
+   "gancho": "a aventura faz-se em Patrulha",
+   "idade": "10–14",
+   "foto_desc": "uma Patrulha em ação, ao ar livre",
+   "legenda": "a nossa Expedição"
+  },
+  {
+   "tipo": "sabado",
+   "titulo": "Aqui és **tu** que decides o rumo.",
+   "fotos": [
+    "exploradores a montar o campo",
+    "uma Patrulha de mapa na mão"
+   ],
+   "legendas": [
+    "o campo",
+    "o rumo"
+   ],
+   "nota": "são eles que organizam o grupo"
+  },
+  {
+   "tipo": "fazem",
+   "titulo": "Ser **explorador**:",
+   "itens": [
+    [
+     "A Lei e a Promessa",
+     "A nossa palavra vale ouro e a Lei do Escuta guia as nossas ações."
+    ],
+    [
+     "A técnica e o terreno",
+     "Orientação, pioneirismo e vida no campo."
+    ],
+    [
+     "O sistema de patrulhas",
+     "Somos nós que organizamos o grupo e decidimos o rumo."
+    ],
+    [
+     "A descoberta",
+     "Saímos da zona de conforto e exploramos novos horizontes."
+    ]
+   ]
+  },
+  {
+   "tipo": "organiza",
+   "titulo": "As **Patrulhas**.",
+   "sub": "Grupos de 4 a 8 exploradores. Cada um tem um animal: o totem.",
+   "emblemas": [
+    {
+     "img": "patrulha_golfinho",
+     "nome": "Golfinho",
+     "lema": "inteligentes e engraçados"
+    },
+    {
+     "img": "patrulha_aguia",
+     "nome": "Águia",
+     "lema": "fortes e persistentes"
+    },
+    {
+     "img": "patrulha_pinguim",
+     "nome": "Pinguim",
+     "lema": "nadadores e brincalhões"
+    },
+    {
+     "img": "patrulha_castor",
+     "nome": "Castor",
+     "lema": "trabalhadores e perfeitos"
+    },
+    {
+     "img": "patrulha_pantera",
+     "nome": "Pantera",
+     "lema": "astutos e audazes"
+    }
+   ],
+   "nota": "todas juntas formam a Expedição, que se reúne na Base"
+  },
+  {
+   "tipo": "lema",
+   "titulo": "Sempre\n**alerta!**",
+   "texto": "Do «Be Prepared» de Baden-Powell nasce o nosso «Sempre Alerta»: estar pronto de corpo e espírito para qualquer desafio ou serviço.",
+   "tira_y": 820
+  },
+  {
+   "tipo": "idades"
+  },
+  {
+   "tipo": "convite",
+   "idade_txt": "Tens 10 a 14 anos?",
+   "foto_desc": "a fachada da sede, com o emblema"
+  }
+ ]
+}
