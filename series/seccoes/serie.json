@@ -1,9 +1,0 @@
-{
-  "nome": "Do 6 aos 22",
-  "formato": { "largura": 1080, "altura": 1440 },
-  "modelo": "modelos/seccoes.html.j2",
-  "estilo": "modelos/seccoes.css",
-  "cores": { "banda": "#0B9544", "amarelo": "#F2B01E", "verde": "#1F8A4C", "azul": "#2748B8", "vermelho": "#D7352B", "creme": "#F3EEE3", "texto_escuro": "#16120F" },
-  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 128 },
-  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne"
-}

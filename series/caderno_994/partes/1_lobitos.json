@@ -32,50 +32,50 @@
   }
  ],
  "pasta_fotos": "lobitos",
- "legenda": "Lobitos: a primeira aventura no escutismo. 🐺\nDos 6 aos 10 anos, vivem na Alcateia, em Bando, entre jogos, histórias e desafios ao ar livre. O lema? Da melhor vontade!\n\nTens entre 6 e 10 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "legenda": "Lobitos: onde a aventura começa. 🐺\nDos 6 aos 10 anos, os sábados à tarde passam-se na Alcateia — entre jogos, histórias da Selva e amigos para a vida. O lema? Da melhor vontade!\n\nTens entre 6 e 10 anos (ou um filho/a nessa idade)? Aparece na nossa sede num sábado à tarde para experimentar.\n\nFala connosco:\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
  "slides": [
   {
    "tipo": "capa",
-   "gancho": "a primeira aventura no escutismo",
+   "gancho": "onde a aventura começa",
    "idade": "6–10",
-   "foto_desc": "lobitos a rir, perto da câmara",
+   "foto": "f29.jpg",
    "legenda": "a nossa Alcateia"
   },
   {
    "tipo": "sabado",
-   "titulo": "Jogos, histórias e **desafios ao ar livre.**",
+   "titulo": "Correr, rir e **aprender a brincar**",
    "fotos": [
-    "um jogo, em movimento",
-    "um Bando à volta de uma história"
+    "21.png",
+    "22.png"
    ],
    "legendas": [
     "jogos",
-    "histórias"
+    "em ação"
    ],
-   "nota": "sábado à tarde!"
+   "nota": "todos os sábados à tarde!"
   },
   {
    "tipo": "fazem",
    "titulo": "Na **Alcateia**:",
    "itens": [
     [
-     "Explorar a selva",
-     "Descobrimos o mundo através de jogos, histórias e desafios ao ar livre."
+     "Explorar a Selva",
+     "Entre jogos e histórias do Livro da Selva, cada sábado traz uma nova descoberta"
     ],
     [
      "Viver em Bando",
-     "Brincamos, partilhamos e aprendemos a crescer juntos, com alegria."
+     "Em pequenos grupos, aprendemos a partilhar, a ouvir e a contar uns com os outros"
     ],
     [
-     "Partir à caçada",
-     "Ajudamos quem precisa com pequenos gestos, todos os dias."
+     "Fazer uma Boa Ação",
+     "Ajudar em casa, na escola ou na Alcateia, com pequenos gestos todos os dias"
     ]
    ]
   },
   {
    "tipo": "organiza",
    "titulo": "Vivem em **Bandos**.",
-   "sub": "Grupos de 4 a 7 lobitos. Cada Bando tem a cor do pelo de um lobo.",
+   "sub": "Grupos de 4 a 7 lobitos. Cada Bando tem a cor do pelo de um lobo",
    "emblemas": [
     {
      "img": "bando_branco",
@@ -98,20 +98,20 @@
      "nome": "Ruivo"
     }
    ],
-   "nota": "todos juntos são a Alcateia, que se reúne no Covil"
+   "nota": "e todos juntos formam a Alcateia, no nosso Covil"
   },
   {
    "tipo": "lema",
    "titulo": "Da melhor\n**vontade!**",
-   "texto": "O lema dos Lobitos lembra-nos que todos os dias podemos dar o nosso melhor."
+   "texto": "O lema dos Lobitos lembra-nos que todos os dias podemos dar o nosso melhor"
   },
   {
    "tipo": "idades"
   },
   {
    "tipo": "convite",
-   "idade_txt": "Tens 6 a 10 anos?",
-   "foto_desc": "a fachada da sede, com o emblema"
+   "idade_txt": "Tens 6 a 10 anos? Vem experimentar!",
+   "foto": "image.png"
   }
  ]
 }

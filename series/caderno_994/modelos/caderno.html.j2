@@ -2,18 +2,32 @@
 <html lang="pt"><head><meta charset="utf-8"><style>{{ css }}</style></head>
 {# ---------------- peças desenhadas à mão ---------------- #}
 {% macro fita(x, y, w, rot) %}<div class="fita" style="left:{{ x }}px;top:{{ y }}px;width:{{ w }}px;transform:rotate({{ rot }}deg)"></div>{% endmacro %}
-{% macro pol(x, y, w, h, rot, desc, leg='', fita_rot=-3) %}
+{% macro pol(x, y, w, h, rot, desc, leg='', fita_rot=-3, img=none) %}
 <div class="pol" style="left:{{ x }}px;top:{{ y }}px;width:{{ w }}px;transform:rotate({{ rot }}deg)">
-  <div class="ft" style="height:{{ h }}px"><b>FOTO</b>{{ desc }}</div>
+  {% if img and ft(img) %}
+    <div class="ft" style="height:{{ h }}px;overflow:hidden">
+      <img src="{{ ft(img) }}" style="width:100%;height:100%;object-fit:cover">
+    </div>
+  {% else %}
+    <div class="ft" style="height:{{ h }}px"><b>FOTO</b>{{ desc }}</div>
+  {% endif %}
   <div class="leg">{{ leg }}</div>
 </div>
 {{ fita(x + w / 2 - 110, y - 26, 220, fita_rot) }}
 {% endmacro %}
 {% macro seta(x, y, w, h, rot=0, sw=7, cor='var(--tinta)') %}
+{% set x1, y1 = w * 0.62, h * 0.08 %}
+{% set x2, y2 = w - 12, 16 %}
+{% set dx, dy = x2 - x1, y2 - y1 %}
+{% set dist = (dx*dx + dy*dy) ** 0.5 %}
+{% set ux, uy = dx / dist, dy / dist %}
+{% set tam = 36 %}
+{% set abertura = 0.45 %}
 <svg class="risco" style="left:{{ x }}px;top:{{ y }}px;transform:rotate({{ rot }}deg)" width="{{ w }}" height="{{ h }}" viewBox="0 0 {{ w }} {{ h }}">
-  <path d="M 8 {{ h - 8 }} C {{ w * 0.25 }} {{ h * 0.35 }}, {{ w * 0.62 }} {{ h * 0.08 }}, {{ w - 12 }} 16" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
-  <path d="M {{ w - 12 }} 16 L {{ w - 50 }} 14 M {{ w - 12 }} 16 L {{ w - 26 }} 52" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
-</svg>{% endmacro %}
+  <path d="M 8 {{ h - 8 }} C {{ w * 0.25 }} {{ h * 0.35 }}, {{ x1 }} {{ y1 }}, {{ x2 }} {{ y2 }}" stroke="{{ cor }}" stroke-width="{{ sw }}" fill="none"/>
+  <path d="M {{ x2 - tam * (ux + abertura * uy) }} {{ y2 - tam * (uy - abertura * ux) }} L {{ x2 }} {{ y2 }} L {{ x2 - tam * (ux - abertura * uy) }} {{ y2 - tam * (uy + abertura * ux) }}" stroke="{{ cor }}" stroke-width="{{ sw }}" fill="none"/>
+</svg>
+{% endmacro %}
 {% macro laco(x, y, w, h, rot=0, sw=8, cor='var(--cor-escura)') %}
 <svg class="risco" style="left:{{ x }}px;top:{{ y }}px;transform:rotate({{ rot }}deg)" width="{{ w }}" height="{{ h }}" viewBox="0 0 {{ w }} {{ h }}">
   <path d="M {{ w * 0.10 }} {{ h * 0.42 }} C {{ w * 0.06 }} {{ h * 0.04 }}, {{ w * 0.86 }} {{ h * 0.00 }}, {{ w * 0.97 }} {{ h * 0.46 }} C {{ w * 1.0 }} {{ h * 0.86 }}, {{ w * 0.34 }} {{ h * 1.0 }}, {{ w * 0.08 }} {{ h * 0.78 }} C {{ w * -0.02 }} {{ h * 0.60 }}, {{ w * 0.14 }} {{ h * 0.16 }}, {{ w * 0.44 }} {{ h * 0.08 }}" stroke="{{ cor }}" stroke-width="{{ sw }}"/>
@@ -42,13 +56,15 @@
   <div class="marker" style="position:absolute;left:56px;top:86px;font-size:{{ parte.tam }}px">{{ parte.titulo }}</div>
   <div class="mao" style="position:absolute;left:62px;top:{{ 116 + parte.tam }}px;font-size:50px;max-width:760px;transform:rotate(-2deg)">{{ s.gancho }}</div>
   {{ seta(800, 150 + parte.tam, 150, 140, 52) }}
-  {{ pol(330, 470, 690, 610, 3, s.foto_desc, s.legenda, -4) }}
+  {{ pol(330, 470, 690, 610, 3, s.foto_desc, s.legenda, -4, s.foto) }}
   <div class="carimbo" style="left:46px;top:820px;transform:rotate(-9deg)">{{ s.idade }}<small>ANOS</small></div>
 
 {% elif t == 'sabado' %}
   <div class="marker" style="position:absolute;left:58px;top:78px;width:960px;font-size:88px">{{ s.titulo|mk|safe }}</div>
-  {{ pol(56, 430, 560, 470, -4, s.fotos[0], s.legendas[0], 4) }}
-  {{ pol(486, 660, 540, 440, 5, s.fotos[1], s.legendas[1], -6) }}
+  {% set eh_img0 = s.fotos[0].lower().endswith(('.png', '.jpg', '.jpeg', '.webp')) %}
+  {% set eh_img1 = s.fotos[1].lower().endswith(('.png', '.jpg', '.jpeg', '.webp')) %}
+  {{ pol(56, 430, 560, 470, -4, s.fotos[0], s.legendas[0], 4, s.fotos[0] if eh_img0 else none) }}
+  {{ pol(486, 660, 540, 440, 5, s.fotos[1], s.legendas[1], -6, s.fotos[1] if eh_img1 else none) }}
   <div class="mao" style="position:absolute;left:66px;top:1262px;font-size:42px;white-space:nowrap;transform:rotate(-2deg)">{{ s.nota }}</div>
 
 {% elif t == 'fazem' %}
@@ -71,7 +87,7 @@
       <img src="{{ ag(e.img) }}" alt="" style="{% if n < 4 %}width:190px;height:190px{% endif %}"><b>{{ e.nome }}</b>{% if e.lema %}<span>{{ e.lema }}</span>{% endif %}
     </div>
   {% endfor %}
-  <div class="mao cor-t" style="position:absolute;left:62px;top:1196px;width:940px;font-size:40px;transform:rotate(-1.5deg)">{{ s.nota }}</div>
+  <div class="mao" style="position:absolute;left:62px;top:1185px;width:940px;font-size:40px;color:var(--cor-escura);transform:rotate(-1.5deg)">{{ s.nota }}</div>
 
 {% elif t == 'lema' %}
   {% if parte.simbolo %}<img src="{{ secao(parte.simbolo) }}" alt="" style="position:absolute;right:70px;top:80px;width:210px;transform:rotate(8deg);filter:drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 12px 12px rgba(40,28,10,.3))">{% endif %}
@@ -98,12 +114,12 @@
   {% set cur = parte.todas[parte.indice] %}
   {{ laco(x0 + (cur.de - 6) * dx - 26, yr + 156 + (parte.indice % 2) * 50, 4 * dx + 52, 190, -3) }}
   <div class="mao cor-t" style="position:absolute;left:{{ [x0 + (cur.de - 6) * dx - 40, 600]|min }}px;top:{{ yr + 420 }}px;font-size:62px;transform:rotate(-4deg)">estás aqui!</div>
-  <div class="maq" style="position:absolute;left:62px;top:1110px;width:780px;font-size:42px">Não é a tua idade? As outras secções estão no nosso perfil.</div>
+  <div class="maq" style="position:absolute;left:62px;top:1110px;width:780px;font-size:42px">Não é a tua idade? Não faz mal! As outras secções estão no nosso perfil.</div>
 
 {% elif t == 'convite' %}
-  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:104px">Aparece num<br><span class="marca">sábado à tarde.</span></div>
-  {{ pol(420, 420, 600, 440, 3, s.foto_desc, 'a nossa sede', -5) }}
-  <div class="mao" style="position:absolute;left:62px;top:520px;font-size:54px;max-width:330px;transform:rotate(-4deg)">{{ s.idade_txt }}</div>
+  <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:104px">O 994<br><span class="marca">chama por ti!</span></div>
+  {{ pol(420, 420, 600, 440, 3, s.foto_desc, 'a nossa sede', -5, s.foto) }}
+  <div class="mao" style="position:absolute;left:58px;top:505px;font-size:43px;max-width:315px;line-height:1.15;transform:rotate(-4deg)">{{ s.idade_txt }}</div>
   {{ seta(130, 690, 260, 150, 8) }}
   <div class="mao" style="position:absolute;left:62px;top:1052px;font-size:44px;transform:rotate(-2deg)">para mais informação:</div>
   <div style="position:absolute;left:58px;top:1128px"><span class="dymo cor" style="transform:rotate(-1.5deg)">924 428 343</span></div>

@@ -32,7 +32,7 @@
   }
  ],
  "pasta_fotos": "caminheiros",
- "legenda": "Caminheiros: a última etapa do caminho escutista. 🥾\nDos 18 aos 22 anos, em Clã, percorrem trilhos exigentes, põem as mãos à obra onde faz mais falta e preparam-se para a vida adulta. A divisa? Servir.\n\nTens entre 18 e 22 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "legenda": "Caminheiros: a última etapa do caminho escutista. 🥾\nDos 18 aos 22 anos, em Clã, não há receitas prontas — cada um traça o seu caminho, põe as mãos onde faz falta e prepara-se para a vida adulta. A divisa? Servir.\n\nTens entre 18 e 22 anos? Aparece na nossa sede num sábado à tarde para experimentar.\n\nFala connosco:\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
  "motivo": "rota",
  "motivo_opac": 0.7,
  "slides": [
@@ -40,44 +40,43 @@
    "tipo": "capa",
    "gancho": "a última etapa do caminho escutista",
    "idade": "18–22",
-   "foto_desc": "caminheiros num trilho, de mochila às costas",
+   "foto": "CAPA.png",
    "legenda": "o nosso Clã"
   },
   {
    "tipo": "sabado",
-   "titulo": "Uma fraternidade do ar livre **para servir.**",
+   "titulo": "Uma fraternidade do ar livre **para servir**",
    "fotos": [
-    "o Clã num trilho",
-    "caminheiros ao serviço da comunidade"
+    "FOTO1.png",
+    "FOTO2.png"
    ],
    "legendas": [
     "o caminho",
     "o serviço"
-   ],
-   "nota": "— Baden-Powell"
+   ]
   },
   {
    "tipo": "fazem",
-   "titulo": "O que **fazem**:",
+   "titulo": "Ser **caminheiro**:",
    "itens": [
     [
-     "A caminhada",
-     "Traçam o próprio rumo, percorrem trilhos exigentes e descobrem quem são."
+     "Fazer-se ao caminho",
+     "Traçamos o nosso rumo, enfrentamos trilhos exigentes e descobrimos quem somos"
     ],
     [
-     "O serviço",
-     "Olham para a sociedade com sentido crítico e metem as mãos à obra."
+     "Servir onde faz falta",
+     "Olhamos para o que nos rodeia com sentido crítico e metemos as mãos à obra"
     ],
     [
-     "O Clã",
-     "Em comunidade de jovens adultos, partilham ideias e decidem juntos."
+     "Viver em Clã",
+     "Uma comunidade de jovens adultos onde partilhamos ideias e decidimos em conjunto"
     ]
    ]
   },
   {
    "tipo": "organiza",
    "titulo": "As **Tribos**.",
-   "sub": "Grupos de 4 a 8 caminheiros. Cada Tribo escolhe um patrono: um santo, um benemérito ou um herói.",
+   "sub": "Grupos de 4 a 8 caminheiros. Cada Tribo escolhe um patrono: um santo, um benemérito ou um herói",
    "emblemas": [
     {
      "img": "aristides",
@@ -88,13 +87,13 @@
      "nome": "Irena Sendler"
     }
    ],
-   "nota": "todas juntas formam o Clã, que se reúne no Albergue"
+   "nota": "e todas juntas formam o Clã, no nosso Albergue"
   },
   {
    "tipo": "lema",
    "titulo": "**Servir.**",
    "tam": 250,
-   "texto": "A divisa dos Caminheiros: colocar a vida ao serviço dos outros, rumo ao ideal do Homem Novo.",
+   "texto": "Mais do que ajudar de vez em quando, é uma forma de estar na vida, colocando o que somos ao serviço dos outros",
    "tira_y": 720
   },
   {
@@ -102,8 +101,8 @@
   },
   {
    "tipo": "convite",
-   "idade_txt": "Tens 18 a 22 anos?",
-   "foto_desc": "a fachada da sede, com o emblema"
+   "idade_txt": "Tens 18 a 22 anos? Vem experimentar!",
+   "foto": "image.png"
   }
  ]
 }

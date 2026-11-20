@@ -32,7 +32,7 @@
   }
  ],
  "pasta_fotos": "exploradores",
- "legenda": "Exploradores: a aventura faz-se em Patrulha. 🧭\nDos 10 aos 14 anos, são os próprios exploradores que organizam o grupo, decidem o rumo e fazem a aventura acontecer.\n\nTens entre 10 e 14 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "legenda": "Exploradores: a aventura faz-se em Patrulha. 🧭\nDos 10 aos 14 anos, não ficamos à espera que nos digam o que fazer — montamos o nosso campo, lemos o mapa e decidimos a aventura em equipa.\n\nTens entre 10 e 14 anos? Aparece na nossa sede num sábado à tarde para experimentar.\n\nFala connosco:\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
  "motivo": "topo",
  "motivo_opac": 0.55,
  "slides": [
@@ -40,48 +40,47 @@
    "tipo": "capa",
    "gancho": "a aventura faz-se em Patrulha",
    "idade": "10–14",
-   "foto_desc": "uma Patrulha em ação, ao ar livre",
+   "foto": "aa.png",
    "legenda": "a nossa Expedição"
   },
   {
    "tipo": "sabado",
-   "titulo": "Aqui és **tu** que decides o rumo.",
+   "titulo": "Aqui és **tu** que decides o rumo",
    "fotos": [
-    "exploradores a montar o campo",
-    "uma Patrulha de mapa na mão"
+    "bb.png",
+    "cc.png"
    ],
    "legendas": [
     "o campo",
-    "o rumo"
-   ],
-   "nota": "aqui decidem eles!"
+    "a orientação"
+   ]
   },
   {
    "tipo": "fazem",
    "titulo": "Ser **explorador**:",
    "itens": [
     [
+     "Viver em Patrulha",
+     "É a nossa pequena equipa: cada um tem o seu cargo e decidimos tudo juntos"
+    ],
+    [
+     "Mãos na massa",
+     "Montar tendas, fazer nós, ler mapas e aprender a técnicas de campo"
+    ],
+    [
      "A Lei e a Promessa",
-     "A nossa palavra vale ouro e a Lei do Escuta guia as nossas ações."
+     "Guiamo-nos pela Lei do Escuta e cumprimos a nossa Promessa"
     ],
     [
-     "A técnica e o terreno",
-     "Orientação, pioneirismo e vida no campo."
-    ],
-    [
-     "O sistema de patrulhas",
-     "Somos nós que organizamos o grupo e decidimos o rumo."
-    ],
-    [
-     "A descoberta",
-     "Saímos da zona de conforto e exploramos novos horizontes."
+     "Sair à descoberta",
+     "Acampamentos, jogos na natureza e desafios fora da zona de conforto"
     ]
    ]
   },
   {
    "tipo": "organiza",
    "titulo": "As **Patrulhas**.",
-   "sub": "Grupos de 4 a 8 exploradores. Cada um tem um animal: o totem.",
+   "sub": "Grupos de 4 a 8 exploradores. Cada patrulha tem o seu animal: o totem",
    "emblemas": [
     {
      "img": "patrulha_golfinho",
@@ -109,12 +108,12 @@
      "lema": "astutos e audazes"
     }
    ],
-   "nota": "todas juntas formam a Expedição, que se reúne na Base"
+   "nota": "e todas juntas formam a Expedição, na nossa Base"
   },
   {
    "tipo": "lema",
    "titulo": "Sempre\n**alerta!**",
-   "texto": "Do «Be Prepared» de Baden-Powell nasce o nosso «Sempre Alerta»: estar pronto de corpo e espírito para qualquer desafio ou serviço.",
+   "texto": "Estar pronto de corpo e espírito para ajudar, resolver problemas e encarar qualquer desafio",
    "tira_y": 820
   },
   {
@@ -122,8 +121,8 @@
   },
   {
    "tipo": "convite",
-   "idade_txt": "Tens 10 a 14 anos?",
-   "foto_desc": "a fachada da sede, com o emblema"
+   "idade_txt": "Tens 10 a 14 anos? Vem experimentar!",
+   "foto": "image.png"
   }
  ]
 }

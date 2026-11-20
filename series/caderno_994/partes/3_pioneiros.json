@@ -32,54 +32,53 @@
   }
  ],
  "pasta_fotos": "pioneiros",
- "legenda": "Pioneiros: as ideias passam do papel à obra. 🛠️\nDos 14 aos 18 anos, escolhem uma ideia juntos e fazem dela algo real: raids, construções e projetos decididos por eles.\n\nTens entre 14 e 18 anos? Aparece num sábado à tarde na nossa sede. Para mais informação, fala connosco.\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
+ "legenda": "Pioneiros: as ideias passam do papel à obra. 🛠️\nDos 14 aos 18 anos, deixas de seguir planos feitos por outros — é a tua Equipa que imagina o projeto, organiza o raid e o faz acontecer.\n\nTens entre 14 e 18 anos? Aparece na nossa sede num sábado à tarde para experimentar.\n\nFala connosco:\n📞 924 428 343 · ✉️ geral.994@escutismo.pt · 🌐 994caxinas.com",
  "slides": [
   {
    "tipo": "capa",
    "gancho": "as ideias passam do papel à obra",
    "idade": "14–18",
-   "foto_desc": "pioneiros a construir, mãos à obra",
+   "foto": "CAPA.png",
    "legenda": "a nossa Comunidade"
   },
   {
    "tipo": "sabado",
-   "titulo": "Escolhem uma ideia. **Fazem-na acontecer.**",
+   "titulo": "Imagina o projeto e **faz acontecer**",
    "fotos": [
-    "a equipa a planear",
-    "o projeto feito"
+    "FOTO1.png",
+    "FOTO2.png"
    ],
    "legendas": [
-    "o plano",
-    "a obra"
-   ],
-   "nota": "o Empreendimento"
+    "o raid",
+    "a equipa"
+   ]
   },
   {
    "tipo": "fazem",
-   "titulo": "O que **fazem**:",
+   "titulo": "Ser **pioneiro**:",
    "itens": [
     [
      "Tu decides",
-     "Os pioneiros escolhem os projetos, os destinos e os desafios."
+     "Não há planos impostos: escolhemos os projetos, os destinos e os desafios"
     ],
     [
-     "Técnica avançada",
-     "Raids, construções e atividades que testam a resistência."
+     "Raids e construções",
+     "Caminhadas exigentes, grandes construções e atividades que põem à prova as nossas capacidades"
     ],
     [
-     "Compromisso",
-     "Escolhas conscientes e a palavra dada honrada."
+     "Palavra dada",
+     "Assumimos responsabilidades a sério, dentro e fora da Equipa."
     ],
     [
-     "Intervenção",
-     "Não esperamos que os outros mudem o mundo: fazemos a nossa parte."
+     "Mãos à obra",
+     "Não ficamos à espera que os outros mudem o mundo: fazemos a nossa parte"
     ]
    ]
   },
   {
    "tipo": "organiza",
    "titulo": "As **Equipas**.",
-   "sub": "Grupos de 4 a 8 pioneiros, com o nome de um santo, de um pioneiro da humanidade ou de um herói nacional.",
+   "sub": "Grupos de 4 a 8 pioneiros, com o nome de um santo, de um pioneiro da humanidade ou de um herói nacional",
    "emblemas": [
     {
      "img": "cristovao_colombo",
@@ -94,20 +93,20 @@
      "nome": "Nuno Álvares Pereira"
     }
    ],
-   "nota": "todos juntos formam a Comunidade, que se reúne no Abrigo"
+   "nota": "e todas juntas formam a Comunidade, no nosso Abrigo"
   },
   {
    "tipo": "lema",
    "titulo": "Sempre\n**alerta!**",
-   "texto": "O lema dos Pioneiros mantém o «Sempre Alerta», mas agora com maturidade: estar pronto para agir, liderar e construir."
+   "texto": "Estar pronto para liderar, construir e agir quando é preciso"
   },
   {
    "tipo": "idades"
   },
   {
    "tipo": "convite",
-   "idade_txt": "Tens 14 a 18 anos?",
-   "foto_desc": "a fachada da sede, com o emblema"
+   "idade_txt": "Tens 14 a 18 anos? Vem experimentar!",
+   "foto": "image.png"
   }
  ]
 }

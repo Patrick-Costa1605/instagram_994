@@ -8,7 +8,10 @@ foreach ($parte in @(
     "3_pioneiros.json",
     "4_caminheiros.json"
 )) {
-    python "src\gerar.py" "series\nossas_seccoes\partes\$parte"
+    $scriptPath = Join-Path 'src' 'gerar.py'
+    $partePath = Join-Path 'series' 'caderno_994' 'partes' $parte
+
+    python $scriptPath $partePath
     if ($LASTEXITCODE -ne 0) {
         throw "Falha ao renderizar $parte"
     }
