@@ -4,9 +4,10 @@
     {
       "tipo": "capa",
       "foto": "f14.jpg",
-      "inteira": true,
-      "foto_pos": "50% 100%",
-      "pos": "topo",
+      "inteira": false,
+      "foto_pos": "50% 50%",
+      "pos": "meio",
+      "y": 50,
       "cor": "#FFD84D",
       "texto": "coisas que achamos|*chique*"
     },
@@ -24,7 +25,7 @@
       "pos": "baixo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "dizer *«é rápido»*|e já ser noite",
+      "texto": "fingir que tens |tudo *sob controlo*",
       "pequeno": true
     },
     {
@@ -37,43 +38,44 @@
       "pequeno": true
     },
     {
-      "foto": "f39.jpg",
+      "foto": "f43.jpg",
       "foto_pos": "50% 40%",
       "pos": "baixo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "cheirar a *fogueira*|na segunda-feira",
+      "texto": "*aprender* com quem |já sabe",
       "pequeno": true
     },
     {
-      "foto": "f19.jpg",
+      "foto": "f06.jpg",
       "foto_pos": "50% 30%",
       "pos": "baixo",
+      "y": 69,
       "cor": "#7BD88F",
       "pre": "chique é",
-      "texto": "*rir* de nós próprios",
+      "texto": "colecionar *memórias*",
       "pequeno": true
     },
     {
-      "foto": "f26.jpg",
+      "foto": "f21.jpg",
       "foto_pos": "50% 50%",
       "pos": "topo",
       "cor": "#FFD84D",
       "pre": "chique é",
-      "texto": "*cumprir* o que|se promete",
+      "texto": "estar pronto para *ajudar*",
       "pequeno": true
     },
     {
-      "foto": "f12.jpg",
+      "foto": "f23.jpg",
       "foto_pos": "50% 50%",
-      "pos": "baixo",
+      "pos": "topo",
       "cor": "#FF9A4D",
       "pre": "chique é",
-      "texto": "dizer *«eu vou!»*|sem saber para onde",
+      "texto": "dizer *\"eu vou!\"*|sem saber para onde",
       "pequeno": true
     },
     {
-      "foto": "f36.jpg",
+      "foto": "f38.jpg",
       "foto_pos": "50% 50%",
       "pos": "topo",
       "cor": "#7BD88F",
@@ -85,6 +87,7 @@
       "tipo": "fim",
       "foto": "f18.jpg",
       "foto_pos": "50% 50%",
+      "pequeno": false,
       "pos": "topo",
       "cor": "#FFD84D",
       "pre": "chique é",
