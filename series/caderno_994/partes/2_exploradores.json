@@ -1,6 +1,6 @@
 {
- "titulo": "EXPLORADORES",
- "tam": 118,
+ "titulo": "Exploradores",
+ "tam": 156,
  "papel": "topo",
  "cor_banda": "#1F8A4C",
  "simbolo": "logo_II_Seccao_transparente.png",
@@ -54,7 +54,7 @@
     "o campo",
     "o rumo"
    ],
-   "nota": "são eles que organizam o grupo"
+   "nota": "aqui decidem eles!"
   },
   {
    "tipo": "fazem",
