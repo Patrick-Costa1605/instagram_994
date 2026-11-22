@@ -1,7 +1,5 @@
 __pycache__/
 *.pyc
 .venv/
-# fotos originais ficam fora do git (pesadas e com direitos de imagem); remove esta linha se quiseres versioná-las
-series/*/fotos/*
 !series/*/fotos/.gitkeep
 scripts.txt
