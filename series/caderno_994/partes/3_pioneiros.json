@@ -85,12 +85,16 @@
      "nome": "Cristóvão Colombo"
     },
     {
+     "img": "nap",
+     "nome": "Nuno Álvares Pereira"
+    },
+    {
      "img": "vasco_da_gama",
      "nome": "Vasco da Gama"
     },
     {
-     "img": "nap",
-     "nome": "Nuno Álvares Pereira"
+     "img": "joana",
+     "nome": "Joana d’Arc"
     }
    ],
    "nota": "e todas juntas formam a Comunidade, no nosso Abrigo"

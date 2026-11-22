@@ -1,9 +1,0 @@
-{
-  "nome": "As Nossas Secções",
-  "formato": { "largura": 1080, "altura": 1350 },
-  "modelo": "modelos/unificado.html.j2",
-  "estilo": "modelos/unificado.css",
-  "cores": { "banda": "#1E9E4A", "amarelo": "#F2C230", "verde": "#3FBF5F", "azul": "#3B6CF0", "vermelho": "#EE4B3A", "creme": "#F8F3E8" },
-  "logo": { "ficheiro": "../../assets/logo-994.png", "altura": 128 },
-  "hashtags": "#escutismo #994caxinas #escuteiros #caxinas #viladoconde #cne"
-}

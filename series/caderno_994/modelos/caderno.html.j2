@@ -81,7 +81,13 @@
   <div class="marker" style="position:absolute;left:58px;top:84px;width:960px;font-size:108px">{{ s.titulo|mk|safe }}</div>
   <div class="maq" style="position:absolute;left:62px;top:{{ 230 if s.titulo|length < 14 else 330 }}px;width:900px">{{ s.sub }}</div>
   {% set n = s.emblemas|length %}
-  {% set pos = {5: ([(70,470,-6),(410,440,4),(745,490,-3),(230,800,6),(590,820,-5)] if s.emblemas[0].lema else [(70,560,-6),(410,520,4),(745,575,-3),(230,900,6),(590,925,-5)]), 3: [(80,600,-5),(420,560,4),(760,620,-3)], 2: [(140,600,-4),(590,640,5)]}[n] %}
+      {% set pos = {
+    6: [(70,540,-5),(410,505,4),(745,555,-3),(70,865,5),(410,835,-4),(745,880,3)],
+    5: ([(70,470,-6),(410,440,4),(745,490,-3),(230,800,6),(590,820,-5)] if s.emblemas[0].lema else [(70,560,-6),(410,520,4),(745,575,-3),(230,900,6),(590,925,-5)]),
+    4: [(160,550,-5),(600,530,4),(175,860,4),(585,875,-4)],
+    3: [(80,600,-5),(420,560,4),(760,620,-3)],
+    2: [(140,600,-4),(590,640,5)]
+  }[n] %}
   {% for e in s.emblemas %}{% set p = pos[loop.index0] %}
     <div class="autocolante {{ 'foto' if e.foto else '' }}" style="left:{{ p[0] }}px;top:{{ p[1] }}px;width:{{ 300 if n < 4 else 260 }}px;transform:rotate({{ p[2] }}deg)">
       <img src="{{ ag(e.img) }}" alt="" style="{% if n < 4 %}width:190px;height:190px{% endif %}"><b>{{ e.nome }}</b>{% if e.lema %}<span>{{ e.lema }}</span>{% endif %}

@@ -312,7 +312,14 @@ def main():
         browser.close()
     for f in tmp.glob("*"):
         f.unlink()
-    tmp.rmdir()
+    import shutil, time
+    for _ in range(5):
+        try:
+            shutil.rmtree(tmp)
+            break
+        except PermissionError:
+            time.sleep(0.5)
+
 
     existentes = [out_dir / f"{i + 1:02d}.png" for i in todos if (out_dir / f"{i + 1:02d}.png").exists()]
     if existentes:
